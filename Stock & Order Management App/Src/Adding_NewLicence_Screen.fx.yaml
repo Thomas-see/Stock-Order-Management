@@ -1,0 +1,1146 @@
+Adding_NewLicence_Screen As screen:
+    Fill: =LookUp(colColorScheme,Name="bg_Primary",color)
+    OnVisible: |
+        =UpdateContext({licenceType:"RLicence"});
+
+    header_page_1 As header_page:
+        OnChangeLogo: =false
+        OnSelect: =Back()
+        PageName: ="Adding License"
+        ZIndex: =1
+
+    bottom_page_2 As bottom_page:
+        Button2Title: ="Notify Applicant"
+        ButtonTitle: ="Request"
+        SaveButton: =SubmitForm(Requested_RecurringItemForm)
+        SaveProgressButton: =
+        Y: =708
+        ZIndex: =3
+
+    Rectangle3 As rectangle:
+        Fill: =LookUp(colColorScheme,Name="Main_colour",Colour)
+        Height: =60
+        Width: =237
+        X: =917
+        Y: =708
+        ZIndex: =4
+
+    Container1_3 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Bold
+        Fill: =LookUp(colColorScheme,Name="secondary_colour",Colour)
+        Height: =648
+        Width: =899
+        Y: =60
+        ZIndex: =5
+
+        Requested_RecurringItemForm As form:
+            DataSource: ='Recurring Items'
+            DefaultMode: =FormMode.New
+            Height: =647
+            OnSuccess: = Cloudy_Requested.Run(Requested_RecurringItemForm.LastSubmit.'Product / Service'.'Products & Service', Requested_RecurringItemForm.LastSubmit.'Description Full', Requested_RecurringItemForm.LastSubmit.'Term (Months)', Requested_RecurringItemForm.LastSubmit.'Customer Reference', Requested_RecurringItemForm.LastSubmit.Account.Account, Requested_RecurringItemForm.LastSubmit.Contact.'Contact (contactid)',"", Requested_RecurringItemForm.LastSubmit.'Start Date', Requested_RecurringItemForm.LastSubmit.'Recurring Item' )
+            Width: =899
+            ZIndex: =1
+
+            DataCard1 As typedDataCard.blankCard:
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =35
+                Width: =299
+                WidthFit: =true
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+                Label14_9 As label:
+                    Color: =RGBA(255, 255, 255, 1)
+                    FontWeight: =FontWeight.Bold
+                    Height: =60
+                    PaddingLeft: =20
+                    Size: =17
+                    Text: ="d"
+                    Width: =493
+                    X: =484
+                    Y: =25
+                    ZIndex: =1
+
+                Label2 As label:
+                    FontWeight: =FontWeight.Bold
+                    Height: =30
+                    Size: =15
+                    Text: ="GENERAL"
+                    Width: =271
+                    X: =19
+                    Y: =25
+                    ZIndex: =2
+
+            DataCard3 As typedDataCard.blankCard:
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =55
+                Width: =299
+                X: =1
+                Y: =0
+                ZIndex: =1
+
+            DataCard2 As typedDataCard.blankCard:
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =31
+                Width: =299
+                WidthFit: =true
+                X: =2
+                Y: =0
+                ZIndex: =1
+
+                Label2_1 As label:
+                    FontWeight: =FontWeight.Bold
+                    Height: =60
+                    Size: =15
+                    Text: ="LICENSE PERIOD"
+                    Width: =353
+                    X: =20
+                    Y: =8
+                    ZIndex: =1
+
+            "'Customer Reference_DataCard2' As typedDataCard.textualEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="crmd_customerreference"
+                Default: =ThisItem.'Customer Reference'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Recurring Items'],DataSourceInfo.DisplayName,"crmd_customerreference")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =85
+                MaxLength: =DataSourceInfo([@'Recurring Items'], DataSourceInfo.MaxLength, "crmd_customerreference")
+                Required: =false
+                Update: =DataCardValue39.Text
+                Width: =299
+                WidthFit: =true
+                X: =0
+                Y: =1
+                ZIndex: =1
+
+                DataCardKey40 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue39 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode
+                    MaxLength: =Parent.MaxLength
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey40.Y + DataCardKey40.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage39 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue39.Y + DataCardValue39.Height
+                    ZIndex: =3
+
+                StarVisible39 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey40.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey40.Y
+                    ZIndex: =4
+
+            "'Description Full_DataCard1' As typedDataCard.textualMultiLineEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="crmd_descriptionfull"
+                Default: =ThisItem.'Description Full'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Recurring Items'],DataSourceInfo.DisplayName,"crmd_descriptionfull")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =104
+                Required: =false
+                Update: =DataCardValue50.Text
+                Width: =299
+                X: =1
+                Y: =1
+                ZIndex: =1
+
+                DataCardKey51 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue50 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Default: =DataCardValue40.Selected.'Description Full'
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =80
+                    Mode: =TextMode.MultiLine
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey51.Y + DataCardKey51.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage50 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue50.Y + DataCardValue50.Height
+                    ZIndex: =3
+
+                StarVisible50 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey51.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey51.Y
+                    ZIndex: =4
+
+            "'Start Date_DataCard3' As typedDataCard.dateEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="crmd_startdate"
+                Default: =ThisItem.'Start Date'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Recurring Items'],DataSourceInfo.DisplayName,"crmd_startdate")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =96
+                Required: =true
+                Update: =DataCardValue52.SelectedDate
+                Width: =299
+                X: =2
+                Y: =1
+                ZIndex: =1
+
+                DataCardKey53 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue52 As datepicker:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    DefaultDate: =Parent.Default
+                    DisplayMode: =Parent.DisplayMode
+                    EndYear: =Year(Today())+100
+                    IsEditable: =true
+                    PaddingBottom: =0
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    StartYear: =1899
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey53.Y + DataCardKey53.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage52 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue52.Y + DataCardValue52.Height
+                    ZIndex: =3
+
+                StarVisible52 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey53.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey53.Y
+                    ZIndex: =4
+
+            "'Product / Service_DataCard2' As typedDataCard.comboBoxEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="crmd_productserviceid"
+                Default: =ThisItem.'Product / Service'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Recurring Items'],DataSourceInfo.DisplayName,"crmd_productserviceid")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =74
+                Required: =false
+                Update: =DataCardValue40.Selected
+                Width: =299
+                WidthFit: =true
+                X: =0
+                Y: =2
+                ZIndex: =1
+
+                DataCardKey41 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue40 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    DefaultSelectedItems: =[Parent.Default]
+                    DisplayFields: =["crmdqe_productsservices_id","crmdqe_category2"]
+                    DisplayMode: =Parent.DisplayMode
+                    Items: =Choices([@'Recurring Items'].'Product / Service')
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["crmdqe_productsservices_id"]
+                    SearchItems: =Search(Choices([@'Recurring Items'].'Product / Service'),DataCardValue40.SearchText,"crmdqe_productsservices_id")
+                    SelectMultiple: =false
+                    Template: =ListItemTemplate.Double
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey41.Y + DataCardKey41.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage40 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue40.Y + DataCardValue40.Height
+                    ZIndex: =3
+
+                StarVisible40 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey41.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey41.Y
+                    ZIndex: =4
+
+            Supplier_DataCard4 As typedDataCard.comboBoxEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="crmd_supplierid"
+                Default: =ThisItem.Supplier
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Recurring Items'],DataSourceInfo.DisplayName,"crmd_supplierid")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =DataCardValue53.Selected
+                Width: =299
+                X: =1
+                Y: =2
+                ZIndex: =1
+
+                DataCardKey54 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue53 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    DefaultSelectedItems: =[Parent.Default]
+                    DisplayFields: =["name"]
+                    DisplayMode: =Parent.DisplayMode
+                    Items: =Choices([@'Recurring Items'].crmd_supplierid)
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["name"]
+                    SearchItems: =Search(Choices([@'Recurring Items'].crmd_supplierid),DataCardValue53.SearchText,"name")
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey54.Y + DataCardKey54.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage53 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =32
+                    Y: =80
+                    ZIndex: =3
+
+                StarVisible53 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey54.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey54.Y
+                    ZIndex: =4
+
+            "'End Date_DataCard2' As typedDataCard.dateEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="crmd_enddate"
+                Default: =ThisItem.'End Date'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Recurring Items'],DataSourceInfo.DisplayName,"crmd_enddate")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =true
+                Update: =DataCardValue45.SelectedDate
+                Width: =299
+                X: =2
+                Y: =2
+                ZIndex: =1
+
+                DataCardKey46 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue45 As datepicker:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    DefaultDate: =Parent.Default
+                    DisplayMode: =Parent.DisplayMode
+                    EndYear: =Year(Today())+100
+                    IsEditable: =true
+                    PaddingBottom: =0
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    StartYear: =1899
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey46.Y + DataCardKey46.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage45 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue45.Y + DataCardValue45.Height
+                    ZIndex: =3
+
+                StarVisible45 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey46.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey46.Y
+                    ZIndex: =4
+
+            Account_DataCard3 As typedDataCard.comboBoxEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="crmd_accountid"
+                Default: =ThisItem.Account
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Recurring Items'],DataSourceInfo.DisplayName,"crmd_accountid")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =DataCardValue41.Selected
+                Width: =299
+                WidthFit: =true
+                X: =0
+                Y: =3
+                ZIndex: =1
+
+                DataCardKey42 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue41 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    DefaultSelectedItems: =[Parent.Default]
+                    DisplayFields: =["name"]
+                    DisplayMode: =Parent.DisplayMode
+                    Items: =Choices([@'Recurring Items'].crmd_accountid)
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["name"]
+                    SearchItems: =Search(Choices([@'Recurring Items'].crmd_accountid),DataCardValue41.SearchText,"name")
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey42.Y + DataCardKey42.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage41 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue41.Y + DataCardValue41.Height
+                    ZIndex: =3
+
+                StarVisible41 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey42.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey42.Y
+                    ZIndex: =4
+
+            DataCard5 As typedDataCard.blankCard:
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Width: =299
+                X: =1
+                Y: =3
+                ZIndex: =1
+
+            "'Term (Months)_DataCard3' As typedDataCard.numberEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="crmd_termmonths"
+                Default: =ThisItem.'Term (Months)'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Recurring Items'],DataSourceInfo.DisplayName,"crmd_termmonths")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =Value(DataCardValue46.Text)
+                Width: =299
+                X: =2
+                Y: =3
+                ZIndex: =1
+
+                DataCardKey47 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue46 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Default: =If(IsBlank(LicenceID)=true, If(DataCardValue40.Selected.'Category 2'="P1Y", 12, If(DataCardValue40.Selected.'Category 2'="P1M", 1, If(DataCardValue40.Selected.'Category 2'="Monthly", 1, If(DataCardValue40.Selected.'Category 2'="M/A", 12, If(DataCardValue40.Selected.'Category 2'="One Off", 1, If(DataCardValue40.Selected.'Category 2'="Annual", 12)))))), LookUp('Recurring Items', crmd_recurringitemid=LicenceID).'Term (Months)')
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Format: =TextFormat.Number
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey47.Y + DataCardKey47.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage46 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue46.Y + DataCardValue46.Height
+                    ZIndex: =3
+
+                StarVisible46 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey47.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey47.Y
+                    ZIndex: =4
+
+            Contact_DataCard1 As typedDataCard.comboBoxEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="crmd_contactid"
+                Default: =ThisItem.Contact
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Recurring Items'],DataSourceInfo.DisplayName,"crmd_contactid")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =93
+                Required: =false
+                Update: =DataCardValue42.Selected
+                Width: =299
+                WidthFit: =true
+                X: =0
+                Y: =4
+                ZIndex: =1
+
+                DataCardKey43 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue42 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    DefaultSelectedItems: =[Parent.Default]
+                    DisplayFields: =["fullname"]
+                    DisplayMode: =Parent.DisplayMode
+                    Items: =Choices([@'Recurring Items'].crmd_contactid)
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["fullname"]
+                    SearchItems: =Search(Choices([@'Recurring Items'].crmd_contactid),DataCardValue42.SearchText,"fullname")
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey43.Y + DataCardKey43.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage42 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue42.Y + DataCardValue42.Height
+                    ZIndex: =3
+
+                StarVisible42 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey43.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey43.Y
+                    ZIndex: =4
+
+            DataCard6 As typedDataCard.blankCard:
+                BorderStyle: =BorderStyle.Solid
+                DisplayMode: =DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =59
+                Width: =299
+                X: =1
+                Y: =4
+                ZIndex: =1
+
+            Quantity_DataCard3 As typedDataCard.numberEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="crmd_quantity"
+                Default: =ThisItem.Quantity
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Recurring Items'],DataSourceInfo.DisplayName,"crmd_quantity")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =true
+                Update: =Value(DataCardValue47.Text)
+                Width: =299
+                X: =2
+                Y: =4
+                ZIndex: =1
+
+                DataCardKey48 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue47 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Format: =TextFormat.Number
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey48.Y + DataCardKey48.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage47 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue47.Y + DataCardValue47.Height
+                    ZIndex: =3
+
+                StarVisible47 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey48.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey48.Y
+                    ZIndex: =4
+
+            Description_DataCard4 As typedDataCard.textualEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="crmd_name"
+                Default: =ThisItem.Description
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Recurring Items'],DataSourceInfo.DisplayName,"crmd_name")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                MaxLength: =DataSourceInfo([@'Recurring Items'], DataSourceInfo.MaxLength, "crmd_name")
+                Required: =false
+                Update: =DataCardValue48.Text
+                Visible: =false
+                Width: =299
+                X: =0
+                Y: =5
+                ZIndex: =1
+
+                DataCardKey49 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue48 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode
+                    MaxLength: =Parent.MaxLength
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey49.Y + DataCardKey49.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage48 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue48.Y + DataCardValue48.Height
+                    ZIndex: =3
+
+                StarVisible48 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey49.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey49.Y
+                    ZIndex: =4
+
+            "'Nominal Code Xero_DataCard2' As typedDataCard.comboBoxEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="crmd_NominalCodeXero"
+                Default: =ThisItem.'Nominal Code Xero'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Recurring Items'],DataSourceInfo.DisplayName,"crmd_NominalCodeXero")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =DataCardValue49.Selected
+                Visible: =false
+                Width: =299
+                X: =1
+                Y: =5
+                ZIndex: =1
+
+                DataCardKey50 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue49 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    DefaultSelectedItems: =['Type (Nominal Codes (Xero))'.Sales]
+                    DisplayFields: =["crmd_name"]
+                    DisplayMode: =Parent.DisplayMode
+                    Items: =Choices([@'Recurring Items'].crmd_NominalCodeXero)
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["crmd_name"]
+                    SearchItems: =Search(Choices([@'Recurring Items'].crmd_NominalCodeXero),DataCardValue49.SearchText,"crmd_name")
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey50.Y + DataCardKey50.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage49 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue49.Y + DataCardValue49.Height
+                    ZIndex: =3
+
+                StarVisible49 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey50.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey50.Y
+                    ZIndex: =4
+
+            "'Licence Status Type_DataCard1' As typedDataCard.comboBoxOptionSetSingleEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr881_licencestatustype"
+                Default: =ThisItem.'Licence Status Type'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Recurring Items'],DataSourceInfo.DisplayName,"cr881_licencestatustype")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =DataCardValue54.Selected.Value
+                Visible: =false
+                Width: =299
+                X: =2
+                Y: =5
+                ZIndex: =1
+
+                DataCardKey55 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue54 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    DefaultSelectedItems: =[statuslicencetype.Requested]
+                    DisplayFields: =["Value"]
+                    DisplayMode: =Parent.DisplayMode
+                    IsSearchable: =false
+                    Items: =Choices(statuslicencetype)
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey55.Y + DataCardKey55.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage54 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue54.Y + DataCardValue54.Height
+                    ZIndex: =3
+
+                StarVisible54 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey55.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey55.Y
+                    ZIndex: =4
+
+            Amount_DataCard2 As typedDataCard.currencyEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="crmd_amount"
+                Default: =ThisItem.Amount
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Recurring Items'],DataSourceInfo.DisplayName,"crmd_amount")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =true
+                Update: =Value(DataCardValue55.Text)
+                Width: =299
+                X: =0
+                Y: =6
+                ZIndex: =1
+
+                DataCardKey56 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue55 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Format: =TextFormat.Number
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey56.Y + DataCardKey56.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage55 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue55.Y + DataCardValue55.Height
+                    ZIndex: =3
+
+                StarVisible55 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey56.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey56.Y
+                    ZIndex: =4
+
+            "'Next Invoice Date_DataCard2' As typedDataCard.dateEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="crmd_nextbillingdate"
+                Default: =ThisItem.'Next Invoice Date'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Recurring Items'],DataSourceInfo.DisplayName,"crmd_nextbillingdate")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =true
+                Update: =DataCardValue56.SelectedDate
+                Width: =299
+                X: =1
+                Y: =6
+                ZIndex: =1
+
+                DataCardKey57 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue56 As datepicker:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    DefaultDate: =Parent.Default
+                    DisplayMode: =Parent.DisplayMode
+                    EndYear: =Year(Today())+100
+                    IsEditable: =true
+                    PaddingBottom: =0
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    StartYear: =1899
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey57.Y + DataCardKey57.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage56 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue56.Y + DataCardValue56.Height
+                    ZIndex: =3
+
+                StarVisible56 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey57.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey57.Y
+                    ZIndex: =4
+
+    Settings_1 As Settings:
+        Visible: =showMenu
+        X: =1254
+        Y: =60
+        ZIndex: =7
+
+    Label3 As label:
+        Height: =102
+        Text: ="Empty space here for something"
+        Width: =322
+        X: =987
+        Y: =333
+        ZIndex: =8
+

@@ -1,0 +1,113 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crmd_invoiceproducts",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crmd_invoiceproduct",
+    "MaxGetRowsCount": 2000,
+    "Name": "Invoice Products",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "crmd_extendedamount": "Extended Amount",
+      "crmd_extendedamount_base": "Extended Amount (Base)",
+      "crmd_invoiceid": "Invoice",
+      "crmd_invoiceprice": "Invoice Price",
+      "crmd_invoiceprice_base": "Invoice Price (Base)",
+      "crmd_invoiceproduct_AsyncOperations": "System Jobs",
+      "crmd_invoiceproduct_BulkDeleteFailures": "Bulk Delete Failures",
+      "crmd_invoiceproduct_DuplicateBaseRecord": "Duplicate Records (crmd_invoiceproduct_DuplicateBaseRecord)",
+      "crmd_invoiceproduct_DuplicateMatchingRecord": "Duplicate Records (crmd_invoiceproduct_DuplicateMatchingRecord)",
+      "crmd_invoiceproduct_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crmd_invoiceproduct_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crmd_invoiceproduct_ProcessSession": "Process Sessions",
+      "crmd_invoiceproduct_SyncErrors": "Sync Errors",
+      "crmd_invoiceproductid": "Invoice Product",
+      "crmd_number": "Invoice Product Number",
+      "crmd_productid": "Product",
+      "crmd_quantity": "Quantity",
+      "crmd_tax": "(+) VAT Amount",
+      "crmd_tax_base": "(+) VAT Amount (Base)",
+      "crmd_taxcodeid": "VAT Code",
+      "crmd_totalamount": "Total Amount",
+      "crmd_totalamount_base": "Total Amount (Base)",
+      "crmd_unitprice": "Unit Price",
+      "crmd_unitprice_base": "Unit Price (Base)",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Invoice Products",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Invoice Products (Views)",
+    "Name": "_crmd_invoiceproduct_views",
+    "RelatedEntityName": "Invoice Products",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "139b0277-4c21-4238-afac-d2a892936b7e": "Invoice Product Advanced Find View",
+      "4a5503de-857c-492a-b502-5791aa17e101": "Invoice Product Lookup View",
+      "63301894-5eab-44a2-a782-8a20d0b3f711": "Invoice Product Associated View",
+      "6910176f-aa0d-4bac-8735-277c0bd2d357": "Inactive Invoice Products",
+      "a77b8267-71c1-4f12-8cb7-7a56bcf259bd": "Active Invoice Products"
+    }
+  },
+  {
+    "DisplayName": "Status (Invoice Products)",
+    "Name": "crmd_invoiceproduct_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Invoice Products"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Invoice Products",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Invoice Products)",
+    "Name": "crmd_invoiceproduct_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Invoice Products"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Invoice Products",
+    "Type": "OptionSetInfo"
+  }
+]

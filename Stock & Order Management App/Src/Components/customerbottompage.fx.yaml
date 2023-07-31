@@ -1,0 +1,128 @@
+customerbottompage As CanvasComponent:
+    Button3Button():
+        ThisProperty:
+            Default: ="Text"
+    Button4Button():
+        ThisProperty:
+            Default: ="Text"
+    Button5Button():
+        ThisProperty:
+            Default: ="Text"
+    Button6Button():
+        ThisProperty:
+            Default: ="Text"
+    SaveButton():
+        ThisProperty:
+            Default: ="Text"
+    SaveProgressButton():
+        ThisProperty:
+            Default: ="Text"
+    Button2Title: ="Text"
+    Button2Visible: =true
+    Button3Color: =RGBA(0, 0, 0, 1)
+    Button3Title: ="Text"
+    Button4Color: =RGBA(0, 0, 0, 1)
+    Button4Title: ="Text"
+    button5color: =RGBA(0, 0, 0, 1)
+    Button5Title: ="Text"
+    Button6Title: ="Text"
+    ButtonColor: =LookUp(colColorScheme,Name="NewBTNColour",Colour)
+    ButtonTitle: ="Text"
+    ClickedFill: =RGBA(0, 0, 0, 1)
+    Fill: =LookUp(colColorScheme,Name="Main_colour",Colour)
+    Height: =60
+    NormalColor: =RGBA(0, 0, 0, 1)
+    Width: =Max(App.Width, App.MinScreenWidth)
+    X: =0
+    Y: =0
+    ZIndex: =2
+
+    Button5_9 As Button:
+        DisplayMode: =DisplayMode.Edit
+        FillColor: =Parent.Button3Color
+        Height: =42
+        HoverFillColor: =
+        OnSelect: =Parent.Button3Button()
+        PressedFillColor: =RGBA(234, 90, 10, 1)
+        Text: =Parent.Button3Title
+        TextColor: =
+        Visible: =Parent.Button2Visible
+        Width: =193
+        X: =631
+        Y: =8
+        ZIndex: =3
+
+    Button5_10 As Button:
+        DisplayMode: =DisplayMode.Edit
+        FillColor: =Parent.Button4Color
+        Height: =42
+        HoverFillColor: =
+        OnSelect: =Parent.Button4Button()
+        PressedFillColor: =RGBA(234, 90, 10, 1)
+        Text: =Parent.Button4Title
+        TextColor: =
+        Visible: =Parent.Button2Visible
+        Width: =193
+        X: =426
+        Y: =8
+        ZIndex: =4
+
+    Button5_11 As Button:
+        DisplayMode: =DisplayMode.Edit
+        FillColor: =Parent.button5color
+        Height: =42
+        HoverFillColor: =
+        OnSelect: =Parent.Button5Button()
+        PressedFillColor: =RGBA(234, 90, 10, 1)
+        Text: =Parent.Button5Title
+        TextColor: =
+        Visible: =Parent.Button2Visible
+        Width: =193
+        X: =220
+        Y: =8
+        ZIndex: =5
+
+    Button5_12 As Button:
+        DisplayMode: =DisplayMode.Edit
+        FillColor: =Parent.ButtonColor
+        Height: =42
+        HoverFillColor: =
+        OnSelect: =Parent.Button6Button()
+        PressedFillColor: =RGBA(234, 90, 10, 1)
+        Text: =Parent.Button6Title
+        TextColor: =
+        Visible: =Parent.Button2Visible
+        Width: =193
+        X: =15
+        Y: =8
+        ZIndex: =6
+
+    Button5_13 As Button:
+        DisplayMode: =DisplayMode.Edit
+        FillColor: =Parent.NormalColor
+        Height: =42
+        HoverFillColor: =
+        OnSelect: =Parent.SaveButton()
+        PressedFillColor: =RGBA(0, 0, 0, 0)
+        Text: =Parent.ButtonTitle
+        TextColor: =
+        Visible: =Parent.Button2Visible
+        Width: =193
+        X: =1157
+        Y: =8
+        ZIndex: =7
+
+    Button5_14 As Button:
+        DisplayMode: =DisplayMode.Disabled
+        FillColor: =Parent.NormalColor
+        Height: =42
+        HoverFillColor: =
+        OnSelect: =Parent.SaveProgressButton()
+        Text: =Parent.Button2Title
+        TextColor: =
+        Visible: =Parent.Button2Visible
+        Width: =193
+        X: =952
+        Y: =8
+        ZIndex: =8
+

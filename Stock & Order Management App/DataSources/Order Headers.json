@@ -1,0 +1,791 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crmd_qe_orders",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crmd_qe_order",
+    "MaxGetRowsCount": 2000,
+    "Name": "Order Headers",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "{Attachments}": "Attachments",
+      "bpf_crmd_qe_order_new_bpf_c5a6f361b3b740d9bcabc6ad9094394a": "Opportunity Sales Process - Cloudy (CRMD update)",
+      "bpf_crmd_qe_order_new_ordermanagementprocessbar": "Order Management Process Bar",
+      "cr881_datearrived": "Date Arrived",
+      "cr881_datetocustomer": "DateToCustomer",
+      "cr881_duedate": "Due Date",
+      "cr881_emailarrived": "EmailArrived",
+      "cr881_iscompleted": "IsCompleted",
+      "cr881_jobcompleted": "Job Completed",
+      "cr881_notifywho": "NotifyWho",
+      "cr881_ribbonstatus": "RibbonStatus",
+      "cr881_sendemailordered": "SendEmailOrdered",
+      "cr881_serviceonlyorder": "Service Only Order",
+      "cr881_StaffToBeNotified": "StaffToBeNotified",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "crmd_accountid": "Account",
+      "crmd_amount": "Amount",
+      "crmd_amount_base": "Amount (Base)",
+      "crmd_amountlefttoinvoice": "Amount left to Invoice",
+      "crmd_amountlefttoinvoice_base": "Amount left to Invoice (Base)",
+      "crmd_amountonmilestones": "Amount On Milestones",
+      "crmd_amountonmilestones_base": "Amount On Milestones (Base)",
+      "crmd_amounttoinvoice": "Amount to Invoice (incl tax)",
+      "crmd_amounttoinvoice_base": "Amount to Invoice (Base)",
+      "crmd_amounttoinvoice_date": "Amount to Invoice (incl tax) (Last Updated On)",
+      "crmd_amounttoinvoice_state": "Amount to Invoice (incl tax) (State)",
+      "crmd_anyassets": "Any Assets?",
+      "crmd_architecturecallbookedna": "Architecture call booked?",
+      "crmd_billto": "Invoice To (Address)",
+      "crmd_checkcontractstartdate": "Check contract start date",
+      "crmd_checkdepositpaid": "Check deposit paid",
+      "crmd_checkpaidinfull": "Check paid in full",
+      "crmd_commencementdate": "Commencement Date",
+      "crmd_completeorder": "Complete Order",
+      "crmd_contactid": "Contact",
+      "crmd_createrecurring": "Create Recurring",
+      "crmd_crmd_qe_order_crmd_deliverynote_orderid": "Delivery Notes",
+      "crmd_crmd_qe_order_crmd_migration_Order": "Migrations",
+      "crmd_crmd_qe_order_crmd_milestonepayment_orderid": "Milestone Payments",
+      "crmd_crmd_qe_order_crmd_purchaseorder_orderid": "Purchase Orders",
+      "crmd_crmd_qe_order_crmd_qe_orderdetail_orderid": "Order Product Lines",
+      "crmd_crmd_qe_order_crmd_recurringitem_orderid": "Recurring Items",
+      "crmd_crmd_qe_order_crmd_signed365document_OrderHeader": "Sign Documents",
+      "crmd_crmd_qe_order_invoice_orderid": "Invoices",
+      "crmd_customerassetsadded": "Customer Assets Added",
+      "crmd_customerreference": "Customer Reference",
+      "crmd_deliverynoteprinted": "Delivery Note Printed",
+      "crmd_deliverynoterequiredoptionyn": "Delivery Note Required",
+      "crmd_description": "Description/Specification",
+      "crmd_directdebitonaccount": "Direct Debit on account?",
+      "crmd_executivesummary": "Executive Summary",
+      "crmd_incoterms": "Incoterms",
+      "crmd_invoicedvalue": "Invoiced value",
+      "crmd_invoicedvalue_base": "Invoiced value (Base)",
+      "crmd_invoicedvalue_date": "Invoiced value (Last Updated On)",
+      "crmd_invoicedvalue_state": "Invoiced value (State)",
+      "crmd_invoiceid": "Invoice",
+      "crmd_invoicinginstructionsoneoff": "Invoicing Instructions one off",
+      "crmd_invoicingstatus": "Invoicing status",
+      "crmd_ismilestone": "Milestone",
+      "crmd_itemsrecdposcompleted": "Items rec'd (POs Completed)",
+      "crmd_licensesbrought": "Licenses brought",
+      "crmd_linetoprovision": "Lines to provision",
+      "crmd_Migration": "Migration",
+      "crmd_name": "Name",
+      "crmd_nooforderlines": "No. of order lines",
+      "crmd_nooforderlines_date": "No. of order lines (Last Updated On)",
+      "crmd_nooforderlines_state": "No. of order lines (State)",
+      "crmd_noprovisionedorderlines": "No. of Provisioned lines",
+      "crmd_noprovisionedorderlines_date": "No. of Provisioned lines (Last Updated On)",
+      "crmd_noprovisionedorderlines_state": "No. of Provisioned lines (State)",
+      "crmd_ordernumber": "Order Number",
+      "crmd_orderprogress": "Order Progress",
+      "crmd_orderstage": "Order Stage",
+      "crmd_ordertotal": "Order Total",
+      "crmd_ordertotal_base": "Order Total (Base)",
+      "crmd_percentage": "Percentage",
+      "crmd_percentageonmilestones": "Percentage On Milestones",
+      "crmd_poscompleted": "PO s completed",
+      "crmd_poscompleted_date": "PO s completed (Last Updated On)",
+      "crmd_poscompleted_state": "PO s completed (State)",
+      "crmd_poscreated": "POs Created",
+      "crmd_posraised": "PO s raised",
+      "crmd_posraised_date": "PO s raised (Last Updated On)",
+      "crmd_posraised_state": "PO s raised (State)",
+      "crmd_postocomplete": "PO s to complete",
+      "crmd_promiseddate": "Promised Date",
+      "crmd_qe_order_ActivityPointers": "Activities",
+      "crmd_qe_order_adx_alertsubscriptions": "Alert Subscriptions",
+      "crmd_qe_order_adx_inviteredemptions": "Invite Redemptions",
+      "crmd_qe_order_adx_portalcomments": "Portal Comments",
+      "crmd_qe_order_Annotations": "Notes",
+      "crmd_qe_order_Appointments": "Appointments",
+      "crmd_qe_order_AsyncOperations": "System Jobs",
+      "crmd_qe_order_BulkDeleteFailures": "Bulk Delete Failures",
+      "crmd_qe_order_chats": "Teams chats",
+      "crmd_qe_order_crmd_signed365activities": "Sign Activities",
+      "crmd_qe_order_Emails": "Email Messages",
+      "crmd_qe_order_Faxes": "Faxes",
+      "crmd_qe_order_Letters": "Letters",
+      "crmd_qe_order_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crmd_qe_order_msdyn_approvals": "Project Service Approvals",
+      "crmd_qe_order_msdyn_bookingalerts": "Booking Alerts",
+      "crmd_qe_order_msdyn_copilottranscripts": "Copilot Transcripts",
+      "crmd_qe_order_msdyn_ocliveworkitems": "Conversations",
+      "crmd_qe_order_msdyn_ocsessions": "Sessions",
+      "crmd_qe_order_msfp_alerts": "Customer Voice alert",
+      "crmd_qe_order_msfp_surveyinvites": "Customer Voice survey invites",
+      "crmd_qe_order_msfp_surveyresponses": "Customer Voice survey responses",
+      "crmd_qe_order_new_casetimes": "Case Time Entries",
+      "crmd_qe_order_PhoneCalls": "Phone Calls",
+      "crmd_qe_order_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crmd_qe_order_ProcessSession": "Process Sessions",
+      "crmd_qe_order_RecurringAppointmentMasters": "Recurring Appointments",
+      "crmd_qe_order_ServiceAppointments": "Service Activities",
+      "crmd_qe_order_SharePointDocumentLocations": "Document Locations",
+      "crmd_qe_order_SocialActivities": "Social Activities",
+      "crmd_qe_order_SyncErrors": "Sync Errors",
+      "crmd_qe_order_Tasks": "Tasks",
+      "crmd_qe_orderid": "Order Header",
+      "crmd_quoteid": "Quote",
+      "crmd_recurringitemscreated": "Recurring Items created",
+      "crmd_recurringrevenuecompleted": "Recurring Revenue checks completed",
+      "crmd_requesteddate": "Requested Date",
+      "crmd_shippingcost": "Delivery Cost",
+      "crmd_shippingcost_base": "Delivery Cost (Base)",
+      "crmd_shippingid": "Delivery",
+      "crmd_shippingtax": "Delivery VAT",
+      "crmd_shippingtax_base": "Delivery VAT (Base)",
+      "crmd_shippingtaxcodeid": "Delivery VAT Code",
+      "crmd_shipto": "Deliver To (Address)",
+      "crmd_SignedContract": "Signed Contract",
+      "crmd_SigningContact": "Signing Contact",
+      "crmd_sow": "Sow",
+      "crmd_specialinstructions": "Special Instructions",
+      "crmd_taxamount": "(+) VAT Amount",
+      "crmd_taxamount_base": "VAT Amount (Base)",
+      "crmd_taxonmilestones": "VAT On Milestones",
+      "crmd_taxonmilestones_base": "VAT On Milestones (Base)",
+      "crmd_termmonths": "Term (Months)",
+      "crmd_totalcostpriceincterms": "Total Cost Price (Inc Terms)",
+      "crmd_totalcostpriceincterms_base": "Total Cost Price (Inc Terms) (Base)",
+      "crmd_totaldiscountedpriceincterms": "Total Discounted Price (Inc Terms)",
+      "crmd_totaldiscountedpriceincterms_base": "Total Discounted Price (Inc Terms) (Base)",
+      "crmd_totalinvoiceyes": "Total Invoice = yes",
+      "crmd_totalinvoiceyes_base": "Total Invoice = yes (Base)",
+      "crmd_totalinvoiceyes_date": "Total Invoice = yes (Last Updated On)",
+      "crmd_totalinvoiceyes_state": "Total Invoice = yes (State)",
+      "crmd_totalmarginincterms": "Total Margin (Inc Terms)",
+      "crmd_totalmarginincterms_base": "Total Margin (Inc Terms) (Base)",
+      "crmd_totalmonthlysalesprice": "Total Monthly Sales Price",
+      "crmd_totalmonthlysalesprice_base": "Total Monthly Sales Price (Base)",
+      "crmd_totalmonthlysalesprice_date": "Total Monthly Sales Price (Last Updated On)",
+      "crmd_totalmonthlysalesprice_state": "Total Monthly Sales Price (State)",
+      "crmd_totalonorderlines": "Total On Order Lines",
+      "crmd_totalonorderlines_base": "Total On Order Lines (Base)",
+      "crmd_totalshippingcost": "(+) Total Delivery Cost",
+      "crmd_totalshippingcost_base": "Total Delivery Cost (Base)",
+      "crmd_usepercentage": "Use Percentage",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "new_countofinvoices": "Count of Invoices",
+      "new_countofinvoices_date": "Count of Invoices (Last Updated On)",
+      "new_countofinvoices_state": "Count of Invoices (State)",
+      "new_descriptionofwork": "Description of work",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "processid": "Process Id",
+      "stageid": "(Deprecated) Stage Id",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "traversedpath": "(Deprecated) Traversed Path",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Order Headers",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Order Headers (Views)",
+    "Name": "_crmd_qe_order_views",
+    "RelatedEntityName": "Order Headers",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "00841c85-d696-45e8-b70f-a9f20f39b3bd": "01 - Draft",
+      "09c0615c-447e-ea11-8453-00155d019801": "06 - Cancelled",
+      "246e6458-9560-eb11-a812-000d3ad5cc77": "04 - Finalising",
+      "398cb095-f4df-eb11-bacb-00224884d778": "Fin. 2 Orders- Invoice on Order",
+      "3d6b825e-c299-ea11-8459-00155d019801": "All Order Headers",
+      "5766747f-03e0-eb11-bacb-00224884d778": "My Orders - Complete",
+      "6f7d7d3f-ea29-487c-8302-f910d965cdaa": "Order Header Lookup View",
+      "70436e4d-03e0-eb11-bacb-00224884d778": "My Orders - Draft",
+      "71df1247-02e0-eb11-bacb-00224884d778": "Orders requiring POs /Provisioning",
+      "79fdf104-b7e0-eb11-bacb-00224884d627": "My Orders Ready for invoicing/not invoiced yet",
+      "908a857d-d29c-481d-a71e-a7b954d5816a": "Order Header Associated View",
+      "963ebee7-94e8-eb11-bacb-000d3a4afaa1": "Fin. 1 Orders  Ready for Invoicing",
+      "98c5296d-03e0-eb11-bacb-00224884d778": "My Orders - Provisioning",
+      "ab46e07e-427e-ea11-8453-00155d019801": "02 - Orders - Provision",
+      "af768c9f-03e0-eb11-bacb-00224884d778": "My Orders not invoiced",
+      "b0e7912b-2ae6-eb11-bacb-000d3a4af275": "Fin. 3 Orders - Complete - to be invoiced",
+      "c04b8b8d-2ee9-eb11-bacb-000d3a4afaa1": "Fin. 4 Orders- Part Invoiced",
+      "da7844fa-2e9f-41e5-8b94-3b5e5ccd05bc": "Order Header Advanced Find View",
+      "ecbfb24b-9560-eb11-a812-000d3ad5cc77": "03 - Ready for Invoicing",
+      "edd0b68e-427e-ea11-8453-00155d019801": "05 - Complete"
+    }
+  },
+  {
+    "DisplayName": "EmailArrived (Order Headers)",
+    "Name": "cr881_crmd_qe_order_cr881_emailarrived",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr881_emailarrived",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr881_emailarrived",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "IsCompleted (Order Headers)",
+    "Name": "cr881_crmd_qe_order_cr881_iscompleted",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr881_iscompleted",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr881_iscompleted",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Job Completed (Order Headers)",
+    "Name": "cr881_crmd_qe_order_cr881_jobcompleted",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr881_jobcompleted",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr881_jobcompleted",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "RibbonStatus (Order Headers)",
+    "Name": "cr881_crmd_qe_order_cr881_ribbonstatus",
+    "OptionSetInfoNameMapping": {
+      "283530000": "Ordered",
+      "283530001": "Arrived",
+      "283530002": "Work Completed"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr881_ribbonstatus",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr881_ribbonstatus",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "SendEmailOrdered (Order Headers)",
+    "Name": "cr881_crmd_qe_order_cr881_sendemailordered",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr881_sendemailordered",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr881_sendemailordered",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Service Only Order (Order Headers)",
+    "Name": "cr881_crmd_qe_order_cr881_serviceonlyorder",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr881_serviceonlyorder",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr881_serviceonlyorder",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "* CRMD Yes No",
+    "Name": "crmd_crmdyesnona",
+    "OptionSetInfoNameMapping": {
+      "103460001": "No",
+      "103460002": "Yes"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_deliverynoteprinted",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmd_deliverynoteprinted",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "*CRMD Yes No Option",
+    "Name": "crmd_crmdyesnooption",
+    "OptionSetInfoNameMapping": {
+      "103460000": "Yes",
+      "103460001": "No"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_deliverynoterequiredoptionyn",
+        "OptionSetReferenceEntityName": "Order Headers"
+      },
+      "OptionSetReferenceItem1": {
+        "OptionSetReferenceColumnName": "crmd_paymentinadvance",
+        "OptionSetReferenceEntityName": "Order Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmd_deliverynoterequiredoptionyn",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "invoicing instruction",
+    "Name": "crmd_invoicinginstruction",
+    "OptionSetInfoNameMapping": {
+      "100000000": "Invoice on order",
+      "100000001": "Invoice on Completion",
+      "100000002": "50% Order 50% Completion",
+      "100000003": "Custom - see special instructions each order line",
+      "279640000": "No One off items"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_invoicinginstructionsoneoff",
+        "OptionSetReferenceEntityName": "Order Headers"
+      },
+      "OptionSetReferenceItem1": {
+        "OptionSetReferenceColumnName": "crmd_invoicingforoneoffitems",
+        "OptionSetReferenceEntityName": "Order Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmd_invoicinginstructionsoneoff",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Order Stage",
+    "Name": "crmd_orderstage",
+    "OptionSetInfoNameMapping": {
+      "103460000": "Draft",
+      "103460001": "Provision",
+      "103460002": "Ready for Invoicing",
+      "103460003": "Finalising",
+      "103460004": "Complete"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_orderstage",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmd_orderstage",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Any Assets? (Order Headers)",
+    "Name": "crmd_qe_order_crmd_anyassets",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_anyassets",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_anyassets",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Check contract start date (Order Headers)",
+    "Name": "crmd_qe_order_crmd_checkcontractstartdate",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_checkcontractstartdate",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_checkcontractstartdate",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Check deposit paid (Order Headers)",
+    "Name": "crmd_qe_order_crmd_checkdepositpaid",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_checkdepositpaid",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_checkdepositpaid",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Check paid in full (Order Headers)",
+    "Name": "crmd_qe_order_crmd_checkpaidinfull",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_checkpaidinfull",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_checkpaidinfull",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Complete Order (Order Headers)",
+    "Name": "crmd_qe_order_crmd_completeorder",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_completeorder",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_completeorder",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Create Recurring (Order Headers)",
+    "Name": "crmd_qe_order_crmd_createrecurring",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_createrecurring",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_createrecurring",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Customer Assets Added (Order Headers)",
+    "Name": "crmd_qe_order_crmd_customerassetsadded",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_customerassetsadded",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_customerassetsadded",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Direct Debit on account? (Order Headers)",
+    "Name": "crmd_qe_order_crmd_directdebitonaccount",
+    "OptionSetInfoNameMapping": {
+      "100000000": "N/A - No Direct Debit",
+      "100000001": "Existing Direct Debit",
+      "100000002": "Yes I manually updated Account",
+      "100000003": "Phase 2 - Set direct debit to yes on account via workflow"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_directdebitonaccount",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmd_directdebitonaccount",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Milestone (Order Headers)",
+    "Name": "crmd_qe_order_crmd_ismilestone",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_ismilestone",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_ismilestone",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Items rec'd (POs Completed) (Order Headers)",
+    "Name": "crmd_qe_order_crmd_itemsrecdposcompleted",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_itemsrecdposcompleted",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_itemsrecdposcompleted",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Licenses brought (Order Headers)",
+    "Name": "crmd_qe_order_crmd_licensesbrought",
+    "OptionSetInfoNameMapping": {
+      "100000000": "Yes",
+      "100000001": "No",
+      "100000002": "N/A"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_licensesbrought",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmd_licensesbrought",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Order Progress (Order Headers)",
+    "Name": "crmd_qe_order_crmd_orderprogress",
+    "OptionSetInfoNameMapping": {
+      "100000000": "In Progress",
+      "100000001": "Paused"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_orderprogress",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmd_orderprogress",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "POs Created (Order Headers)",
+    "Name": "crmd_qe_order_crmd_poscreated",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_poscreated",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_poscreated",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Recurring Revenue checks completed (Order Headers)",
+    "Name": "crmd_qe_order_crmd_recurringrevenuecompleted",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_recurringrevenuecompleted",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_recurringrevenuecompleted",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Use Percentage (Order Headers)",
+    "Name": "crmd_qe_order_crmd_usepercentage",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_usepercentage",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_usepercentage",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Order Headers)",
+    "Name": "crmd_qe_order_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Order Headers)",
+    "Name": "crmd_qe_order_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Draft",
+      "100000000": "Complete",
+      "100000001": "Preparing",
+      "100000002": "Ready for Dispatch",
+      "100000003": "Dispatched",
+      "2": "Cancelled"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Order Headers",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,3375 @@
+"'Line Items_1' As screen":
+    Fill: =LookUp(colColorScheme,Name="bg_Primary",color)
+    OnVisible: |-
+        =UpdateContext({quoteType:"QOrders"});
+        ClearCollect(items, Table({ item:{ItemName:"", ExpectedQuantity:"", DeliveredQuantity:""}}));
+        
+        UpdateContext({showCustomerAssetMenu: false});
+        UpdateContext({showCustomerAssetMenu1: false});
+        UpdateContext({showAllCustomerAssetMenu: false});
+        UpdateContext({varPageNumber:1});
+        UpdateContext({varPageNumber1:1});
+        UpdateContext({customerassetsNumber: 1});
+        /*ClearCollect(Col_QuoteOrders, {
+           Bool: false,
+           Item: "",
+           ID: ""
+        
+        })*/
+        
+        ClearCollect(Col_QuoteOrders, Blank())
+
+    Header_12 As Header:
+
+    Icon6_17 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =22
+        Icon: =Icon.Hamburger
+        OnSelect: |
+            =UpdateContext({showMenu: !showMenu})
+        Width: =30
+        X: =1324
+        Y: =19
+        ZIndex: =2
+
+    Quote_Orders_Con As groupContainer.manualLayoutContainer:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Fill: =LookUp(colColorScheme,Name="bg_Secondary",color)
+        Height: =520
+        Visible: =If(quoteType = "QOrders",true,false)
+        Width: =1339
+        X: =14
+        Y: =235
+        ZIndex: =3
+
+        galItems_6 As gallery.variableTemplateHeightGallery:
+            Fill: =LookUp(colColorScheme,Name="body_colour",Colour)
+            Height: =468
+            Items: |-
+                =/*Filter('Order Product Lines',
+                    Order.'Order Header' = galItems_4.Selected.'Order Header' && 'Product/Service'.Make ="Hardware" 
+                )
+                */
+                
+                Filter('Order Product Lines',
+                    Order.'Order Header' = Order_ID && 'Product/Service'.Make ="Hardware" 
+                )
+            Layout: =Layout.Vertical
+            ShowScrollbar: =false
+            TemplatePadding: =0
+            TemplateSize: =105
+            Width: =601
+            X: =8
+            Y: =45
+            ZIndex: =1
+
+            Rectangle14_12 As rectangle:
+                Fill: =If(ThisItem.IsSelected,ColorFade(LookUp(colColorScheme,Name="theme",Colour),90%),RGBA(255, 255, 255, 0.8))
+                OnSelect: |-
+                    =/*UpdateContext({showEditItem:true});
+                    UpdateContext({EditType:"Edit"});
+                    Select(Parent)*/
+                Width: =601
+                Y: =3
+                ZIndex: =1
+
+            Label2_15 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =37
+                Text: =If(Len(ThisItem.Name)>100,Concatenate(Left(ThisItem.Name,100),"..."),ThisItem.Name)
+                Width: =572
+                X: =14
+                ZIndex: =2
+
+            Label2_16 As label:
+                Height: =35
+                Text: |-
+                    =Concatenate("Expected Quanity:  "  ,ThisItem.Quantity)
+                Width: =496
+                X: =14
+                Y: =33
+                ZIndex: =3
+
+            UserInput_4 As rectangle:
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =103
+                OnSelect: =
+                Width: =21
+                X: =596
+                ZIndex: =4
+
+            Label8_1 As label:
+                OnSelect: =Select(Parent)
+                Text: =If(ThisItem.Ordered = true, "Ordered", ThisItem.Arrived=true, "Arrived", ThisItem.Completed=true, "Completed", "N/A")
+                Visible: =false
+                Width: =122
+                X: =450
+                Y: =63
+                ZIndex: =5
+
+            ExpectedQuan_1 As label:
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.'Expected Quantity'
+                Visible: =false
+                X: =468
+                ZIndex: =6
+
+            OrderedLBL_1 As label:
+                OnSelect: =Select(Parent)
+                Text: =ThisItem.Ordered
+                Visible: =false
+                X: =446
+                Y: =20
+                ZIndex: =7
+
+            QuantityAndExpectedQuantityLBL_1 As label:
+                OnSelect: =Select(Parent)
+                Text: =If(ThisItem.Quantity = ThisItem.'Expected Quantity', "Arrived", "Not Arrived")
+                Visible: =false
+                X: =258
+                Y: =39
+                ZIndex: =8
+
+            Label2_17 As label:
+                Height: =35
+                Text: |-
+                    =Concatenate("Delivered Quantity:  "  ,ThisItem.'Expected Quantity')
+                Width: =496
+                X: =14
+                Y: =68
+                ZIndex: =9
+
+            Icon2_6 As icon.Check:
+                Color: =RGBA(255, 255, 255, 1)
+                Fill: =LookUp(colColorScheme,Name="bg_HeaderNew",color)
+                Height: =35
+                Icon: =Icon.Search
+                OnSelect: |-
+                    =Launch("https://cloudyit.crm11.dynamics.com/main.aspx?appid=28ff6879-ca4b-ec11-8f8e-000d3a7f937e&forceUCI=1&pagetype=entityrecord&etn=crmd_qe_orderdetail&id="&ThisItem.'Order Product Line')
+                PaddingBottom: =2
+                PaddingLeft: =2
+                PaddingRight: =2
+                PaddingTop: =2
+                Width: =37
+                X: =559
+                Y: =60
+                ZIndex: =10
+
+            Icon2_7 As icon.Check:
+                Color: =RGBA(255, 255, 255, 1)
+                Fill: =LookUp(colColorScheme,Name="bg_HeaderNew",color)
+                Height: =35
+                Icon: =Icon.Add
+                OnSelect: |-
+                    =UpdateContext({showCustomerAssetMenu: true})
+                PaddingBottom: =2
+                PaddingLeft: =2
+                PaddingRight: =2
+                PaddingTop: =2
+                Width: =37
+                X: =509
+                Y: =60
+                ZIndex: =11
+
+            Icon2_8 As icon.Check:
+                Color: =RGBA(255, 255, 255, 1)
+                Fill: =LookUp(colColorScheme,Name="bg_HeaderNew",color)
+                Height: =35
+                Icon: =Icon.View
+                OnSelect: |-
+                    =UpdateContext({showCustomerAssetMenu1:true})
+                PaddingBottom: =2
+                PaddingLeft: =2
+                PaddingRight: =2
+                PaddingTop: =2
+                Width: =37
+                X: =459
+                Y: =60
+                ZIndex: =12
+
+            Rectangle9 As rectangle:
+                Fill: =If(ThisItem.Ordered=true && ThisItem.Completed=false && ThisItem.Arrived=false, LookUp(colColorScheme,Name="red",Colour), If(ThisItem.Arrived=true, LookUp(colColorScheme,Name="orange",Colour), LookUp(colColorScheme,Name="green",Colour)))
+                Height: =103
+                OnSelect: =Select(Parent)
+                Width: =5
+                ZIndex: =13
+
+            Checkbox1 As checkbox:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                CheckboxBorderColor: =RGBA(202, 202, 202, 1)
+                CheckboxSize: =50
+                Color: =
+                Height: =40
+                OnCheck: |-
+                    =Select(Parent);
+                    Collect(Col_QuoteOrders, {Bool: true, Item: ThisItem.Name, ID: ThisItem.'Order Line Number', Ordered: ThisItem.Ordered, Supplier: ThisItem.Supplier, ExpectedQuantity: ThisItem.Quantity, DeliveredQuantity: ThisItem.'Expected Quantity', Completed: ThisItem.Completed, GUID: ThisItem.'Order Product Line'})
+                OnSelect: =Select(Parent)
+                OnUncheck: |
+                    =Remove(Col_QuoteOrders, LookUp(Col_QuoteOrders, ID = ThisItem.'Order Line Number'))
+                Size: =0
+                Text: =""
+                Width: =50
+                X: =551
+                Y: =3
+                ZIndex: =14
+
+        Label7_1 As label:
+            Font: =Font.'Lato Black'
+            FontWeight: =FontWeight.Bold
+            Height: =45
+            Size: =15
+            Text: ="Viewing Quote Orders -  " & galItems_4.Selected.Quote.'Quote Number'
+            Width: =1281
+            X: =8
+            ZIndex: =2
+
+        Form3_2 As form:
+            DataSource: ='Order Product Lines'
+            Fill: =LookUp(colColorScheme,Name="body_colour",Colour)
+            Height: =467
+            Item: =galItems_6.Selected
+            NumberOfColumns: =2
+            Width: =717
+            X: =614
+            Y: =45
+            ZIndex: =3
+
+            Name_DataCard1_1 As typedDataCard.textualEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="crmd_name"
+                Default: =ThisItem.Name
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Order Product Lines'],DataSourceInfo.DisplayName,"crmd_name")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =95
+                MaxLength: =DataSourceInfo([@'Order Product Lines'], DataSourceInfo.MaxLength, "crmd_name")
+                Required: =false
+                Update: =DataCardValue15_1.Text
+                Width: =716
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+                DataCardKey15_2 As label:
+                    AutoHeight: =true
+                    Color: =LookUp(colColorScheme,Name="theme",color)
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Size: =11
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue15_1 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =0
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode
+                    MaxLength: =Parent.MaxLength
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey15_2.Y + DataCardKey15_2.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage14_1 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue15_1.Y + DataCardValue15_1.Height
+                    ZIndex: =3
+
+                StarVisible14_1 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey15_2.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey15_2.Y
+                    ZIndex: =4
+
+            Ordered_DataCard1_1 As typedDataCard.comboBoxOptionSetSingleEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr881_ordered"
+                Default: =ThisItem.Ordered
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Order Product Lines'],DataSourceInfo.DisplayName,"cr881_ordered")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =DataCardValue6_1.Selected.Value
+                Visible: =true
+                Width: =358
+                X: =0
+                Y: =1
+                ZIndex: =1
+
+                DataCardKey6_1 As label:
+                    AutoHeight: =true
+                    Color: =LookUp(colColorScheme,Name="theme",color)
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Size: =11
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue6_1 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =0
+                    ChevronBackground: =LookUp(colColorScheme,Name="theme",color)
+                    DefaultSelectedItems: =[Parent.Default]
+                    DisplayFields: =["Value"]
+                    DisplayMode: =Parent.DisplayMode
+                    IsSearchable: =false
+                    Items: =Choices('Ordered (Order Product Lines)')
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey6_1.Y + DataCardKey6_1.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage5_2 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue6_1.Y + DataCardValue6_1.Height
+                    ZIndex: =3
+
+                StarVisible5_2 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey6_1.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey6_1.Y
+                    ZIndex: =4
+
+                Toggle1_3 As toggleSwitch:
+                    Height: =29
+                    Visible: =false
+                    Width: =203
+                    X: =30
+                    Y: =54
+                    ZIndex: =5
+
+            Supplier_DataCard1_1 As typedDataCard.comboBoxEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="crmd_supplierid"
+                Default: =ThisItem.Supplier
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Order Product Lines'],DataSourceInfo.DisplayName,"crmd_supplierid")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =DataCardValue14_2.Selected
+                Width: =358
+                X: =1
+                Y: =1
+                ZIndex: =1
+
+                DataCardKey14_2 As label:
+                    AutoHeight: =true
+                    Color: =LookUp(colColorScheme,Name="theme",color)
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Size: =11
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue14_2 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =0
+                    ChevronBackground: =LookUp(colColorScheme,Name="theme",color)
+                    DefaultSelectedItems: =Parent.Default
+                    DisplayFields: =["name"]
+                    DisplayMode: =Parent.DisplayMode
+                    Items: =Choices([@'Order Product Lines'].crmd_supplierid)
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["name"]
+                    SearchItems: =Search(Choices([@'Order Product Lines'].crmd_supplierid),DataCardValue14_2.SearchText,"name")
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =40
+                    ZIndex: =2
+
+                ErrorMessage13_1 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue14_2.Y + DataCardValue14_2.Height
+                    ZIndex: =3
+
+                StarVisible13_1 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey14_2.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey14_2.Y
+                    ZIndex: =4
+
+            "'Expected Quantity_DataCard1_1' As typedDataCard.numberEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr881_expectedquantity"
+                Default: =ThisItem.'Expected Quantity'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Order Product Lines'],DataSourceInfo.DisplayName,"cr881_expectedquantity")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =Value(DataCardValue1_1.Text)
+                Width: =358
+                X: =1
+                Y: =2
+                ZIndex: =1
+
+                DataCardKey1_1 As label:
+                    AutoHeight: =true
+                    Color: =LookUp(colColorScheme,Name="theme",color)
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Size: =11
+                    Text: ="Delivered Quantity"
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =24
+                    Y: =16
+                    ZIndex: =1
+
+                DataCardValue1_1 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =0
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Format: =TextFormat.Number
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =46
+                    ZIndex: =2
+
+                ErrorMessage1_1 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue1_1.Y + DataCardValue1_1.Height
+                    ZIndex: =3
+
+                StarVisible1_1 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey1_1.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey1_1.Y
+                    ZIndex: =4
+
+            Completed_DataCard1_1 As typedDataCard.comboBoxOptionSetSingleEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr881_completed"
+                Default: =ThisItem.Completed
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Order Product Lines'],DataSourceInfo.DisplayName,"cr881_completed")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =DataCardValue3_1.Selected.Value
+                Width: =716
+                X: =0
+                Y: =3
+                ZIndex: =1
+
+                DataCardKey3_1 As label:
+                    AutoHeight: =true
+                    Color: =LookUp(colColorScheme,Name="theme",color)
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Size: =11
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue3_1 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =0
+                    ChevronBackground: =LookUp(colColorScheme,Name="theme",color)
+                    DefaultSelectedItems: =[Parent.Default]
+                    DisplayFields: =["Value"]
+                    DisplayMode: =Parent.DisplayMode
+                    IsSearchable: =false
+                    Items: =Choices('Completed (Order Product Lines)')
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey3_1.Y + DataCardKey3_1.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage3_1 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue3_1.Y + DataCardValue3_1.Height
+                    ZIndex: =3
+
+                StarVisible3_1 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey3_1.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey3_1.Y
+                    ZIndex: =4
+
+            Arrived_DataCard1_1 As typedDataCard.comboBoxOptionSetSingleEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr881_arrived"
+                Default: =ThisItem.Arrived
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Order Product Lines'],DataSourceInfo.DisplayName,"cr881_arrived")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =DataCardValue2_1.Selected.Value
+                Visible: =false
+                Width: =358
+                X: =0
+                Y: =4
+                ZIndex: =1
+
+                DataCardKey2_1 As label:
+                    AutoHeight: =true
+                    Color: =LookUp(colColorScheme,Name="theme",color)
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Size: =11
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue2_1 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =0
+                    ChevronBackground: =LookUp(colColorScheme,Name="theme",color)
+                    DefaultSelectedItems: =If(QuantityAndExpectedQuantityLBL_1.Text="Arrived", [Choices('Arrived (Order Product Lines)'.Yes)], Blank())
+                    DisplayFields: =["Value"]
+                    DisplayMode: =Parent.DisplayMode
+                    IsSearchable: =false
+                    Items: =Choices('Arrived (Order Product Lines)')
+                    OnChange: =
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =50
+                    ZIndex: =2
+
+                ErrorMessage2_1 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue2_1.Y + DataCardValue2_1.Height
+                    ZIndex: =3
+
+                StarVisible2_1 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey2_1.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey2_1.Y
+                    ZIndex: =4
+
+                Toggle1_1 As toggleSwitch:
+                    Height: =29
+                    Visible: =false
+                    Width: =203
+                    X: =30
+                    Y: =44
+                    ZIndex: =5
+
+            report_DataCard1 As typedDataCard.comboBoxOptionSetSingleEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr881_report"
+                Default: =ThisItem.report
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Order Product Lines'],DataSourceInfo.DisplayName,"cr881_report")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =DataCardValue1.Selected.Value
+                Visible: =false
+                Width: =358
+                X: =1
+                Y: =4
+                ZIndex: =1
+
+                DataCardKey2 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue1 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    DefaultSelectedItems: =If(DataCardValue6_1.Selected.Value=true, [Choices('report (Order Product Lines)'.Yes)], Blank())
+                    DisplayFields: =["Value"]
+                    DisplayMode: =Parent.DisplayMode
+                    IsSearchable: =false
+                    Items: =Choices('report (Order Product Lines)')
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey2.Y + DataCardKey2.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage2 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue1.Y + DataCardValue1.Height
+                    ZIndex: =3
+
+                StarVisible2 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey2.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey2.Y
+                    ZIndex: =4
+
+            report2_DataCard1 As typedDataCard.comboBoxOptionSetSingleEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr881_report2"
+                Default: =ThisItem.report2
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Order Product Lines'],DataSourceInfo.DisplayName,"cr881_report2")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =DataCardValue2.Selected.Value
+                Visible: =false
+                Width: =358
+                X: =0
+                Y: =5
+                ZIndex: =1
+
+                DataCardKey3 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue2 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    DefaultSelectedItems: =If(DataCardValue3_1.Selected.Value=true, [Choices('report2 (Order Product Lines)'.Yes)], Blank())
+                    DisplayFields: =["Value"]
+                    DisplayMode: =Parent.DisplayMode
+                    IsSearchable: =false
+                    Items: =Choices('report2 (Order Product Lines)')
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey3.Y + DataCardKey3.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage3 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue2.Y + DataCardValue2.Height
+                    ZIndex: =3
+
+                StarVisible3 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey3.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey3.Y
+                    ZIndex: =4
+
+            Quantity_DataCard1_1 As typedDataCard.numberEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="crmd_quantity"
+                Default: =ThisItem.Quantity
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Order Product Lines'],DataSourceInfo.DisplayName,"crmd_quantity")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =true
+                Update: =Value(DataCardValue5_1.Text)
+                Width: =358
+                X: =0
+                Y: =2
+                ZIndex: =2
+
+                DataCardKey4_1 As label:
+                    AutoHeight: =true
+                    Color: =LookUp(colColorScheme,Name="theme",color)
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Size: =11
+                    Text: ="Expected Quantity"
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue5_1 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =0
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Format: =TextFormat.Number
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey4_1.Y + DataCardKey4_1.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage4_1 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue5_1.Y + DataCardValue5_1.Height
+                    ZIndex: =3
+
+                StarVisible4_1 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey4_1.Height
+                    Text: ="*"
+                    Visible: =false
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey4_1.Y
+                    ZIndex: =4
+
+    BackHeader_3 As BackHeader:
+        Home: =Navigate(Dashboard_Screen)
+        Save: =Back()
+        ScreenName: |-
+            =//galItems_4.Selected.'Description/Specification'
+            
+            LookUp('Order Headers', 'Order Header'=Order_ID).'Description/Specification'
+        Theme: =LookUp(colColorScheme,Name="bg_HeaderNew",color)
+        Y: =63
+        ZIndex: =4
+
+    progressGallery_1 As gallery.galleryHorizontal:
+        BorderColor: =RGBA(243, 242, 241, 1)
+        FocusedBorderColor: =RGBA(98, 100, 167, 1)
+        FocusedBorderThickness: =2
+        Height: =32
+        Items: =["Ordered", "Arrived", "Work Completed"]
+        ShowScrollbar: =false
+        TemplateFill: =LookUp(colColorScheme,Name="bg_Primary",color)
+        TemplatePadding: =0
+        TemplateSize: =Self.Width / CountRows(Self.AllItems)
+        Width: =1339
+        WrapCount: =0
+        X: =14
+        Y: =152
+        ZIndex: =5
+
+        Button5_1 As Button:
+            Alignment: =Align.Justify
+            BorderRadius: =0
+            ButtonType: ='Button.ButtonType'.Primary
+            DisabledFillColor: |-
+                =
+                Switch( ThisItem.Value,
+                "Ordered", If(statusLBL_1.Text in ["Ordered"],LookUp(colColorScheme,Name="btn_Selected",color),RGBA(56, 96, 178,0.3)),
+                "Arrived", If(statusLBL_1.Text in ["Arrived"],LookUp(colColorScheme,Name="btn_Selected",color),RGBA(56, 96, 178,0.3)),
+                "Work Completed", If(statusLBL_1.Text in ["Work Completed"],LookUp(colColorScheme,Name="btn_Selected",color),RGBA(56, 96, 178,0.3))
+                )
+            DisabledTextColor: =RGBA(255,255,255,1)
+            DisplayMode: =DisplayMode.Disabled
+            FillColor: =
+            FontSize: =9.5
+            FontWeight: =FontWeight.Bold
+            Height: =Parent.TemplateHeight
+            OnSelect: =Select(Parent)
+            PaddingEnd: =10
+            PaddingStart: =10
+            Text: |-
+                =Switch( ThisItem.Value,
+                "Ordered", If(statusLBL_1.Text in ["Ordered"],statusLBL_1.Text,"Ordered"),
+                "Arrived", If(statusLBL_1.Text in ["Arrived"],statusLBL_1.Text,"Arrived"),
+                "Work Completed", If(statusLBL_1.Text in ["Work Completed"],statusLBL_1.Text,"Work Completed")
+                )
+            Width: =Parent.TemplateWidth
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+        Icon10_1 As icon.BookmarkFilled:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =LookUp(colColorScheme,Name="body_colour",Colour)
+            DisabledBorderColor: =RGBA(243, 242, 241, 1)
+            DisabledColor: =LookUp(colColorScheme,Name="bg_Primary",color)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            DisplayMode: =DisplayMode.View
+            FocusedBorderThickness: =0
+            Height: =Parent.TemplateHeight+20
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =ColorFade(RGBA(98, 100, 167, 1), -30%)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.BookmarkFilled
+            OnSelect: =Select(Parent)
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =ColorFade(RGBA(98, 100, 167, 1), -30%)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Rotation: =90
+            Width: =Self.Height
+            X: =Parent.TemplateWidth- Self.Width
+            Y: =Parent.TemplateHeight/2 - Self.Height/2
+            ZIndex: =2
+
+    ordersTab_1 As gallery.galleryHorizontal:
+        Default: =First(ordersTab_1.AllItems)
+        Height: =63
+        Items: |-
+            =ForAll([{quote:"Quote Orders",quoteType:"QOrders"}, {quote:"Quote Details",quoteType:"QDetails"}], {Value: ThisRecord})
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =196
+        Width: =602
+        X: =14
+        Y: =195
+        ZIndex: =6
+
+        VacantPlotsBTN_1 As button:
+            BorderColor: =RGBA(128, 128, 128, 1)
+            BorderThickness: =0.5
+            Fill: =If(quoteType = ThisItem.Value.quoteType, LookUp(colColorScheme,Name="btn_Selected",Colour),LookUp(colColorScheme,Name="btn_UnSelected",Colour))
+            HoverBorderColor: =ColorFade(Self.Fill, 20%)
+            HoverFill: =ColorFade(Self.Fill, 20%)
+            OnSelect: |-
+                =UpdateContext({quoteType:ThisItem.Value.quoteType})
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =13
+            Text: =ThisItem.Value.quote
+            Width: =196
+            ZIndex: =1
+
+    Quote_Details_Con As groupContainer.manualLayoutContainer:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Fill: =LookUp(colColorScheme,Name="bg_Secondary",color)
+        Height: =520
+        Visible: =If(quoteType = "QDetails",true,false)
+        Width: =1339
+        X: =13
+        Y: =235
+        ZIndex: =7
+
+        Form3_3 As form:
+            DataSource: ='Order Headers'
+            Fill: =LookUp(colColorScheme,Name="body_colour",Colour)
+            Item: |+
+                =First(Filter('Order Headers', 'Order Header'=Order_ID))
+                
+            OnSuccess: |
+                =///If(Form3_3.LastSubmit.SendEmailOrdered=true, Cloudy_Downstairs.Run(Text(jsonItems),Text(Form3_3.LastSubmit.Quote.'Quote Number'), Text(Form3_3.LastSubmit.Quote.'Total Cost Price')), Blank()) // Flow will run from here
+                If(
+                    Form3_3.LastSubmit.SendEmailOrdered = true || Form3_3.LastSubmit.EmailArrived = true || Form3_3.LastSubmit.IsCompleted = true,
+                    ForAll(
+                        galItems_6.AllItems As rec,
+                        Patch(
+                            items,
+                            Defaults(items),
+                            {
+                                item: {
+                                    ItemName: rec.Name,
+                                    ExpectedQuantity: rec.Quantity,
+                                    DeliveredQuantity: rec.'Expected Quantity'
+                                }
+                            }
+                        )
+                    ),
+                    Blank()
+                );
+                Set(
+                    jsonItems,
+                    JSON(
+                        items,
+                        JSONFormat.IgnoreBinaryData
+                    )
+                );
+                If(
+                    Form3_3.LastSubmit.SendEmailOrdered = true && Form3_3.LastSubmit.EmailArrived = false && Form3_3.LastSubmit.IsCompleted = false && IsBlank(statusLBL_1)=false,
+                    Cloudy_Downstairs.Run(
+                        jsonItems,
+                        Text(Form3_3.LastSubmit.Quote.'Quote Number'),
+                        Text(Form3_3.LastSubmit.Quote.'Total Cost Price'),
+                        Text(
+                            Concatenate(
+                                "https://cloudyit.crm11.dynamics.com/main.aspx?appid=28ff6879-ca4b-ec11-8f8e-000d3a7f937e&forceUCI=1&pagetype=entityrecord&etn=crmd_qe_order&id=",
+                                Form3_3.LastSubmit.'Order Header'
+                            )
+                        ),
+                        Text(Form3_3.LastSubmit.'Description of work')
+                    ),
+                    If(
+                        Form3_3.LastSubmit.EmailArrived = true && Form3_3.LastSubmit.IsCompleted = false && IsBlank(statusLBL_1)=false,
+                        Cloudy_Upstairs.Run(
+                            jsonItems,
+                            Text(Form3_3.LastSubmit.Quote.'Quote Number'),
+                            Text(Form3_3.LastSubmit.Quote.'Total Cost Price'),
+                            Text(
+                                Concatenate(
+                                    "https://cloudyit.crm11.dynamics.com/main.aspx?appid=28ff6879-ca4b-ec11-8f8e-000d3a7f937e&forceUCI=1&pagetype=entityrecord&etn=crmd_qe_order&id=",
+                                    Form3_3.LastSubmit.'Order Header'
+                                )
+                            ),
+                            Text(Form3_3.LastSubmit.'Description of work')
+                        ),
+                        If(
+                            Form3_3.LastSubmit.IsCompleted = true && IsBlank(statusLBL_1)=false,
+                            Cloudy_Complete.Run(
+                                jsonItems,
+                                Text(Form3_3.LastSubmit.Quote.'Quote Number'),
+                                Text(Form3_3.LastSubmit.Quote.'Total Cost Price'),
+                                Text(
+                                    Concatenate(
+                                        "https://cloudyit.crm11.dynamics.com/main.aspx?appid=28ff6879-ca4b-ec11-8f8e-000d3a7f937e&forceUCI=1&pagetype=entityrecord&etn=crmd_qe_order&id=",
+                                        Form3_3.LastSubmit.'Order Header'
+                                    )
+                                ),
+                                Text(Form3_3.LastSubmit.'Description of work')
+                            ),
+                            Blank()
+                        )
+                    )
+                );
+                Clear(items);
+            SnapToColumns: =false
+            Width: =1323
+            X: =8
+            Y: =8
+            ZIndex: =1
+
+            Account_DataCard1_2 As typedDataCard.comboBoxEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="crmd_accountid"
+                Default: =ThisItem.Account
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Order Headers'],DataSourceInfo.DisplayName,"crmd_accountid")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =85
+                Required: =false
+                Update: =DataCardValue13_2.Selected
+                Width: =321
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+                DataCardKey14_3 As label:
+                    AutoHeight: =true
+                    Color: =LookUp(colColorScheme,Name="theme",color)
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue13_2 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =0
+                    ChevronBackground: =LookUp(colColorScheme,Name="theme",color)
+                    DefaultSelectedItems: =Parent.Default
+                    DisplayFields: =["name"]
+                    DisplayMode: =Parent.DisplayMode
+                    Items: =Choices([@'Order Headers'].crmd_accountid)
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["name"]
+                    SearchItems: =Search(Choices([@'Order Headers'].crmd_accountid),DataCardValue13_2.SearchText,"name")
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =286
+                    X: =30
+                    Y: =39
+                    ZIndex: =2
+
+                ErrorMessage5_3 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue13_2.Y + DataCardValue13_2.Height
+                    ZIndex: =3
+
+                StarVisible5_3 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey14_3.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey14_3.Y
+                    ZIndex: =4
+
+            Quote_DataCard1_2 As typedDataCard.comboBoxEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="crmd_quoteid"
+                Default: =ThisItem.Quote
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Order Headers'],DataSourceInfo.DisplayName,"crmd_quoteid")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =85
+                Required: =false
+                Update: =DataCardValue14_3.Selected
+                Width: =321
+                X: =1
+                Y: =0
+                ZIndex: =1
+
+                DataCardKey15_3 As label:
+                    AutoHeight: =true
+                    Color: =LookUp(colColorScheme,Name="theme",color)
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue14_3 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =0
+                    ChevronBackground: =LookUp(colColorScheme,Name="theme",color)
+                    DefaultSelectedItems: =Parent.Default
+                    DisplayFields: =["crmdqe_quoteheader_id"]
+                    DisplayMode: =Parent.DisplayMode
+                    Items: =Choices([@'Order Headers'].crmd_quoteid)
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["crmdqe_quoteheader_id"]
+                    SearchItems: =Search(Choices([@'Order Headers'].crmd_quoteid),DataCardValue14_3.SearchText,"crmdqe_quoteheader_id")
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =284
+                    X: =30
+                    Y: =40
+                    ZIndex: =2
+
+                ErrorMessage11_2 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue14_3.Y + DataCardValue14_3.Height
+                    ZIndex: =3
+
+                StarVisible11_2 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey15_3.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey15_3.Y
+                    ZIndex: =4
+
+            "'Due Date_DataCard1' As typedDataCard.dateTimeEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr881_duedate"
+                Default: =ThisItem.'Due Date'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Order Headers'],DataSourceInfo.DisplayName,"cr881_duedate")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =DateValue1.SelectedDate 
+                Width: =330
+                X: =2
+                Y: =0
+                ZIndex: =1
+
+                DataCardKey1 As label:
+                    AutoHeight: =true
+                    Color: =LookUp(colColorScheme,Name="theme",color)
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DateValue1 As datepicker:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =0
+                    DefaultDate: =Parent.Default
+                    DisplayMode: =Parent.DisplayMode
+                    EndYear: =Year(Today())+100
+                    Height: =DataCardValue14_3.Height
+                    IconBackground: =LookUp(colColorScheme,Name="theme",color)
+                    IsEditable: =true
+                    PaddingBottom: =0
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    StartYear: =1899
+                    Tooltip: =Parent.DisplayName
+                    Width: =DataCardValue14_3.Width
+                    X: =DataCardValue14_3.X
+                    Y: =DataCardValue14_3.Y
+                    ZIndex: =2
+
+                ErrorMessage1 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =
+                    ZIndex: =6
+
+                StarVisible1 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey1.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey1.Y
+                    ZIndex: =7
+
+            DateToCustomer_DataCard1_2 As typedDataCard.dateTimeEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr881_datetocustomer"
+                Default: =ThisItem.DateToCustomer
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Order Headers'],DataSourceInfo.DisplayName,"cr881_datetocustomer")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =95
+                Required: =false
+                Update: =DateValue8_2.SelectedDate 
+                Width: =330
+                X: =3
+                Y: =0
+                ZIndex: =1
+
+                DataCardKey20_2 As label:
+                    AutoHeight: =true
+                    Color: =LookUp(colColorScheme,Name="theme",color)
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Text: ="Date to customer"
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DateValue8_2 As datepicker:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =0
+                    DefaultDate: =Parent.Default
+                    DisplayMode: =Parent.DisplayMode
+                    EndYear: =Year(Today())+100
+                    IconBackground: =LookUp(colColorScheme,Name="theme",color)
+                    IsEditable: =true
+                    PaddingBottom: =0
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    StartYear: =1899
+                    Tooltip: =Parent.DisplayName
+                    Width: =290
+                    X: =30
+                    Y: =DataCardValue14_3.Y
+                    ZIndex: =2
+
+                ErrorMessage15_2 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =
+                    ZIndex: =6
+
+                StarVisible15_2 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey20_2.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey20_2.Y
+                    ZIndex: =7
+
+            Contact_DataCard1_2 As typedDataCard.comboBoxEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="crmd_contactid"
+                Default: =ThisItem.Contact
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Order Headers'],DataSourceInfo.DisplayName,"crmd_contactid")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =83
+                Required: =false
+                Update: =DataCardValue17_2.Selected
+                Width: =330
+                X: =4
+                Y: =0
+                ZIndex: =1
+
+                DataCardKey22_2 As label:
+                    AutoHeight: =true
+                    Color: =LookUp(colColorScheme,Name="theme",color)
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =6
+                    ZIndex: =1
+
+                DataCardValue17_2 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =0
+                    ChevronBackground: =LookUp(colColorScheme,Name="theme",color)
+                    DefaultSelectedItems: =Parent.Default
+                    DisplayFields: =["fullname"]
+                    DisplayMode: =Parent.DisplayMode
+                    Items: =Choices([@'Order Headers'].crmd_contactid)
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["fullname"]
+                    SearchItems: =Search(Choices([@'Order Headers'].crmd_contactid),DataCardValue17_2.SearchText,"fullname")
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =285
+                    X: =30
+                    Y: =DataCardValue14_3.Y
+                    ZIndex: =2
+
+                ErrorMessage17_2 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue17_2.Y + DataCardValue17_2.Height
+                    ZIndex: =3
+
+                StarVisible17_2 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey22_2.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey22_2.Y
+                    ZIndex: =4
+
+            "'Description of work_DataCard2_1' As typedDataCard.textualMultiLineEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="new_descriptionofwork"
+                Default: =ThisItem.'Description of work'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Order Headers'],DataSourceInfo.DisplayName,"new_descriptionofwork")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =237
+                Required: =false
+                Update: =DataCardValue9_1.Text
+                Width: =1320
+                X: =0
+                Y: =1
+                ZIndex: =1
+
+                DataCardKey9_1 As label:
+                    AutoHeight: =true
+                    Color: =LookUp(colColorScheme,Name="theme",color)
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    ZIndex: =1
+
+                DataCardValue9_1 As text:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =0
+                    Default: =Parent.Default
+                    DelayOutput: =true
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =186
+                    Mode: =TextMode.MultiLine
+                    PaddingLeft: =5
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =27
+                    Y: =53
+                    ZIndex: =2
+
+                ErrorMessage9_1 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue9_1.Y + DataCardValue9_1.Height
+                    ZIndex: =3
+
+                StarVisible9_1 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey9_1.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey9_1.Y
+                    ZIndex: =4
+
+            StaffToBeNotified_DataCard1_2 As typedDataCard.comboBoxEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr881_StaffToBeNotified"
+                Default: =ThisItem.StaffToBeNotified
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Order Headers'],DataSourceInfo.DisplayName,"cr881_StaffToBeNotified")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =DataCardValue32_2.Selected
+                Visible: =false
+                Width: =287
+                X: =1
+                Y: =1
+                ZIndex: =1
+
+                DataCardKey41_2 As label:
+                    AutoHeight: =true
+                    Color: =LookUp(colColorScheme,Name="theme",color)
+                    FontWeight: =FontWeight.Bold
+                    Height: =34
+                    Size: =11
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    ZIndex: =1
+
+                DataCardValue32_2 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =0
+                    ChevronBackground: =LookUp(colColorScheme,Name="theme",color)
+                    DefaultSelectedItems: =Parent.Default
+                    DisplayFields: =["fullname"]
+                    DisplayMode: =Parent.DisplayMode
+                    Items: =Choices([@'Order Headers'].cr881_StaffToBeNotified)
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["fullname"]
+                    SearchItems: =Search(Choices([@'Order Headers'].cr881_StaffToBeNotified),DataCardValue32_2.SearchText,"fullname")
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =30
+                    ZIndex: =2
+
+                ErrorMessage36_2 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue32_2.Y + DataCardValue32_2.Height
+                    ZIndex: =3
+
+                StarVisible36_2 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey41_2.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey41_2.Y
+                    ZIndex: =4
+
+            "'Complete Order_DataCard1_1' As typedDataCard.comboBoxOptionSetSingleEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="crmd_completeorder"
+                Default: =ThisItem.'Complete Order'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Order Headers'],DataSourceInfo.DisplayName,"crmd_completeorder")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =9
+                Required: =false
+                Update: =DataCardValue4_1.Selected.Value
+                Visible: =true
+                Width: =321
+                X: =0
+                Y: =2
+                ZIndex: =1
+
+                DataCardKey5_1 As label:
+                    AutoHeight: =true
+                    Color: =RGBA(0, 0, 0, 0)
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue4_1 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderThickness: =0
+                    ChevronBackground: =RGBA(0, 0, 0, 0)
+                    ChevronDisabledBackground: =RGBA(0, 0, 0, 0)
+                    ChevronDisabledFill: =RGBA(0, 0, 0, 0)
+                    ChevronFill: =RGBA(0, 0, 0, 0)
+                    ChevronHoverBackground: =RGBA(0, 0, 0, 0)
+                    ChevronHoverFill: =RGBA(0, 0, 0, 0)
+                    Color: =RGBA(0, 0, 0, 0)
+                    DefaultSelectedItems: =If(statusLBL_1.Text = "Work Completed", Choices('Complete Order (Order Headers)'.Yes)) 
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(0, 0, 0, 0)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    DisplayFields: =["Value"]
+                    DisplayMode: =Parent.DisplayMode
+                    Fill: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(0, 0, 0, 0)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    IsSearchable: =false
+                    Items: =Choices('Complete Order (Order Headers)')
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    PressedColor: =RGBA(0, 0, 0, 0)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectionColor: =RGBA(0, 0, 0, 0)
+                    SelectionFill: =RGBA(0, 0, 0, 0)
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =4
+                    ZIndex: =2
+
+                ErrorMessage6_1 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue4_1.Y + DataCardValue4_1.Height
+                    ZIndex: =3
+
+                StarVisible6_1 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey5_1.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey5_1.Y
+                    ZIndex: =4
+
+                Rectangle3_1 As rectangle:
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =49
+                    Width: =323
+                    ZIndex: =5
+
+            "'Status Reason_DataCard1_1' As typedDataCard.comboBoxOptionSetSingleEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="statuscode"
+                Default: =ThisItem.'Status Reason'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Order Headers'],DataSourceInfo.DisplayName,"statuscode")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =1
+                Required: =false
+                Update: =DataCardValue8_1.Selected.Value
+                Visible: =false
+                Width: =428
+                X: =1
+                Y: =2
+                ZIndex: =1
+
+                DataCardKey8_1 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue8_1 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    DefaultSelectedItems: =[Parent.Default]
+                    DisplayFields: =["Value"]
+                    DisplayMode: =Parent.DisplayMode
+                    IsSearchable: =false
+                    Items: =If(statusLBL_1.Text = "Work Completed", Choices('Status Reason (Order Headers)'.Complete)) 
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey8_1.Y + DataCardKey8_1.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage8_1 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue8_1.Y + DataCardValue8_1.Height
+                    ZIndex: =3
+
+                StarVisible8_1 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey8_1.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey8_1.Y
+                    ZIndex: =4
+
+            "'Complete Order_DataCard2' As typedDataCard.comboBoxOptionSetSingleEditCard":
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="crmd_completeorder"
+                Default: =ThisItem.'Complete Order'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Order Headers'],DataSourceInfo.DisplayName,"crmd_completeorder")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =DataCardValue24.Selected.Value
+                Visible: =false
+                Width: =441
+                X: =2
+                Y: =2
+                ZIndex: =1
+
+                DataCardKey24 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue24 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    DefaultSelectedItems: =If(statusLBL_1.Text ="Work Completed", ['Complete Order (Order Headers)'.Yes], ['Complete Order (Order Headers)'.No])
+                    DisplayFields: =["Value"]
+                    DisplayMode: =Parent.DisplayMode
+                    IsSearchable: =false
+                    Items: =Choices('Complete Order (Order Headers)')
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey24.Y + DataCardKey24.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage21 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue24.Y + DataCardValue24.Height
+                    ZIndex: =3
+
+                StarVisible21 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey24.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey24.Y
+                    ZIndex: =4
+
+            SendEmailOrdered_DataCard1 As typedDataCard.comboBoxOptionSetSingleEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr881_sendemailordered"
+                Default: =ThisItem.SendEmailOrdered
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Order Headers'],DataSourceInfo.DisplayName,"cr881_sendemailordered")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =DataCardValue3.Selected.Value
+                Visible: =false
+                Width: =441
+                X: =0
+                Y: =3
+                ZIndex: =1
+
+                DataCardKey4 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue3 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    DefaultSelectedItems: =If(statusLBL_1.Text ="Ordered", ['SendEmailOrdered (Order Headers)'.Yes], ['SendEmailOrdered (Order Headers)'.No])
+                    DisplayFields: =["Value"]
+                    DisplayMode: =Parent.DisplayMode
+                    IsSearchable: =false
+                    Items: =Choices('SendEmailOrdered (Order Headers)')
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey4.Y + DataCardKey4.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage4 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue3.Y + DataCardValue3.Height
+                    ZIndex: =3
+
+                StarVisible4 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey4.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey4.Y
+                    ZIndex: =4
+
+            EmailArrived_DataCard1 As typedDataCard.comboBoxOptionSetSingleEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr881_emailarrived"
+                Default: =ThisItem.EmailArrived
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Order Headers'],DataSourceInfo.DisplayName,"cr881_emailarrived")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =DataCardValue4.Selected.Value
+                Visible: =false
+                Width: =441
+                X: =1
+                Y: =3
+                ZIndex: =1
+
+                DataCardKey5 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue4 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    DefaultSelectedItems: =If(statusLBL_1.Text ="Arrived", ['EmailArrived (Order Headers)'.Yes], ['EmailArrived (Order Headers)'.No])
+                    DisplayFields: =["Value"]
+                    DisplayMode: =Parent.DisplayMode
+                    IsSearchable: =false
+                    Items: =Choices('EmailArrived (Order Headers)')
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey5.Y + DataCardKey5.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage5 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue4.Y + DataCardValue4.Height
+                    ZIndex: =3
+
+                StarVisible5 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey5.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey5.Y
+                    ZIndex: =4
+
+            IsCompleted_DataCard1 As typedDataCard.comboBoxOptionSetSingleEditCard:
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="cr881_iscompleted"
+                Default: =ThisItem.IsCompleted
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Order Headers'],DataSourceInfo.DisplayName,"cr881_iscompleted")
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =50
+                Required: =false
+                Update: =DataCardValue5.Selected.Value
+                Visible: =false
+                Width: =441
+                X: =2
+                Y: =3
+                ZIndex: =1
+
+                DataCardKey6 As label:
+                    AutoHeight: =true
+                    Height: =34
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue5 As combobox:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    DefaultSelectedItems: =If(statusLBL_1.Text ="Work Completed", ['IsCompleted (Order Headers)'.Yes], ['IsCompleted (Order Headers)'.No])
+                    DisplayFields: =["Value"]
+                    DisplayMode: =Parent.DisplayMode
+                    IsSearchable: =false
+                    Items: =Choices('IsCompleted (Order Headers)')
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectMultiple: =false
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey6.Y + DataCardKey6.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage6 As label:
+                    AutoHeight: =true
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue5.Y + DataCardValue5.Height
+                    ZIndex: =3
+
+                StarVisible6 As label:
+                    Align: =Align.Center
+                    Height: =DataCardKey6.Height
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey6.Y
+                    ZIndex: =4
+
+    statusLBL_1 As Label:
+        DisplayMode: =DisplayMode.Edit
+        Height: =22
+        Text: |
+            =If(
+              CountRows(Filter(galItems_6.AllItems, Completed = true)) = CountRows(galItems_6.AllItems),
+              "Work Completed",
+              If(
+                CountRows(Filter(galItems_6.AllItems, Quantity <> 'Expected Quantity')) = 0,
+                "Arrived",
+                If(
+                  CountRows(Filter(galItems_6.AllItems, Ordered = true)) = CountRows(galItems_6.AllItems),
+                  "Ordered",
+                  Blank()
+                )
+              )
+            )
+        Visible: =false
+        Width: =221
+        X: =0
+        Y: =63
+        ZIndex: =8
+
+    btnSave_3 As button:
+        BorderColor: =Self.Fill
+        BorderThickness: =1
+        Fill: =LookUp(colColorScheme,Name="bg_HeaderNew",color)
+        Height: =38
+        HoverColor: =Self.Color
+        HoverFill: =ColorFade(Self.Fill, -20%)
+        OnSelect: = SubmitForm(Form3_3); Notify( "Successfully saved data", NotificationType.Success);
+        PressedColor: =Self.Color
+        PressedFill: =Self.Fill
+        RadiusBottomLeft: =5
+        RadiusBottomRight: =5
+        RadiusTopLeft: =5
+        RadiusTopRight: =5
+        Size: =11
+        Text: ="UPDATE QUOTE"
+        Visible: =If(quoteType = "QDetails",true,false)
+        Width: =288
+        X: =1036
+        Y: =699
+        ZIndex: =9
+
+    Circle1_8 As circle:
+        Fill: =LookUp(colColorScheme,Name="bg_HeaderNew",color)
+        Height: =45
+        OnSelect: |-
+            =Launch(Concatenate("https://cloudyit.crm11.dynamics.com/main.aspx?appid=28ff6879-ca4b-ec11-8f8e-000d3a7f937e&forceUCI=1&pagetype=entityrecord&etn=crmdqe_quoteheader&id=", Quote_ID))
+        Width: =45
+        X: =189
+        Y: =85
+        ZIndex: =10
+
+    Icon10_8 As icon.Check:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =25
+        Icon: =Icon.Search
+        OnSelect: |-
+            =Launch(Concatenate("https://cloudyit.crm11.dynamics.com/main.aspx?appid=28ff6879-ca4b-ec11-8f8e-000d3a7f937e&forceUCI=1&pagetype=entityrecord&etn=crmdqe_quoteheader&id=", Quote_ID))
+        Width: =25
+        X: =199
+        Y: =95
+        ZIndex: =11
+
+    EditNameScreen As groupContainer.manualLayoutContainer:
+        Height: =768
+        Visible: =showCustomerAssetMenu
+        Width: =1366
+        ZIndex: =12
+
+        Rectangle10_8 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.69)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({boolDelPopup:false})
+            Width: =1366
+            ZIndex: =1
+
+        ConfirmDeleteConatiner_8 As groupContainer.manualLayoutContainer:
+            BorderColor: =RGBA(246, 88, 16, 1)
+            BorderThickness: =4
+            Fill: =RGBA(230, 230, 230, 1)
+            Height: =515
+            Width: =897
+            X: =252
+            Y: =100
+            ZIndex: =2
+
+            Rectangle13_8 As rectangle:
+                Fill: =LookUp(colColorScheme,Name="bg_HeaderNew",color)
+                Height: =44
+                Width: =897
+                ZIndex: =1
+
+            DeleteLabel_11 As Label:
+                Alignment: =Align.Left
+                AutoHeight: =false
+                Color: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.Edit
+                Font: =Font.'Open Sans'
+                FontSize: =13
+                Height: =44
+                Overflow: ="Hidden"
+                PaddingBottom: =0
+                PaddingTop: =0
+                Text: ="Adding asset to " & galItems_6.Selected.Account.'Account Name'
+                Width: =492
+                X: =13
+                Y: =0
+                ZIndex: =2
+
+            closeScreen_17 As icon.Add:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(243, 242, 241, 1)
+                DisabledColor: =RGBA(220, 220, 220, 1)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                Height: =44
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(255, 0, 0, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({showCustomerAssetMenu:false});
+                    UpdateContext({customerassetsNumber: 1})
+                PaddingBottom: =10
+                PaddingTop: =10
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedColor: =ColorFade(RGBA(98, 100, 167, 1), -30%)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Tooltip: ="Close"
+                Width: =40
+                X: =857
+                ZIndex: =3
+
+            DeleteBTN_14 As Button:
+                Alignment: ="center"
+                BorderRadius: =0
+                BorderStyle: =""
+                BorderThickness: =0
+                ButtonType: ='Button.ButtonType'.Standard
+                DisplayMode: =DisplayMode.Edit
+                FillColor: =LookUp(colColorScheme,Name="bg_HeaderNew",color)
+                FontWeight: =FontWeight.Bold
+                Height: =28
+                HideFromAssistiveTechnologies: =false
+                HoverFillColor: =RGBA(175, 191, 224, 1)
+                Italic: =false
+                OnSelect: |-
+                    =Patch('Customer Assets', Defaults('Customer Assets'),
+                        {
+                            Name: TextInput2.Text,
+                            'Serial Number': TextInput2_1.Text,
+                            Account: ComboBox4.Selected,
+                            Status: ComboBox4_1.Selected.Value,
+                            'Product Location': ComboBox4_3.Selected,
+                            Product: ComboBox4_2.Selected,
+                            'Goods In Delivery Note Line': Patch('Delivery Note Lines', Defaults('Delivery Note Lines'), {Name: TextInput2.Text})
+                        }
+                    );
+                    
+                    
+                    
+                    
+                    Refresh('Customer Assets');
+                    Notify(
+                        Concatenate(
+                            "Successfully saved data",
+                            "(",
+                            customerassetsNumber,
+                            ")"
+                        ),
+                        NotificationType.Success
+                    );
+                    UpdateContext({customerassetsNumber: customerassetsNumber + 1})
+                PaddingBottom: =0
+                PaddingTop: =0
+                Strikethrough: =false
+                Text: ="Save & Add"
+                TextColor: =RGBA(255, 255, 255, 1)
+                Underline: =false
+                VerticalAlignment: ="middle"
+                Width: =150
+                X: =707
+                Y: =356
+                ZIndex: =5
+
+            Label10 As label:
+                Color: =LookUp(colColorScheme,Name="theme",color)
+                FontWeight: =FontWeight.Bold
+                Text: ="Name"
+                X: =20
+                Y: =80
+                ZIndex: =9
+
+            TextInput2 As text:
+                BorderThickness: =0
+                Default: =galItems_6.Selected.Name
+                Height: =41
+                HintText: ="Name"
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Width: =419
+                X: =20
+                Y: =120
+                ZIndex: =10
+
+            Label10_6 As label:
+                Color: =LookUp(colColorScheme,Name="theme",color)
+                FontWeight: =FontWeight.Bold
+                Text: ="Serial Number"
+                X: =20
+                Y: =175
+                ZIndex: =11
+
+            TextInput2_1 As text:
+                BorderThickness: =0
+                Default: =""
+                Height: =41
+                HintText: ="Serial Number"
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Width: =419
+                X: =20
+                Y: =215
+                ZIndex: =12
+
+            ComboBox4 As combobox:
+                BorderThickness: =0
+                ChevronBackground: =LookUp(colColorScheme,Name="theme",color)
+                DefaultSelectedItems: =[galItems_6.Selected.Account]
+                DisplayFields: =["name"]
+                Height: =41
+                Items: =Choices([@'Customer Assets'].crmd_Account)
+                SearchFields: =["name"]
+                SearchItems: =Search(Choices([@'Customer Assets'].crmd_Account),ComboBox4.SearchText,"name")
+                SelectMultiple: =false
+                Width: =419
+                X: =20
+                Y: =296
+                ZIndex: =13
+
+            Label10_7 As label:
+                Color: =LookUp(colColorScheme,Name="theme",color)
+                FontWeight: =FontWeight.Bold
+                Text: ="Account"
+                X: =20
+                Y: =256
+                ZIndex: =14
+
+            ComboBox4_1 As combobox:
+                BorderThickness: =0
+                ChevronBackground: =LookUp(colColorScheme,Name="theme",color)
+                DefaultSelectedItems: =['Status (Customer Assets)'.Active]
+                DisplayFields: =["Value"]
+                Height: =41
+                Items: =Choices('Status (Customer Assets)')
+                SearchFields: =["Value"]
+                SearchItems: =Choices('Status (Customer Assets)',ComboBox4_1.SearchText)
+                SelectMultiple: =false
+                Visible: =false
+                Width: =419
+                X: =20
+                Y: =384
+                ZIndex: =15
+
+            Label10_8 As label:
+                Color: =LookUp(colColorScheme,Name="theme",color)
+                FontWeight: =FontWeight.Bold
+                Text: ="* Status Reason"
+                Visible: =false
+                X: =20
+                Y: =344
+                ZIndex: =16
+
+            ComboBox4_2 As combobox:
+                BorderThickness: =0
+                ChevronBackground: =LookUp(colColorScheme,Name="theme",color)
+                DefaultSelectedItems: =LookUp('Products & Services', 'Products & Service'=GUID("bd2e8546-6800-ee11-8f6d-6045bdd1d123"))
+                DisplayFields: =["crmdqe_productsservices_id"]
+                Height: =41
+                Items: =Choices([@'Customer Assets'].crmd_productid)
+                SearchFields: =["crmdqe_productsservices_id"]
+                SearchItems: =Search(Choices([@'Customer Assets'].crmd_productid),ComboBox4_2.SearchText,"crmdqe_productsservices_id")
+                SelectMultiple: =false
+                Width: =419
+                X: =458
+                Y: =120
+                ZIndex: =17
+
+            Label10_9 As label:
+                Color: =LookUp(colColorScheme,Name="theme",color)
+                FontWeight: =FontWeight.Bold
+                Text: ="* Product "
+                X: =458
+                Y: =80
+                ZIndex: =18
+
+            ComboBox4_3 As combobox:
+                BorderThickness: =0
+                ChevronBackground: =LookUp(colColorScheme,Name="theme",color)
+                DefaultSelectedItems: =LookUp('Product Locations', 'Product Location'=GUID("b64cdc37-d884-ec11-8d21-6045bd0f0493"))
+                DisplayFields: =["crmd_name"]
+                Height: =41
+                Items: =Choices([@'Customer Assets'].crmd_productlocationid)
+                SearchFields: =["crmd_name"]
+                SearchItems: =Search(Choices([@'Customer Assets'].crmd_productlocationid),ComboBox4_3.SearchText,"crmd_name")
+                SelectMultiple: =false
+                Width: =419
+                X: =458
+                Y: =215
+                ZIndex: =19
+
+            Label10_10 As label:
+                Color: =LookUp(colColorScheme,Name="theme",color)
+                FontWeight: =FontWeight.Bold
+                Text: ="* Product Location"
+                Width: =289
+                X: =458
+                Y: =175
+                ZIndex: =20
+
+            nxtBTN_2 As button:
+                BorderColor: =Self.Fill
+                BorderThickness: =1
+                DisplayMode: =If(varPageNumber1<galItems_6.Selected.Quantity, DisplayMode.Edit, DisplayMode.Disabled)
+                Fill: =RGBA(61, 63, 104, 1)
+                Height: =28
+                HoverColor: =Self.Color
+                HoverFill: =ColorFade(Self.Fill, -20%)
+                OnSelect: |-
+                    =UpdateContext({varPageNumber1: varPageNumber1 + 1}); 
+                    
+                    Patch('Customer Assets', Defaults('Customer Assets'),
+                        {
+                            Name: TextInput2.Text,
+                            'Serial Number': TextInput2_1.Text,
+                            Account: ComboBox4.Selected,
+                            Status: ComboBox4_1.Selected.Value,
+                            'Product Location': ComboBox4_3.Selected,
+                            Product: ComboBox4_2.Selected,
+                            'Goods In Delivery Note Line': Patch('Delivery Note Lines', Defaults('Delivery Note Lines'), {Name: TextInput2.Text})
+                        }
+                    );
+                PressedColor: =Self.Color
+                PressedFill: =Self.Fill
+                RadiusBottomLeft: =5
+                RadiusBottomRight: =5
+                RadiusTopLeft: =5
+                RadiusTopRight: =5
+                Size: =11
+                Text: ="SAVE & NEXT"
+                Width: =150
+                X: =585
+                Y: =461
+                ZIndex: =21
+
+            prevBTN_1 As button:
+                BorderColor: =Self.Fill
+                BorderThickness: =1
+                DisplayMode: =If(varPageNumber1 <= 1, DisplayMode.Disabled, DisplayMode.Edit)
+                Fill: =RGBA(232, 163, 2, 1)
+                Height: =28
+                HoverColor: =Self.Color
+                HoverFill: =ColorFade(Self.Fill, -20%)
+                OnSelect: |-
+                    =UpdateContext({varPageNumber1: varPageNumber1 - 1}); 
+                PressedColor: =Self.Color
+                PressedFill: =Self.Fill
+                RadiusBottomLeft: =5
+                RadiusBottomRight: =5
+                RadiusTopLeft: =5
+                RadiusTopRight: =5
+                Size: =11
+                Text: ="PREVIOUS"
+                Width: =150
+                X: =161
+                Y: =461
+                ZIndex: =22
+
+            pgTXT_1 As label:
+                Align: =Align.Center
+                Color: =LookUp(colColorScheme,Name="font_Title",color)
+                FontWeight: =FontWeight.Bold
+                Height: =28
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =11
+                Text: =varPageNumber1 & " of " & galItems_6.Selected.Quantity
+                Width: =274
+                Wrap: =false
+                X: =311
+                Y: =461
+                ZIndex: =23
+
+    EditNameScreen_1 As groupContainer.manualLayoutContainer:
+        Height: =768
+        Visible: =showCustomerAssetMenu1
+        Width: =1366
+        ZIndex: =13
+
+        Rectangle10_9 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.69)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({boolDelPopup:false})
+            Width: =1366
+            ZIndex: =1
+
+        ConfirmDeleteConatiner_9 As groupContainer.manualLayoutContainer:
+            BorderColor: =RGBA(246, 88, 16, 1)
+            BorderThickness: =4
+            Fill: =RGBA(230, 230, 230, 1)
+            Height: =515
+            Width: =897
+            X: =252
+            Y: =100
+            ZIndex: =2
+
+            Rectangle13_9 As rectangle:
+                BorderColor: =RGBA(141, 198, 63, 1)
+                Fill: =LookUp(colColorScheme,Name="bg_HeaderNew",color)
+                Height: =44
+                Width: =897
+                ZIndex: =1
+
+            DeleteLabel_12 As Label:
+                Alignment: =Align.Left
+                AutoHeight: =false
+                Color: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.Edit
+                Font: =Font.'Open Sans'
+                FontSize: =13
+                Height: =44
+                Overflow: ="Hidden"
+                PaddingBottom: =0
+                PaddingTop: =0
+                Text: ="Viewing customer assets for " & galItems_6.Selected.Account.'Account Name'
+                Width: =492
+                X: =13
+                Y: =0
+                ZIndex: =2
+
+            closeScreen_18 As icon.Add:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(243, 242, 241, 1)
+                DisabledColor: =RGBA(220, 220, 220, 1)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                Height: =44
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(255, 0, 0, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({showCustomerAssetMenu1:false})
+                PaddingBottom: =10
+                PaddingTop: =10
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedColor: =ColorFade(RGBA(98, 100, 167, 1), -30%)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Tooltip: ="Close"
+                Width: =40
+                X: =857
+                ZIndex: =3
+
+            DeleteBTN_15 As Button:
+                Alignment: ="center"
+                BorderRadius: =0
+                BorderStyle: =""
+                BorderThickness: =0
+                ButtonType: ='Button.ButtonType'.Standard
+                DisplayMode: =DisplayMode.Edit
+                FillColor: =LookUp(colColorScheme,Name="bg_HeaderNew",color)
+                FontWeight: =FontWeight.Bold
+                Height: =32
+                HideFromAssistiveTechnologies: =false
+                HoverFillColor: =RGBA(175, 191, 224, 1)
+                Italic: =false
+                OnSelect: =SubmitForm(Form2); Notify( "Successfully saved data", NotificationType.Success)
+                PaddingBottom: =0
+                PaddingTop: =0
+                Strikethrough: =false
+                Text: ="Update"
+                TextColor: =RGBA(255, 255, 255, 1)
+                Underline: =false
+                VerticalAlignment: ="middle"
+                Width: =96
+                X: =791
+                Y: =473
+                ZIndex: =5
+
+            galItems_7 As gallery.variableTemplateHeightGallery:
+                Fill: =LookUp(colColorScheme,Name="body_colour",Colour)
+                Height: =416
+                Items: |
+                    =Filter('Customer Assets',
+                       Account.Account = galItems_6.Selected.Account.Account
+                    )
+                Layout: =Layout.Vertical
+                ShowScrollbar: =false
+                TemplatePadding: =0
+                TemplateSize: =103
+                Width: =425
+                X: =13
+                Y: =57
+                ZIndex: =7
+
+                Rectangle14_13 As rectangle:
+                    Fill: =If(ThisItem.IsSelected,ColorFade(LookUp(colColorScheme,Name="theme",color),90%),RGBA(255, 255, 255, 0.8))
+                    OnSelect: |-
+                        =/*UpdateContext({showEditItem:true});
+                        UpdateContext({EditType:"Edit"});
+                        Select(Parent)*/
+                    Width: =425
+                    Y: =3
+                    ZIndex: =1
+
+                Label2_18 As label:
+                    FontWeight: =FontWeight.Bold
+                    Height: =37
+                    Text: |
+                        =If(Len(ThisItem.Name)>100,Concatenate(Left(ThisItem.Name,100),"..."),ThisItem.Name)
+                    Width: =572
+                    ZIndex: =2
+
+                Label2_19 As label:
+                    Height: =37
+                    Text: =ThisItem.'Serial Number'
+                    Width: =496
+                    Y: =33
+                    ZIndex: =3
+
+                UserInput_5 As rectangle:
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =103
+                    OnSelect: =
+                    Width: =425
+                    ZIndex: =4
+
+                Label2_20 As label:
+                    Height: =35
+                    Text: =ThisItem.'Created On'
+                    Width: =425
+                    Y: =68
+                    ZIndex: =9
+
+                "Icon3 As icon.'3DPrinting'":
+                    Color: =RGBA(255, 255, 255, 1)
+                    Fill: =LookUp(colColorScheme,Name="bg_HeaderNew",color)
+                    Height: =35
+                    Icon: =Icon.Search
+                    OnSelect: |-
+                        =Select(Parent);
+                        Launch(Concatenate("https://cloudyit.crm11.dynamics.com/main.aspx?appid=28ff6879-ca4b-ec11-8f8e-000d3a7f937e&forceUCI=1&pagetype=entityrecord&etn=crmd_customerasset&id=", ThisItem.'Customer Asset'))
+                    PaddingBottom: =2
+                    PaddingLeft: =2
+                    PaddingRight: =2
+                    PaddingTop: =2
+                    Width: =35
+                    X: =378
+                    Y: =57
+                    ZIndex: =10
+
+                "Icon3_1 As icon.'3DPrinting'":
+                    Color: =RGBA(255, 255, 255, 1)
+                    Fill: =LookUp(colColorScheme,Name="bg_HeaderNew",color)
+                    Height: =35
+                    Icon: =Icon.Trash
+                    OnSelect: |-
+                        =Select(Parent);
+                        Remove('Customer Assets',galItems_7.Selected);
+                        
+                        Notify( "Successfully deleted data", NotificationType.Success)
+                    PaddingBottom: =2
+                    PaddingLeft: =2
+                    PaddingRight: =2
+                    PaddingTop: =2
+                    Width: =35
+                    X: =332
+                    Y: =57
+                    ZIndex: =11
+
+            Form2 As form:
+                DataSource: ='Customer Assets'
+                Height: =412
+                Item: =galItems_7.Selected
+                NumberOfColumns: =1
+                Width: =437
+                X: =450
+                Y: =61
+                ZIndex: =8
+
+                Account_DataCard2 As typedDataCard.comboBoxEditCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="crmd_Account"
+                    Default: =ThisItem.Account
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@'Customer Assets'],DataSourceInfo.DisplayName,"crmd_Account")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =50
+                    Required: =false
+                    Update: =DataCardValue22.Selected
+                    Width: =437
+                    X: =0
+                    Y: =2
+                    ZIndex: =1
+
+                    DataCardKey22 As label:
+                        AutoHeight: =true
+                        Color: =LookUp(colColorScheme,Name="theme",color)
+                        FontWeight: =FontWeight.Bold
+                        Height: =34
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue22 As combobox:
+                        BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                        BorderThickness: =0
+                        ChevronBackground: =LookUp(colColorScheme,Name="theme",color)
+                        DefaultSelectedItems: =Parent.Default
+                        DisplayFields: =["name"]
+                        DisplayMode: =Parent.DisplayMode
+                        FontWeight: =FontWeight.Lighter
+                        Items: =Choices([@'Customer Assets'].crmd_Account)
+                        PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                        SearchFields: =["name"]
+                        SearchItems: =Search(Choices([@'Customer Assets'].crmd_Account),DataCardValue22.SearchText,"name")
+                        SelectMultiple: =false
+                        Tooltip: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey22.Y + DataCardKey22.Height + 5
+                        ZIndex: =2
+
+                    ErrorMessage19 As label:
+                        AutoHeight: =true
+                        Height: =10
+                        Live: =Live.Assertive
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =Parent.Error
+                        Visible: =Parent.DisplayMode=DisplayMode.Edit
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardValue22.Y + DataCardValue22.Height
+                        ZIndex: =3
+
+                    StarVisible19 As label:
+                        Align: =Align.Center
+                        Height: =DataCardKey22.Height
+                        Text: ="*"
+                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                        Width: =30
+                        Wrap: =false
+                        Y: =DataCardKey22.Y
+                        ZIndex: =4
+
+                Name_DataCard4 As typedDataCard.textualEditCard:
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="crmd_name"
+                    Default: =ThisItem.Name
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@'Customer Assets'],DataSourceInfo.DisplayName,"crmd_name")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =50
+                    MaxLength: =DataSourceInfo([@'Customer Assets'], DataSourceInfo.MaxLength, "crmd_name")
+                    Required: =true
+                    Update: =DataCardValue20.Text
+                    Width: =437
+                    X: =0
+                    Y: =0
+                    ZIndex: =9
+
+                    DataCardKey20 As label:
+                        AutoHeight: =true
+                        Color: =LookUp(colColorScheme,Name="theme",color)
+                        FontWeight: =FontWeight.Bold
+                        Height: =34
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue20 As text:
+                        BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                        BorderThickness: =0
+                        Default: =Parent.Default
+                        DelayOutput: =true
+                        DisplayMode: =Parent.DisplayMode
+                        MaxLength: =Parent.MaxLength
+                        PaddingLeft: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Tooltip: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey20.Y + DataCardKey20.Height + 5
+                        ZIndex: =2
+
+                    ErrorMessage17 As label:
+                        AutoHeight: =true
+                        Height: =10
+                        Live: =Live.Assertive
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =Parent.Error
+                        Visible: =Parent.DisplayMode=DisplayMode.Edit
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardValue20.Y + DataCardValue20.Height
+                        ZIndex: =3
+
+                    StarVisible17 As label:
+                        Align: =Align.Center
+                        Height: =DataCardKey20.Height
+                        Text: ="*"
+                        Visible: =false
+                        Width: =30
+                        Wrap: =false
+                        Y: =DataCardKey20.Y
+                        ZIndex: =4
+
+                "'Serial Number_DataCard2' As typedDataCard.textualEditCard":
+                    BorderStyle: =BorderStyle.Solid
+                    DataField: ="crmd_serialnumber"
+                    Default: =ThisItem.'Serial Number'
+                    DisplayMode: =Parent.DisplayMode
+                    DisplayName: =DataSourceInfo([@'Customer Assets'],DataSourceInfo.DisplayName,"crmd_serialnumber")
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =50
+                    MaxLength: =DataSourceInfo([@'Customer Assets'], DataSourceInfo.MaxLength, "crmd_serialnumber")
+                    Required: =false
+                    Update: =DataCardValue19.Text
+                    Width: =437
+                    X: =0
+                    Y: =1
+                    ZIndex: =9
+
+                    DataCardKey19 As label:
+                        AutoHeight: =true
+                        Color: =LookUp(colColorScheme,Name="theme",color)
+                        FontWeight: =FontWeight.Bold
+                        Height: =34
+                        Text: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        Wrap: =false
+                        X: =30
+                        Y: =10
+                        ZIndex: =1
+
+                    DataCardValue19 As text:
+                        BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                        BorderThickness: =0
+                        Default: =Parent.Default
+                        DelayOutput: =true
+                        DisplayMode: =Parent.DisplayMode
+                        MaxLength: =Parent.MaxLength
+                        PaddingLeft: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Tooltip: =Parent.DisplayName
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardKey19.Y + DataCardKey19.Height + 5
+                        ZIndex: =2
+
+                    ErrorMessage16 As label:
+                        AutoHeight: =true
+                        Height: =10
+                        Live: =Live.Assertive
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =Parent.Error
+                        Visible: =Parent.DisplayMode=DisplayMode.Edit
+                        Width: =Parent.Width - 60
+                        X: =30
+                        Y: =DataCardValue19.Y + DataCardValue19.Height
+                        ZIndex: =3
+
+                    StarVisible16 As label:
+                        Align: =Align.Center
+                        Height: =DataCardKey19.Height
+                        Text: ="*"
+                        Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                        Width: =30
+                        Wrap: =false
+                        Y: =DataCardKey19.Y
+                        ZIndex: =4
+
+            CancelBTN_17 As Button:
+                Alignment: ="center"
+                BorderRadius: =0
+                BorderStyle: =""
+                BorderThickness: =0
+                ButtonType: ='Button.ButtonType'.Standard
+                DisplayMode: =DisplayMode.Edit
+                FillColor: =RGBA(204, 204, 204, 1)
+                FontWeight: =FontWeight.Bold
+                Height: =32
+                HideFromAssistiveTechnologies: =false
+                HoverFillColor: =RGBA(204, 204, 204, 1)
+                Italic: =false
+                OnSelect: |-
+                    =UpdateContext({showCustomerAssetMenu1:false})
+                PaddingBottom: =0
+                PaddingTop: =0
+                Strikethrough: =false
+                Text: ="Cancel"
+                TextColor: =RGBA(0, 0, 0, 1)
+                Underline: =false
+                VerticalAlignment: ="middle"
+                Width: =96
+                X: =688
+                Y: =473
+                ZIndex: =9
+
+            Label9 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =189
+                Size: =25
+                Text: ="No Customer Assets Found"
+                Visible: =If(CountRows(galItems_7.AllItems)>0, false, true)
+                Width: =634
+                X: =199
+                Y: =172
+                ZIndex: =10
+
+    btnSave_2 As button:
+        BorderColor: =Self.Fill
+        BorderThickness: =1
+        Fill: =LookUp(colColorScheme,Name="bg_HeaderNew",color)
+        Height: =38
+        HoverColor: =Self.Color
+        HoverFill: =ColorFade(Self.Fill, -20%)
+        OnSelect: |-
+            = SubmitForm(Form3_2); SubmitForm(Form3_3); Notify( "Successfully saved data", NotificationType.Success);
+            
+             ////
+            
+             ///ForAll(galItems_6.AllItems, Patch(items, Defaults(items), {item: {Item:"", ExpectedQuantity:"", DeliveredQuantity:""}}));
+            
+            //Set(jsonItems, JSON(items, JSONFormat.IgnoreBinaryData));
+        PressedColor: =Self.Color
+        PressedFill: =Self.Fill
+        RadiusBottomLeft: =5
+        RadiusBottomRight: =5
+        RadiusTopLeft: =5
+        RadiusTopRight: =5
+        Size: =11
+        Text: ="UPDATE ORDER"
+        Visible: =If(quoteType = "QOrders",If(showCustomerAssetMenu1 Or showCustomerAssetMenu = true, false, true),false)
+        Width: =288
+        X: =1036
+        Y: =699
+        ZIndex: =15
+
+    VacantPlotsBTN_3 As button:
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =0.5
+        Fill: =LookUp(colColorScheme,Name="btn_Selected",Colour)
+        HoverBorderColor: =ColorFade(Self.Fill, 20%)
+        HoverFill: =ColorFade(Self.Fill, 20%)
+        OnSelect: |-
+            =SubmitForm(Form3_2); 
+            
+            Patch('Order Product Lines', LookUp('Order Product Lines', 'Order Line Number'=Form3_2.LastSubmit.'Order Line Number'),{JobCompleted: true});
+            
+            Notify( "Successfully saved data", NotificationType.Success);
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =13
+        Text: ="Archive"
+        Visible: =If(showCustomerAssetMenu1 Or showCustomerAssetMenu = true, false, true)
+        Width: =196
+        X: =973
+        Y: =195
+        ZIndex: =16
+
+    Icon5 As icon.BackArrow:
+        Color: =LookUp(colColorScheme,Name="theme",color)
+        Height: =40
+        Icon: =Icon.Reload
+        OnSelect: =Refresh('Order Headers'); Refresh('Order Product Lines')
+        PaddingBottom: =3
+        PaddingLeft: =3
+        PaddingRight: =3
+        PaddingTop: =3
+        Visible: =If(showCustomerAssetMenu1 Or showCustomerAssetMenu = true, false, true)
+        Width: =40
+        X: =926
+        Y: =195
+        ZIndex: =17
+
+    btnSave_4 As button:
+        BorderColor: =Self.Fill
+        BorderThickness: =1
+        Fill: =LookUp(colColorScheme,Name="bg_HeaderNew",color)
+        Height: =45
+        HoverColor: =Self.Color
+        HoverFill: =ColorFade(Self.Fill, -20%)
+        OnSelect: |-
+            =UpdateContext({showAllCustomerAssetMenu: true})
+        PressedColor: =Self.Color
+        PressedFill: =Self.Fill
+        RadiusBottomLeft: =5
+        RadiusBottomRight: =5
+        RadiusTopLeft: =5
+        RadiusTopRight: =5
+        Size: =11
+        Text: ="UPDATE ALL "
+        Visible: =If(CountRows(Col_QuoteOrders)>1, If(showCustomerAssetMenu || showCustomerAssetMenu1 =true, false, true), false)
+        Width: =146
+        X: =480
+        Y: =235
+        ZIndex: =18
+
+    EditNameScreen_2 As groupContainer.manualLayoutContainer:
+        Height: =768
+        Visible: =showAllCustomerAssetMenu
+        Width: =1366
+        ZIndex: =19
+
+        Rectangle10_10 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.69)
+            Height: =768
+            OnSelect: |-
+                =UpdateContext({boolDelPopup:false})
+            Width: =1366
+            ZIndex: =1
+
+        ConfirmDeleteConatiner_10 As groupContainer.manualLayoutContainer:
+            BorderColor: =RGBA(246, 88, 16, 1)
+            BorderThickness: =4
+            Fill: =RGBA(230, 230, 230, 1)
+            Height: =515
+            Width: =897
+            X: =252
+            Y: =100
+            ZIndex: =2
+
+            Rectangle13_10 As rectangle:
+                Fill: =LookUp(colColorScheme,Name="bg_HeaderNew",color)
+                Height: =44
+                Width: =897
+                ZIndex: =1
+
+            Gallery5 As gallery.variableTemplateHeightGallery:
+                DelayItemLoading: =true
+                Height: =399
+                Items: |-
+                    =If(
+                        varPageNumber=1,
+                        FirstN(
+                            Filter(
+                                Col_QuoteOrders,
+                                And(
+                                    !IsBlank(ID),
+                                    If(
+                                        IsBlank(ComboBox1.Selected),
+                                        true,
+                                        ID = ComboBox1.Selected.ID
+                                    )
+                                )
+                            ),
+                            varPageNumber
+                        ),
+                        LastN(
+                            FirstN(
+                                Filter(
+                                    Col_QuoteOrders,
+                                    And(
+                                        !IsBlank(ID),
+                                        If(
+                                            IsBlank(ComboBox1.Selected),
+                                            true,
+                                            ID = ComboBox1.Selected.ID
+                                        )
+                                    )
+                                ),
+                                varPageNumber
+                            ),
+                            1
+                        )
+                    )
+                Layout: =Layout.Vertical
+                LoadingSpinner: =LoadingSpinner.Data
+                TemplatePadding: =4
+                TemplateSize: =395
+                Width: =856
+                X: =21
+                Y: =56
+                ZIndex: =1
+
+                ComboBox3 As combobox:
+                    BorderThickness: =0
+                    ChevronBackground: =LookUp(colColorScheme,Name="theme",color)
+                    DefaultSelectedItems: =[ThisItem.Ordered]
+                    DisplayFields: =["Value"]
+                    IsSearchable: =false
+                    Items: =Choices('Ordered (Order Product Lines)')
+                    OnSelect: =Select(Parent)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectMultiple: =false
+                    Width: =355
+                    X: =52
+                    Y: =185
+                    ZIndex: =2
+
+                ComboBox3_1 As combobox:
+                    BorderThickness: =0
+                    ChevronBackground: =LookUp(colColorScheme,Name="theme",color)
+                    DefaultSelectedItems: =[ThisItem.Completed]
+                    DisplayFields: =["Value"]
+                    IsSearchable: =false
+                    Items: =Choices('Completed (Order Product Lines)')
+                    OnSelect: =Select(Parent)
+                    SearchFields: =["Value"]
+                    SearchItems: =[]
+                    SelectMultiple: =false
+                    Width: =358
+                    X: =440
+                    Y: =185
+                    ZIndex: =3
+
+                Label10_1 As label:
+                    Color: =LookUp(colColorScheme,Name="theme",color)
+                    FontWeight: =FontWeight.Bold
+                    Height: =29
+                    OnSelect: =Select(Parent)
+                    Text: ="Completed"
+                    Width: =328
+                    X: =440
+                    Y: =156
+                    ZIndex: =4
+
+                Label10_2 As label:
+                    Color: =LookUp(colColorScheme,Name="theme",color)
+                    FontWeight: =FontWeight.Bold
+                    Height: =29
+                    OnSelect: =Select(Parent)
+                    Text: ="Ordered"
+                    Width: =328
+                    X: =52
+                    Y: =156
+                    ZIndex: =5
+
+                Label10_3 As label:
+                    Color: =LookUp(colColorScheme,Name="theme",color)
+                    FontWeight: =FontWeight.Bold
+                    Height: =29
+                    OnSelect: =Select(Parent)
+                    Text: ="Item"
+                    Width: =739
+                    X: =52
+                    Y: =61
+                    ZIndex: =7
+
+                TextInput1 As text:
+                    BorderThickness: =0
+                    Default: =ThisItem.Item
+                    Height: =ComboBox3.Height
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =743
+                    X: =52
+                    Y: =101
+                    ZIndex: =8
+
+                Label10_4 As label:
+                    Color: =LookUp(colColorScheme,Name="theme",color)
+                    FontWeight: =FontWeight.Bold
+                    OnSelect: =Select(Parent)
+                    Text: ="Expected Quantity"
+                    Width: =355
+                    X: =52
+                    Y: =236
+                    ZIndex: =9
+
+                TextInput1_1 As text:
+                    BorderThickness: =0
+                    Default: =ThisItem.ExpectedQuantity
+                    Height: =41
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =355
+                    X: =52
+                    Y: =272
+                    ZIndex: =10
+
+                Label10_5 As label:
+                    Color: =LookUp(colColorScheme,Name="theme",color)
+                    FontWeight: =FontWeight.Bold
+                    OnSelect: =Select(Parent)
+                    Text: ="Delivered Quantity"
+                    Width: =355
+                    X: =440
+                    Y: =232
+                    ZIndex: =11
+
+                TextInput1_2 As text:
+                    BorderThickness: =0
+                    Default: =ThisItem.DeliveredQuantity
+                    Height: =41
+                    RadiusBottomLeft: =0
+                    RadiusBottomRight: =0
+                    RadiusTopLeft: =0
+                    RadiusTopRight: =0
+                    Width: =355
+                    X: =440
+                    Y: =272
+                    ZIndex: =12
+
+            DeleteLabel_13 As Label:
+                Alignment: =Align.Left
+                AutoHeight: =false
+                Color: =RGBA(255, 255, 255, 1)
+                DisplayMode: =DisplayMode.Edit
+                Font: =Font.'Open Sans'
+                FontSize: =13
+                Height: =44
+                Overflow: ="Hidden"
+                PaddingBottom: =0
+                PaddingTop: =0
+                Text: ="Update Selected Items"
+                Width: =492
+                X: =13
+                Y: =0
+                ZIndex: =2
+
+            closeScreen_19 As icon.Add:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                Color: =RGBA(255, 255, 255, 1)
+                DisabledBorderColor: =RGBA(243, 242, 241, 1)
+                DisabledColor: =RGBA(220, 220, 220, 1)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                Height: =44
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(255, 0, 0, 1)
+                HoverFill: =RGBA(255, 255, 255, 1)
+                Icon: =Icon.Cancel
+                OnSelect: |-
+                    =UpdateContext({showAllCustomerAssetMenu:false})
+                PaddingBottom: =10
+                PaddingTop: =10
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedColor: =ColorFade(RGBA(98, 100, 167, 1), -30%)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                Tooltip: ="Close"
+                Width: =40
+                X: =857
+                ZIndex: =3
+
+            nxtBTN As button:
+                BorderColor: =Self.Fill
+                BorderThickness: =1
+                DisplayMode: =If(varPageNumber<CountRows(Filter(Col_QuoteOrders,!IsBlank(ID))), DisplayMode.Edit,DisplayMode.Disabled)
+                Fill: =RGBA(61, 63, 104, 1)
+                Height: =28
+                HoverColor: =Self.Color
+                HoverFill: =ColorFade(Self.Fill, -20%)
+                OnSelect: |-
+                    =UpdateContext({varPageNumber: varPageNumber + 1}); 
+                PressedColor: =Self.Color
+                PressedFill: =Self.Fill
+                RadiusBottomLeft: =5
+                RadiusBottomRight: =5
+                RadiusTopLeft: =5
+                RadiusTopRight: =5
+                Size: =11
+                Text: ="NEXT"
+                Width: =150
+                X: =555
+                Y: =469
+                ZIndex: =7
+
+            prevBTN As button:
+                BorderColor: =Self.Fill
+                BorderThickness: =1
+                DisplayMode: =If(varPageNumber <= 1, DisplayMode.Disabled, DisplayMode.Edit)
+                Fill: =RGBA(232, 163, 2, 1)
+                Height: =28
+                HoverColor: =Self.Color
+                HoverFill: =ColorFade(Self.Fill, -20%)
+                OnSelect: |-
+                    =UpdateContext({varPageNumber: varPageNumber - 1}); 
+                PressedColor: =Self.Color
+                PressedFill: =Self.Fill
+                RadiusBottomLeft: =5
+                RadiusBottomRight: =5
+                RadiusTopLeft: =5
+                RadiusTopRight: =5
+                Size: =11
+                Text: ="PREVIOUS"
+                Width: =150
+                X: =64
+                Y: =469
+                ZIndex: =8
+
+            pgTXT As label:
+                Align: =Align.Center
+                Color: =LookUp(colColorScheme,Name="font_Title",color)
+                FontWeight: =FontWeight.Bold
+                Height: =24
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =11
+                Text: =varPageNumber & " of " & RoundUp(CountRows(Filter(Col_QuoteOrders,!IsBlank(ID))),0)
+                Width: =177
+                Wrap: =false
+                X: =378
+                Y: =473
+                ZIndex: =9
+
+            "ComboBox1 As 'Combo box'.pcfdataset":
+                AllowSearching: =false
+                CheckedHoverOptionBackgroundFill: =LookUp(colColorScheme,Name="theme",color)
+                CheckedOptionBackgroundFill: =
+                ChevronColor: =LookUp(colColorScheme,Name="theme",color)
+                Color: =
+                DefaultSelectedItems: =
+                DisplayMode: =DisplayMode.Edit
+                Height: =28
+                Items: |
+                    =Col_QuoteOrders
+                OnChange: |
+                    =UpdateContext({varSelectedIndex: CountRows(Filter(Col_QuoteOrders, !IsBlank(ID) && Value(ID) <= Value(SelectedIDLabel.Text)))});
+                    UpdateContext({varPageNumber: If(varSelectedIndex > 0, varSelectedIndex, varPageNumber)});
+                OnSelect: =
+                Visible: =true
+                Width: =150
+                X: =228
+                Y: =469
+                ZIndex: =10
+
+                cr666_assets_LU1 As pcfDataField.textualColumn:
+                    FieldDisplayName: ="item"
+                    FieldName: ="item"
+                    FieldType: ="E"
+                    FieldVariantName: ="textualColumn"
+                    Order: =1
+                    ZIndex: =48
+
+            nxtBTN_1 As button:
+                BorderColor: =Self.Fill
+                BorderThickness: =1
+                Fill: =LookUp(colColorScheme,Name="bg_HeaderNew",color)
+                Height: =28
+                HoverColor: =Self.Color
+                HoverFill: =ColorFade(Self.Fill, -20%)
+                OnSelect: |-
+                    =ForAll(Gallery5.AllItems As Rec,
+                    Patch(
+                        'Order Product Lines',
+                        First(Filter('Order Product Lines', 'Order Product Line' = Rec.GUID)),
+                        {
+                            Ordered: ComboBox3.Selected.Value,
+                            Completed: ComboBox3_1.Selected.Value,
+                            'Expected Quantity': Int(TextInput1_1.Text),
+                            Quantity: Int(TextInput1_2.Text),
+                            report: If(ComboBox3.Selected.Value=true, true, Blank()),
+                            report2: If(ComboBox3_1.Selected.Value=true, true, Blank())
+                        }
+                    ));
+                    SubmitForm(Form3_3);
+                     Notify( "Successfully saved data", NotificationType.Success);
+                PressedColor: =Self.Color
+                PressedFill: =Self.Fill
+                RadiusBottomLeft: =5
+                RadiusBottomRight: =5
+                RadiusTopLeft: =5
+                RadiusTopRight: =5
+                Size: =11
+                Text: ="SAVE"
+                Width: =150
+                X: =727
+                Y: =469
+                ZIndex: =11
+
+        SelectedIDLabel As Label:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |
+                =If(IsBlank(ComboBox1.Selected), "", ComboBox1.Selected.ID)
+            Visible: =false
+            Width: =320
+            X: =504
+            Y: =28
+            ZIndex: =3
+
+    VacantPlotsBTN_10 As button:
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =0.5
+        Fill: =LookUp(colColorScheme,Name="btn_Selected",Colour)
+        HoverBorderColor: =ColorFade(Self.Fill, 20%)
+        HoverFill: =ColorFade(Self.Fill, 20%)
+        OnSelect: |-
+            =SubmitForm(Form3_2); 
+            
+            Patch('Order Product Lines', LookUp('Order Product Lines', 'Order Line Number'=Form3_2.LastSubmit.'Order Line Number'),{IsImportant: true});
+            
+            Notify( "Successfully updated data", NotificationType.Success);
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =13
+        Text: ="Mark as Important"
+        Visible: =If(showCustomerAssetMenu1 Or showCustomerAssetMenu = true, false, true)
+        Width: =183
+        X: =1169
+        Y: =195
+        ZIndex: =20
+
+    Settings_11 As Settings:
+        Visible: =showMenu
+        X: =1254
+        Y: =60
+        ZIndex: =21
+

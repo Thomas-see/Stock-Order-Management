@@ -1,0 +1,304 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crmd_recurringitems",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crmd_recurringitem",
+    "MaxGetRowsCount": 2000,
+    "Name": "Recurring Items",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr881_approvalstatus": "approvalstatus",
+      "cr881_id": "ID",
+      "cr881_licencestatustype": "Licence Status Type",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "crmd_1stdayofstartdatemonth": "1st Day of Start Date Month",
+      "crmd_accountid": "Account",
+      "crmd_addmonths": "Add Months",
+      "crmd_adjustedamount": "Adjusted Amount",
+      "crmd_adjustedcost": "Adjusted Cost",
+      "crmd_amount": "Amount",
+      "crmd_amount_base": "Amount (Base)",
+      "crmd_amountfornextinvoice": "Amount for next Invoice",
+      "crmd_amountfornextinvoice_base": "Amount for next Invoice (Base)",
+      "crmd_billingpercentage": "Invoice Percentage",
+      "crmd_billingperiodend": "Invoice Period End",
+      "crmd_billingperiodstart": "Invoice Period Start",
+      "crmd_billto": "Invoice To",
+      "crmd_cancellableuntil": "Cancellable until",
+      "crmd_chargingapproach": "Charging Approach",
+      "crmd_contactid": "Contact",
+      "crmd_contractend": "Contract End",
+      "crmd_contractstart": "Contract Start",
+      "crmd_costprice": "Cost Price",
+      "crmd_crmd_recurringitem_crmd_qe_orderdetail_Recurringlookup": "Order Product Lines",
+      "crmd_crmd_recurringitem_crmd_recurringitem_parentid": "Recurring Items",
+      "crmd_customerreference": "Customer Reference",
+      "crmd_dateexpired": "Date Expired",
+      "crmd_daysinbillingperiod": "Days in Invoice Period",
+      "crmd_daysinfirstmonth": "Days in First Month",
+      "crmd_daysinlicenseperiod": "Days in License Period",
+      "crmd_descriptionfull": "Description Full",
+      "crmd_discountamount": "Discount",
+      "crmd_discountamount_base": "Discount (Base)",
+      "crmd_enddate": "End Date",
+      "crmd_extendedamount": "Extended Amount",
+      "crmd_extendedamount_base": "Extended Amount (Base)",
+      "crmd_initialsalesprice": "Initial Sales Price",
+      "crmd_initialsalesprice_base": "Initial Sales Price (Base)",
+      "crmd_invoiceid": "Invoice",
+      "crmd_lastdaystartdatemonth": "Last Day Start Date Month",
+      "crmd_linkdontlinkcode": "Link / Don't Link",
+      "crmd_name": "Description",
+      "crmd_nextbillingdate": "Next Invoice Date",
+      "crmd_NominalCodeXero": "Nominal Code Xero",
+      "crmd_numberofpayments": "Number of Payments",
+      "crmd_orderid": "Order",
+      "crmd_orderproductlineid": "Order Product Line",
+      "crmd_parentitemid": "Parent Item",
+      "crmd_productclassification": "Product Classification",
+      "crmd_productserviceid": "Product / Service",
+      "crmd_quantity": "Quantity",
+      "crmd_recurringitem_AsyncOperations": "System Jobs",
+      "crmd_recurringitem_BulkDeleteFailures": "Bulk Delete Failures",
+      "crmd_recurringitem_DuplicateBaseRecord": "Duplicate Records (crmd_recurringitem_DuplicateBaseRecord)",
+      "crmd_recurringitem_DuplicateMatchingRecord": "Duplicate Records (crmd_recurringitem_DuplicateMatchingRecord)",
+      "crmd_recurringitem_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crmd_recurringitem_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crmd_recurringitem_ProcessSession": "Process Sessions",
+      "crmd_recurringitem_SyncErrors": "Sync Errors",
+      "crmd_recurringitemid": "Recurring Item",
+      "crmd_relatedquantity": "Related Quantity",
+      "crmd_relatedquantity_date": "Related Quantity (Last Updated On)",
+      "crmd_relatedquantity_state": "Related Quantity (State)",
+      "crmd_renewalnotificationdate": "Renewal Notification Date",
+      "crmd_renewalstatus": "Renewal Status",
+      "crmd_setfirstinvoicedates": "Set First Invoice Dates",
+      "crmd_shipto": "Deliver To",
+      "crmd_startdate": "Start Date",
+      "crmd_supplierid": "Supplier",
+      "crmd_suppliertotalcost": "Supplier Total Cost",
+      "crmd_termmonths": "Term (Months)",
+      "crmd_totalquantity": "Total Quantity",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "processid": "Process Id",
+      "stageid": "Stage Id",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "traversedpath": "Traversed Path",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Recurring Items",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Recurring Items (Views)",
+    "Name": "_crmd_recurringitem_views",
+    "RelatedEntityName": "Recurring Items",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0344b453-50a1-ed11-aad1-6045bd0e77e4": "Recurring Items - Due for Renewal in next 6 months",
+      "08aead96-48bd-eb11-bacc-000d3ad6acc6": "Draft Recurring items to Process",
+      "133e4a70-b2a7-ed11-aad1-002248425b83": "Recurring items - Contract End Expired",
+      "152f80c3-6175-45f9-ad59-b49e9f33d55f": "Recurring Item Advanced Find View",
+      "2510fd59-9273-4dd4-b5a5-0bb5823cb6cf": "Recurring Item Lookup View",
+      "327e87d1-bfb6-ed11-b596-002248079224": "* New in last 10 days: Invoice from Recurring",
+      "39167f5a-afe5-4172-a51d-36acaac65341": "Recurring Items",
+      "4ae4c24d-7a5a-eb11-a812-00224840f53c": "* Recurring Items - Due This Month",
+      "5f7e2de3-bba7-ed11-aad1-002248425b83": "Recurring Items - Due Next 90 Days",
+      "7520119c-7a5a-eb11-a812-00224840f53c": "* Recurring Items - Due Next Month",
+      "88b2c05f-e36d-ea11-844b-00155d019801": "Expired Recurring Items",
+      "97f316fb-b1a7-ed11-aad1-002248425b83": "Recurring items - Contract End <90 days",
+      "a92d232d-bfb6-ed11-b596-002248079224": "* New: First Invoice sent from Order",
+      "aeab3d43-610c-4a13-8310-cfb29fb7ebed": "Inactive Recurring Items",
+      "dd9227e2-1af4-4596-a1dd-18ce2cbf3ec5": "Recurring Item Associated View",
+      "e701822d-56a1-ed11-aad1-6045bd0e77e4": "Recurring Items - Renewal Opportunity Created"
+    }
+  },
+  {
+    "DisplayName": "approvalstat",
+    "Name": "cr881_approvalstat",
+    "OptionSetInfoNameMapping": {
+      "283530000": "Approved",
+      "283530001": "Rejected",
+      "283530002": "Pending"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr881_approvalstatus",
+        "OptionSetReferenceEntityName": "Recurring Items"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr881_approvalstatus",
+    "RelatedEntityName": "Recurring Items",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "statuslicencetype",
+    "Name": "cr881_statuslicencetype",
+    "OptionSetInfoNameMapping": {
+      "283530000": "Requested",
+      "283530001": "Purchased",
+      "283530002": "Completed"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr881_licencestatustype",
+        "OptionSetReferenceEntityName": "Recurring Items"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr881_licencestatustype",
+    "RelatedEntityName": "Recurring Items",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Link / Don't Link",
+    "Name": "crmd_linkdontlinkcode",
+    "OptionSetInfoNameMapping": {
+      "100000000": "Link",
+      "100000001": "Don't Link"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_linkdontlinkcode",
+        "OptionSetReferenceEntityName": "Recurring Items"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmd_linkdontlinkcode",
+    "RelatedEntityName": "Recurring Items",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Charging Approach (Recurring Items)",
+    "Name": "crmd_recurringitem_crmd_chargingapproach",
+    "OptionSetInfoNameMapping": {
+      "100000000": "Original Price",
+      "100000001": "Current Price",
+      "100000002": "Agreed Uplift % / Original Price"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_chargingapproach",
+        "OptionSetReferenceEntityName": "Recurring Items"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmd_chargingapproach",
+    "RelatedEntityName": "Recurring Items",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Renewal Status (Recurring Items)",
+    "Name": "crmd_recurringitem_crmd_renewalstatus",
+    "OptionSetInfoNameMapping": {
+      "100000000": "Due for Renewal",
+      "100000001": "Opportunity Created",
+      "100000002": "Quoted",
+      "100000003": "Quote Won",
+      "100000004": "Lost"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_renewalstatus",
+        "OptionSetReferenceEntityName": "Recurring Items"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmd_renewalstatus",
+    "RelatedEntityName": "Recurring Items",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Set First Invoice Dates (Recurring Items)",
+    "Name": "crmd_recurringitem_crmd_setfirstinvoicedates",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_setfirstinvoicedates",
+        "OptionSetReferenceEntityName": "Recurring Items"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_setfirstinvoicedates",
+    "RelatedEntityName": "Recurring Items",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Recurring Items)",
+    "Name": "crmd_recurringitem_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Recurring Items"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Recurring Items",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Recurring Items)",
+    "Name": "crmd_recurringitem_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Activated",
+      "100000000": "Expired",
+      "100000001": "Draft",
+      "100000002": "Invoiced",
+      "100000003": "Draft after first Invoice",
+      "2": "Cancelled"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Recurring Items"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Recurring Items",
+    "Type": "OptionSetInfo"
+  }
+]

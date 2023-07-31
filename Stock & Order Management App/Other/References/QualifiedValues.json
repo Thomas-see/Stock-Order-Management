@@ -1,0 +1,411 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_crmdqe_quoteproductline_forms",
+      "Namespace": "Quote Product Lines (Forms)",
+      "Values": {
+        " Order Management": "0f8cac93-4266-eb11-a812-00224840452c",
+        "Information": "41c53193-920d-4961-aae5-dc854aaea662"
+      }
+    },
+    {
+      "Kind": "default.cds_opportunity_forms",
+      "Namespace": "Opportunities (Forms)",
+      "Values": {
+        "AI for Sales": "595978a6-704c-4aec-aab8-34f3927c1cda",
+        "Field Service Information": "8335a04b-dc80-44b0-83ab-11ed80f93d3e",
+        "Follow up with Opportunity": "a769690f-c29a-4495-8f06-1349f81de627",
+        "In Context Form": "ba7f7ad7-e0e7-43aa-be19-5069dd9c60eb",
+        "Information": "a2a56263-ec37-4991-a3b0-e7b37a71d818",
+        "Opportunities Dashboard": "f7e6d29b-1e3e-e711-80e1-00155d871bb4",
+        "Opportunity": "a837e4a7-01b8-4f82-a475-be9abd67e667",
+        "Opportunity Quote Engine": "168f7117-96bf-4077-9cf8-d95545cd09e8",
+        "Project Information": "2e5bb425-abef-4661-9ed7-df5cb28f2ed4",
+        "Quick Opportunity View Form": "24b5ce86-1811-44c3-b1ad-90f7ea02d2d7",
+        "Sales Professional": "757dfd61-134c-4882-b260-f48352ea3ece"
+      }
+    },
+    {
+      "Kind": "default.cds_crmdqe_productsservices_forms",
+      "Namespace": "Products & Services (Forms)",
+      "Values": {
+        " Purchase Order View Form": "9fd640b2-3083-eb11-a812-000d3ad48ea1",
+        "CPQ": "58460730-f57b-4fee-936f-aef64536fa5d",
+        "Information": "416a7448-eb4b-4c07-84d2-98eb6a768db5",
+        "Product Family": "e5d9d630-39be-4482-b048-34fa3bea431a",
+        "Product/Services Associations Quick View": "9fbe7de8-08fa-41db-81d9-da6330fe2e01",
+        "Recurring Quick View": "56ee1778-2857-4672-a9a1-5432964ceb3d",
+        "Stock Management": "1b347d0d-592a-eb11-a813-000d3ad50753"
+      }
+    },
+    {
+      "Kind": "default.cds_account_forms",
+      "Namespace": "Accounts (Forms)",
+      "Values": {
+        "Account": "8448b78f-8f42-454e-8e2a-f8196b0419af",
+        "Account - Mobile": "74da4947-5d1d-4400-9f99-c6ed578211bb",
+        "Account - Recurring Items quick view": "18eb3058-59a1-ed11-aad1-6045bd0e77e4",
+        "account card": "b028db32-3619-48a5-ac51-cf3f947b0ef3",
+        "Account Card form": "cccff382-2b92-467e-bf1b-3db179512af8",
+        "Account for Interactive experience": "a72c7955-442b-4ea4-9499-b10cd18b4256",
+        "Account for Multisession experience": "ff49442f-8c60-4877-bdae-8fe51e6f4636",
+        "Account form for Conversation Customer Card": "944bd820-76a0-ed11-aad1-6045bd00698c",
+        "Account form for Customer Card": "f5f9a07e-0f28-ed11-9db1-000d3a8d107a",
+        "Account Hierarchy Tile Form": "69cff312-cfb6-4289-9631-249ab85d2c62",
+        "Account Main - CS": "5cbdb034-141b-444a-9390-0ae80e4510ff",
+        "Account Quick Create": "c9e7ec2d-efca-4e4c-b3e3-f63c4bba5e4b",
+        "Account Quick Create - Field Service": "e40cb98a-e5a5-4d22-93fd-7d1f0c0cf060",
+        "Account Reference Panel": "098ae145-1567-41ec-8398-86dbaac70c9b",
+        "Account Summary Card": "894155a3-95d5-4881-b9c3-04444cef1bcc",
+        "Accounts Dashboard": "15915835-b87c-49ec-9ffc-bfac3ac44ef1",
+        "App for Outlook Account Card": "fb65cc73-181c-468b-9bb3-82ecde306991",
+        "App for Outlook Account Quick View": "76b81f10-2a08-4f1a-9454-ee38bea94eb5",
+        "Cases For Customer": "48028ae0-bf87-48c9-adf6-3dc9f29d7661",
+        "Cloudy Account": "1e00661a-e1e9-4eab-9190-22d207e43d7b",
+        "Customer profile": "e9a9c8a9-e94d-47a9-a6c3-ec37ddb83b99",
+        "Customer profile cases": "67e6801d-f669-ed11-9561-000d3a36d4e2",
+        "In Context Form": "face3aa6-99c4-4b7e-af07-55f121cdca86",
+        "Information": "b053a39a-041a-4356-acef-ddf00182762b",
+        "Insights": "1885aec5-9005-417a-a15c-cee2d4ca5752",
+        "Portal Account": "f145c04d-9c36-417e-a9f8-5d61e0b09980",
+        "Portal Account for Interactive experience": "9a2f8b85-425c-469c-9af7-843adea62aa9",
+        "Recent Cases - CS": "2d66a7f8-96dd-4c73-97ab-d1c12847d7ce",
+        "Recent Cases and Entitlements": "43300723-f867-420b-ab28-976a4d12e6c4",
+        "Sales Insights": "cb430327-bcc1-416d-959d-db7592e685af",
+        "Sales Professional": "524e6e7f-0256-4cff-a836-740e10dffc7d",
+        "Social Profiles": "2205c86d-ed88-4a2f-a447-3b86a8781f2e",
+        "TimelineWallControl - Account- Main": "6df8e8ce-7655-468c-925e-660d59aa7f4c",
+        "Xero": "4753551d-1ad8-ec11-a7b5-0022481a4556"
+      }
+    },
+    {
+      "Kind": "default.cds_contact_forms",
+      "Namespace": "Contacts (Forms)",
+      "Values": {
+        "account contact card": "29de27bc-a257-4f29-99cf-bab4a84e688f",
+        "Account quick view form": "3ace4e34-9f50-4e73-ae49-b595d6b48fa4",
+        "App for Outlook Contact Card": "cdbb9298-3b2e-41f3-8f4a-0168d6b09fc4",
+        "App for Outlook Contact Quick View": "3d22ab88-96c8-4b3f-a533-d4827e2925c9",
+        "Cases for Customer": "5194a156-576a-4fa1-bf1a-abf7a41b0e8c",
+        "ChangePassword": "01707dcb-aeca-4b87-a9e4-a5b199a54ece",
+        "Cloudy Contact": "1fed44d1-ae68-4a41-bd2b-f13acac4acfa",
+        "Contact - Decision Makers": "73191a91-f69e-4bd9-a788-6b8da23ab8e2",
+        "Contact - Mobile": "28b5b9b6-dfa2-45d6-8a81-3f6ba02a098a",
+        "contact card": "707fc57b-c5e6-471b-a180-e37ed28a38e2",
+        "Contact Card form": "bc0f68dd-a4b1-4a8f-bed3-c8f5db2f89cf",
+        "Contact company view": "5efdc20d-5ae6-47d2-b4ed-8a929d089d7a",
+        "Contact for Interactive experience": "cc760212-3eab-4009-b5c3-ea9cf6f3e141",
+        "Contact for Multisession experience": "e06af4d1-2812-45c7-a9c2-9fb73fee7bec",
+        "Contact form for Conversation Customer card": "5aab71db-78a0-ed11-aad1-6045bd00698c",
+        "Contact form for Customer Card": "edfc131b-8d2d-ed11-9db2-002248285e57",
+        "Contact Main - CS": "5e5c217e-0731-4b0e-8dd0-89bb98eda36f",
+        "Contact Quick Create": "661157fe-2fc9-4eaa-835f-5bfa2f7b64f7",
+        "Contact Quick Create - Field Service": "477d15ad-60b2-4d8e-9508-b3d2b87c9868",
+        "Contact Quick Form": "bdb0ae1c-32fa-4374-b637-8dafe107bc44",
+        "Contact quick view form on event team member": "5d904496-1ba1-4724-a582-f46732305a7f",
+        "Contact Reference Panel": "d880c3cf-80e2-42f3-82f9-24d040d09f17",
+        "Contact Simple Form - CS": "13207dcf-6d4e-41a9-a8be-812675847a2f",
+        "Contacts Dashboard": "70ad8b15-e3f3-4d7d-9e4b-16cb4e51b484",
+        "Customer profile": "05ea391a-d034-43fe-849b-b4fa3213a2b2",
+        "Customer profile cases": "c621206a-f769-ed11-9561-000d3a36d4e2",
+        "In Context Form": "4c9c89b9-f909-4b34-8f63-b87d7ff2f0c4",
+        "Information": "894cc46a-b0cb-4ab0-8bf6-200544e46a2d",
+        "Insights": "7b78aae4-7945-4515-848b-1f86535846d6",
+        "Invite Web Form": "d6190b35-9474-4098-9698-33f6627eb3bf",
+        "KTTK Quick View": "57e145ef-a23c-4020-a622-65a5fdab4c8b",
+        "Live Persona Card Form": "449faa0e-f471-48ec-87d0-4719909546d2",
+        "New Form": "94cbaeea-c3fe-43b5-ac8c-e3b2f9dbe3bb",
+        "Portal Contact": "3fb651a5-cdbf-46c9-87fb-d2c748662bb8",
+        "Portal Contact for Interactive experience": "49d062e4-d892-4baa-af50-6387989ac638",
+        "Profile web form": "0bd832d5-9d6a-456d-bdc1-21129e82cc0f",
+        "Profile Web Form - Japanese": "36cc830c-eeab-4a89-a7c9-da2ac6c451a1",
+        "Recent Cases - CS": "5a851f9a-8513-42b1-863e-6bd306bd1369",
+        "Recent Cases and Entitlements": "f3b707fb-3b5f-45f9-9c6b-5e573bb5d19e",
+        "Sales Insights": "293c878f-f068-40a0-ae48-4297e060871c",
+        "Sales Professional": "27e18734-9b62-416b-9b76-a858dde457c4",
+        "Social Profiles": "7bb87dfd-ec3e-4ed9-8e3e-5725d3067295",
+        "TimelineWallControl - Contact - Main": "986258b5-2985-4ae0-970a-5e1d108ab793",
+        "Update Contact": "26843818-6508-4afe-9342-5fae2ebf15ca"
+      }
+    },
+    {
+      "Kind": "default.cds_crmdqe_quoteheader_forms",
+      "Namespace": "Quote Headers (Forms)",
+      "Values": {
+        "Information": "bd7b9258-1f05-4c57-bb1b-752d9804f51e",
+        "Order Management": "737fabdf-6e53-4240-9f6b-3defe2a8bde2",
+        "Order View Form": "161a775e-d8cc-4280-b484-e7af4b3a264c",
+        "Revision Hierarchy View": "7c119d3a-d230-4423-a47a-f8bf0574b2bc"
+      }
+    },
+    {
+      "Kind": "default.cds_crmd_qe_order_forms",
+      "Namespace": "Order Headers (Forms)",
+      "Values": {
+        "Information": "3497a85b-8f15-4e7d-aa06-b9396658843a",
+        "Quick View Form (Milestone Payments)": "0bf11054-a9d0-4ca9-9019-07ea47376a84",
+        "Stock Management": "539bc405-ef57-447e-bf2a-8db93364b432"
+      }
+    },
+    {
+      "Kind": "default.cds_systemuser_forms",
+      "Namespace": "Users (Forms)",
+      "Values": {
+        "Application User": "d26924ef-4d80-46f7-ab1d-e6ae80a54ce8",
+        "Information": "094fb08a-77bb-49e0-b7ea-8dbddfd01294",
+        "User": "c2cd9e55-d4b4-4b55-9951-16ead79643e5",
+        "User - CS": "90b6659e-8dc8-ea11-a812-000d3a2c81cd",
+        "User form – Business": "c2413504-7eb2-4c59-a087-95d819866114",
+        "User Hierarchy Tile Form": "c68d6c09-d7a7-4959-8d0f-44b8cff9b452",
+        "User Information Form": "20bc9121-0a7c-46b6-9c11-5db245e8214d"
+      }
+    },
+    {
+      "Kind": "default.cds_crmd_invoiceproduct_forms",
+      "Namespace": "Invoice Products (Forms)",
+      "Values": {
+        "Information": "ee83ea1b-a79e-4fea-8fc2-78808e8df219"
+      }
+    },
+    {
+      "Kind": "default.cds_invoice_forms",
+      "Namespace": "Invoices (Forms)",
+      "Values": {
+        "Field Service Information": "e42e464f-c249-4005-896e-cdee472d7e1e",
+        "Information": "fc4d659c-b2e6-491d-8823-bf5fb57eb739",
+        "Invoice": "ddc30f29-e6e2-463f-9e37-163b4014b27e",
+        "Invoice Quick View Form": "74f580bd-2011-4244-96c2-eb15ea46e22f",
+        "Invoices Dashboard": "a2436a11-ef49-e711-80e1-00155d342d09",
+        "Order Management - Information": "ec0fa5cb-92c9-4b0c-9759-412b802ffea0",
+        "Project Invoice": "a0445736-61ca-495d-8e03-855be3a56eff",
+        "Quick View Form (Milestone Payments)": "a43a70d9-1707-432a-82b7-c4fa68154420",
+        "Xero": "c5fc7359-56a2-4a66-8d67-bb474d27e198"
+      }
+    },
+    {
+      "Kind": "default.cds_crmd_address_forms",
+      "Namespace": "Addresses (Forms)",
+      "Values": {
+        "Information": "388bb545-e1e8-440d-a9df-cb0ec46d4034",
+        "Quick view Composite Address only": "b902cda1-9aa3-4012-9490-0c778907d64c"
+      }
+    },
+    {
+      "Kind": "default.cds_crmd_qe_orderdetail_forms",
+      "Namespace": "Order Product Lines (Forms)",
+      "Values": {
+        "Information": "1b95a63c-91b1-4377-b3c4-9360de7db8e1"
+      }
+    },
+    {
+      "Kind": "default.cds_new_bpf_f21df00f99f343dfb1042a99fa221f63_forms",
+      "Namespace": "Quote Header (CRMD) (Forms)",
+      "Values": {
+        "Information": "ffb8506d-4b77-49f0-b992-1d4141f5f29c"
+      }
+    },
+    {
+      "Kind": "default.cds_new_bpf_c5a6f361b3b740d9bcabc6ad9094394a_forms",
+      "Namespace": "Opportunity Sales Process - Cloudy (CRMD update) (Forms)",
+      "Values": {
+        "Information": "be3310ef-cfe0-4562-bc19-7b931393a912"
+      }
+    },
+    {
+      "Kind": "default.cds_cr881_cloudy_tb_emaillist_forms",
+      "Namespace": "Cloudy_tb_EmailLists (Forms)",
+      "Values": {
+        "Information": "ff294429-f6b2-47d2-8757-e99c3dc831bf"
+      }
+    },
+    {
+      "Kind": "default.cds_crmd_customerasset_forms",
+      "Namespace": "Customer Assets (Forms)",
+      "Values": {
+        " Stock Management": "8c2df17c-3b2e-eb11-a813-000d3a0ba026",
+        "Information": "fd4017ae-8b4d-4b98-8020-94fc8abf4c45"
+      }
+    },
+    {
+      "Kind": "default.cds_crmd_bombuild_forms",
+      "Namespace": "BOM Builds (Forms)",
+      "Values": {
+        "Information": "e0d2f9af-c994-4ef4-93d2-be9a5061dc36"
+      }
+    },
+    {
+      "Kind": "default.cds_crmd_productlocation_forms",
+      "Namespace": "Product Locations (Forms)",
+      "Values": {
+        "Information": "de89de2b-0efa-420e-97be-c9f27c344978"
+      }
+    },
+    {
+      "Kind": "default.cds_crmd_deliverynoteline_forms",
+      "Namespace": "Delivery Note Lines (Forms)",
+      "Values": {
+        "Information": "c9520442-4e30-4a3f-b505-d452febc0633"
+      }
+    },
+    {
+      "Kind": "default.cds_crmd_deliverynote_forms",
+      "Namespace": "Delivery Notes (Forms)",
+      "Values": {
+        "Information": "6d57fb9b-a2df-494f-bf45-e5edc9ffa1d3"
+      }
+    },
+    {
+      "Kind": "default.cds_crmd_recurringitem_forms",
+      "Namespace": "Recurring Items (Forms)",
+      "Values": {
+        "Information": "cf511b2e-527a-4404-836d-b6bf14edbada"
+      }
+    },
+    {
+      "Kind": "default.cds_cr881_stock_tb_stockordermanagement_forms",
+      "Namespace": "Stock_tb_Stock&OrderManagements (Forms)",
+      "Values": {
+        "Information": "a40974c9-f160-4430-9a53-d0f134b2393e"
+      }
+    },
+    {
+      "Kind": "default.cds_crmd_xero_nominalcode_forms",
+      "Namespace": "Nominal Codes (Xero) (Forms)",
+      "Values": {
+        "Information": "8b240f12-fa8f-4c47-b19c-dc48b5bb979e"
+      }
+    },
+    {
+      "Kind": "default.cds_cr881_licence_tb_stockordermanagement_forms",
+      "Namespace": "licence_tb_stock&ordermanagements (Forms)",
+      "Values": {
+        "Information": "49934e57-998f-4f2a-8993-e4b2b9b4ce9f"
+      }
+    },
+    {
+      "Kind": "default.cds_cr881_internal_supplier_forms",
+      "Namespace": "Internal_Suppliers (Forms)",
+      "Values": {}
+    },
+    {
+      "Kind": "default.cds_cr881_internal_orders_forms",
+      "Namespace": "Internal_Orders (Forms)",
+      "Values": {}
+    },
+    {
+      "Kind": "default.cds_cr881_internal_stock_forms",
+      "Namespace": "Internal_Stocks (Forms)",
+      "Values": {}
+    },
+    {
+      "Kind": "default.cds_cr881_internal_settings_forms",
+      "Namespace": "Internal_Settings (Forms)",
+      "Values": {}
+    },
+    {
+      "Kind": "default.cds_cr881_internal_lineitems_forms",
+      "Namespace": "Internal_LineItems (Forms)",
+      "Values": {}
+    },
+    {
+      "Kind": "default.cds_quote_forms",
+      "Namespace": "Quotes (Forms)",
+      "Values": {
+        "Field Service Information": "b3fa6477-581b-411f-a725-0ab32d8edb8f",
+        "Information": "a7152a8b-afbf-44f0-99c7-fa9e44dd73f5",
+        "Project Information": "5fe63868-1c0a-475c-a763-2efb1037174d",
+        "Project Quote Information": "3f75bbcd-3bff-4a46-bd6d-16ce37b04a25",
+        "Quote": "54076a2d-d043-4a1b-b061-4d06846371a9",
+        "Quote View Form": "1e70456a-ccfa-4a29-9e78-0d71724b3377",
+        "Quotes Dashboard": "db86e637-863c-e711-80e0-00155d871bb4"
+      }
+    },
+    {
+      "Kind": "default.cds_quotedetail_forms",
+      "Namespace": "Quote Lines (Forms)",
+      "Values": {
+        "Field Service Information": "6e8748df-74c2-4f6b-b098-32e3865d8ef9",
+        "Information": "1ff13845-48d3-4744-bc69-43b691931a6e",
+        "Project Information": "b1996c16-d30f-4ef6-b3ce-aa1351154784",
+        "QuoteDetail": "4fcfa8a9-9189-42c9-9189-e5a38acb6e72"
+      }
+    },
+    {
+      "Kind": "default.cds_msdyn_quotelinetransaction_forms",
+      "Namespace": "Quote Line Detail (Forms)",
+      "Values": {
+        "Project Information": "c2821704-8270-4c96-8dae-49ff8aa6d770",
+        "Project Quick Create": "fca0ae49-ce03-4aef-898b-c9aa5cb8a6cd"
+      }
+    },
+    {
+      "Kind": "default.cds_msdyn_projectquotelinesplitbillingrule_forms",
+      "Namespace": "Quote Line Customers (Forms)",
+      "Values": {
+        "Information": "e6373f39-e89e-49ae-b071-721e43c638f5"
+      }
+    },
+    {
+      "Kind": "default.cds_msdyn_customerasset_forms",
+      "Namespace": "Customer Assets (Forms)1",
+      "Values": {
+        "Asset Work Orders Quick View Form": "46eb847e-943f-49f7-80f6-754311fa7b7d",
+        "Customer Asset": "8e32cdf1-c3c0-490f-8681-37ac1e223d1a",
+        "Customer Asset - Mobile": "23a63844-ff18-4fcc-b641-eac69b6ef100",
+        "Customer Asset Quick Create": "cef1eed6-7652-4053-b7cf-9246af579b4f",
+        "Customer Asset Tile Form": "8d2d2b33-2427-42e2-b080-57f9b919a76d"
+      }
+    },
+    {
+      "Kind": "default.cds_crmd_customerasset_forms",
+      "Namespace": "Customer Assets (Forms)11",
+      "Values": {
+        " Stock Management": "8c2df17c-3b2e-eb11-a813-000d3a0ba026",
+        "Information": "fd4017ae-8b4d-4b98-8020-94fc8abf4c45"
+      }
+    },
+    {
+      "Kind": "default.cds_crmd_customerasset_forms",
+      "Namespace": "Customer Assets (Forms)2",
+      "Values": {
+        " Stock Management": "8c2df17c-3b2e-eb11-a813-000d3a0ba026",
+        "Information": "fd4017ae-8b4d-4b98-8020-94fc8abf4c45"
+      }
+    },
+    {
+      "Kind": "default.cds_crmd_customerasset_forms",
+      "Namespace": "Customer Assets (Forms)3",
+      "Values": {
+        " Stock Management": "8c2df17c-3b2e-eb11-a813-000d3a0ba026",
+        "Information": "fd4017ae-8b4d-4b98-8020-94fc8abf4c45"
+      }
+    },
+    {
+      "Kind": "default.cds_msdyn_customerasset_forms",
+      "Namespace": "Customer Assets_1 (Forms)",
+      "Values": {
+        "Asset Work Orders Quick View Form": "46eb847e-943f-49f7-80f6-754311fa7b7d",
+        "Customer Asset": "8e32cdf1-c3c0-490f-8681-37ac1e223d1a",
+        "Customer Asset - Mobile": "23a63844-ff18-4fcc-b641-eac69b6ef100",
+        "Customer Asset Quick Create": "cef1eed6-7652-4053-b7cf-9246af579b4f",
+        "Customer Asset Tile Form": "8d2d2b33-2427-42e2-b080-57f9b919a76d"
+      }
+    },
+    {
+      "Kind": "default.cds_crmd_customerasset_forms",
+      "Namespace": "Customer Assets (Forms)4",
+      "Values": {
+        " Stock Management": "8c2df17c-3b2e-eb11-a813-000d3a0ba026",
+        "Information": "fd4017ae-8b4d-4b98-8020-94fc8abf4c45"
+      }
+    },
+    {
+      "Kind": "default.cds_crmd_customerasset_forms",
+      "Namespace": "Customer Assets (Forms)5",
+      "Values": {
+        " Stock Management": "8c2df17c-3b2e-eb11-a813-000d3a0ba026",
+        "Information": "fd4017ae-8b4d-4b98-8020-94fc8abf4c45"
+      }
+    }
+  ]
+}

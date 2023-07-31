@@ -1,0 +1,117 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crmd_customerassets",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crmd_customerasset",
+    "MaxGetRowsCount": 2000,
+    "Name": "Customer Assets",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "{Attachments}": "Attachments",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "crmd_Account": "Account",
+      "crmd_addressid": "Address",
+      "crmd_assetnumber": "Asset Number",
+      "crmd_buildid": "Build",
+      "crmd_crmd_customerasset_crmd_customerasset_parentassetid": "Customer Assets",
+      "crmd_customerasset_Annotations": "Notes",
+      "crmd_customerasset_AsyncOperations": "System Jobs",
+      "crmd_customerasset_BulkDeleteFailures": "Bulk Delete Failures",
+      "crmd_customerasset_DuplicateBaseRecord": "Duplicate Records (crmd_customerasset_DuplicateBaseRecord)",
+      "crmd_customerasset_DuplicateMatchingRecord": "Duplicate Records (crmd_customerasset_DuplicateMatchingRecord)",
+      "crmd_customerasset_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crmd_customerasset_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crmd_customerasset_ProcessSession": "Process Sessions",
+      "crmd_customerasset_SyncErrors": "Sync Errors",
+      "crmd_customerassetid": "Customer Asset",
+      "crmd_goodsindeliverynotelineid": "Goods In Delivery Note Line",
+      "crmd_name": "Name",
+      "crmd_orderproductid": "Order Product",
+      "crmd_parentassetid": "Parent Asset",
+      "crmd_productid": "Product",
+      "crmd_productlocationid": "Product Location",
+      "crmd_serialnumber": "Serial Number",
+      "crmd_stocktransactionid": "Stock Transaction",
+      "crmd_taskid": "Task",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "new_userassigned": "User assigned",
+      "organizationid": "Organization Id",
+      "overriddencreatedon": "Record Created On",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Customer Assets",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Customer Assets (Views)",
+    "Name": "_crmd_customerasset_views",
+    "RelatedEntityName": "Customer Assets",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "05149678-c624-4202-8ec2-0384a48d3b42": "Customer Asset Advanced Find View",
+      "06cc2b5e-c6ed-4c0a-9606-f5c9b5f13253": "Customer Asset Associated View",
+      "7aa6a6f1-b53d-48d2-a05d-d8ccf9d5a619": "Inactive Customer Assets",
+      "7b4c413c-d230-eb11-a813-000d3a0ba026": "Serial Numbers",
+      "7d991731-a8bc-eb11-bacc-000d3ad6acc6": "Unallocated Customer Assets",
+      "7f5f133e-a8bc-eb11-bacc-000d3ad6acc6": "Allocated Customer Assets",
+      "8c1e4937-9382-ec11-8d21-6045bd0f0f6d": "Customer Assets - Goods In subgrid",
+      "e5c5bcd8-2404-4b4f-b06e-f2d361e60bbf": "Customer Asset Lookup View",
+      "f17dbdd7-c205-4b89-a219-2ac0165bdc5b": "Customer Assets",
+      "fe7ade56-a8bc-eb11-bacc-000d3ad6acc6": "On Site Customer Assets"
+    }
+  },
+  {
+    "DisplayName": "Status (Customer Assets)",
+    "Name": "crmd_customerasset_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Customer Assets"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Customer Assets",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Customer Assets)",
+    "Name": "crmd_customerasset_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Unallocated",
+      "100000000": "Allocated",
+      "100000001": "On Customer Site",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Customer Assets"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Customer Assets",
+    "Type": "OptionSetInfo"
+  }
+]

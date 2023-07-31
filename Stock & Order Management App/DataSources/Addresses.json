@@ -1,0 +1,150 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crmd_addresses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crmd_address",
+    "MaxGetRowsCount": 2000,
+    "Name": "Addresses",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "crmd_accountid": "Account",
+      "crmd_address_AsyncOperations": "System Jobs",
+      "crmd_address_BulkDeleteFailures": "Bulk Delete Failures",
+      "crmd_address_DuplicateBaseRecord": "Duplicate Records (crmd_address_DuplicateBaseRecord)",
+      "crmd_address_DuplicateMatchingRecord": "Duplicate Records (crmd_address_DuplicateMatchingRecord)",
+      "crmd_address_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crmd_address_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crmd_address_ProcessSession": "Process Sessions",
+      "crmd_address_SyncErrors": "Sync Errors",
+      "crmd_addressid": "Address",
+      "crmd_addresstype": "Address Type",
+      "crmd_city": "City",
+      "crmd_compositeaddress": "Composite Address",
+      "crmd_contactid": "Site Contact",
+      "crmd_contacttext": "Site Contact (text)",
+      "crmd_country": "Country",
+      "crmd_crmd_address_account_primarybillingaddressid": "Accounts (crmd_crmd_address_account_primarybillingaddressid)",
+      "crmd_crmd_address_account_primaryshippingaddressid": "Accounts (crmd_crmd_address_account_primaryshippingaddressid)",
+      "crmd_crmd_address_crmd_bombuild_stocklocationid": "BOM Builds",
+      "crmd_crmd_address_crmd_deliverynote_deliveryaddressid": "Delivery Notes",
+      "crmd_crmd_address_crmd_milestonepayment_billtoid": "Milestone Payments",
+      "crmd_crmd_address_crmd_productlocation_locationid": "Product Locations",
+      "crmd_crmd_address_crmd_purchaseorder_shiptoid": "Purchase Orders",
+      "crmd_crmd_address_crmd_qe_order_billto": "Order Headers (crmd_crmd_address_crmd_qe_order_billto)",
+      "crmd_crmd_address_crmd_qe_order_shipto": "Order Headers (crmd_crmd_address_crmd_qe_order_shipto)",
+      "crmd_crmd_address_crmd_recurringitem_billto": "Recurring Items (crmd_crmd_address_crmd_recurringitem_billto)",
+      "crmd_crmd_address_crmd_recurringitem_shipto": "Recurring Items (crmd_crmd_address_crmd_recurringitem_shipto)",
+      "crmd_crmd_address_crmdqe_quoteheader_billto": "Quote Headers (crmd_crmd_address_crmdqe_quoteheader_billto)",
+      "crmd_crmd_address_crmdqe_quoteheader_shipto": "Quote Headers (crmd_crmd_address_crmdqe_quoteheader_shipto)",
+      "crmd_customerasset_addressid_crmd_address": "Customer Assets",
+      "crmd_mobile": "Site Mobile",
+      "crmd_name": "Name",
+      "crmd_postalcode": "Postal Code",
+      "crmd_stateprovince": "State or Province",
+      "crmd_street1": "Street 1",
+      "crmd_street2": "Street 2",
+      "crmd_street3": "Street 3",
+      "crmd_telephone": "Site Telephone",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Addresses",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Addresses (Views)",
+    "Name": "_crmd_address_views",
+    "RelatedEntityName": "Addresses",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0aa3715f-031a-eb11-a813-000d3ad689ea": "Stock Locations",
+      "0e65e7b9-c500-4074-8c32-b7707ab8609b": "Address Lookup View",
+      "76097cf6-b176-eb11-a812-0022484149fe": "Delivery Addresses",
+      "931015de-b176-eb11-a812-0022484149fe": "Invoice Addresses",
+      "9b0a8bd1-14da-4aec-83db-e5b7e4130f00": "Address Associated View",
+      "b1222e6a-5cb2-4a49-acfb-3f1ac8b2416e": "Address Advanced Find View",
+      "bebf17f8-cf42-41dd-8ad2-099ea41521ed": "Inactive Addresses",
+      "bf8e47f2-ba9c-40a9-8c9e-b329a00b75d7": "Addresses"
+    }
+  },
+  {
+    "DisplayName": "Address Type (Addresses)",
+    "Name": "crmd_address_crmd_addresstype",
+    "OptionSetInfoNameMapping": {
+      "100000000": "Invoice",
+      "100000001": "Delivery",
+      "100000002": "Invoice/Delivery",
+      "100000003": "Stock Location"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_addresstype",
+        "OptionSetReferenceEntityName": "Addresses"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmd_addresstype",
+    "RelatedEntityName": "Addresses",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Addresses)",
+    "Name": "crmd_address_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Addresses"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Addresses",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Addresses)",
+    "Name": "crmd_address_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Addresses"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Addresses",
+    "Type": "OptionSetInfo"
+  }
+]

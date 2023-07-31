@@ -1,0 +1,44 @@
+bottom_page As CanvasComponent:
+    SaveButton():
+        ThisProperty:
+            Default: ="Text"
+    SaveProgressButton():
+        ThisProperty:
+            Default: ="Text"
+    Button2Title: ="Text"
+    Button2Visible: =true
+    ButtonColor: =LookUp(colColorScheme,Name="NewBTNColour",Colour)
+    ButtonTitle: ="Text"
+    Fill: =LookUp(colColorScheme,Name="Main_colour",Colour)
+    Height: =60
+    Width: =Max(App.Width, App.MinScreenWidth)
+    X: =0
+    Y: =0
+    ZIndex: =2
+
+    Button5_5 As Button:
+        DisplayMode: =DisplayMode.Edit
+        FillColor: =Parent.ButtonColor
+        Height: =42
+        HoverFillColor: =
+        OnSelect: =Parent.SaveButton()
+        Text: =Parent.ButtonTitle
+        Width: =193
+        X: =1164
+        Y: =9
+        ZIndex: =1
+
+    Button5_6 As Button:
+        DisplayMode: =DisplayMode.Edit
+        FillColor: =Parent.ButtonColor
+        Height: =42
+        HoverFillColor: =
+        OnSelect: =Parent.SaveProgressButton()
+        Text: =Parent.Button2Title
+        TextColor: =
+        Visible: =Parent.Button2Visible
+        Width: =193
+        X: =958
+        Y: =9
+        ZIndex: =2
+

@@ -1,0 +1,349 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |
+        =
+        //{Value:"Ordered",Icon:Icon.Waypoint,Screen:Ordered_Orders},
+        //{Value:"Arrived",Icon:Icon.Waypoint,Screen:Arrived_Orders},
+        //{Value:"Work Completed",Icon:Icon.Waypoint,Screen:Completed_Orders}
+        //{Value:"Line Items",Icon:Icon.Items,Screen:'Line Items'}
+        /*{Value:"Inspections",Icon:Icon.Search,Screen:Inspection,rotation:-270},
+        {Value:"Locations & Items",Icon:Icon.Waypoint,Screen:SitesItems_Screen},
+        {Value:"Repairs",Icon:Icon.Tools,Screen:Repairs_Screen}*/
+        Set(
+            colColorScheme,
+            Table(
+                {
+                    Name: "Main_colour",
+                    Colour: RGBA(
+                        46,
+                        139,
+                        87,
+                        1
+                    )
+                },
+                {
+                    Name: "reportcolour",
+                    Colour: RGBA(
+                        216,
+                        219,
+                        228,
+                        1
+                    )
+                },
+                {
+                    Name: "NewBTNColour",
+                    Colour: RGBA(
+                        108,
+                        173,
+                        137,
+                        1
+                    )
+                },
+                { Name: "bg_HeaderNew", 
+                color: RGBA (234, 90, 10, 1 ) },
+                {
+                    Name: "bg_Secondary",
+                    color: RGBA(
+                        218,
+                        218,
+                        218,
+                        1
+                    )
+                },
+                {
+                    Name: "bg_Fields",
+                    Colour: RGBA(
+                        255,
+                        255,
+                        255,
+                        1
+                    )
+                },
+                {
+                    Name: "bg_ColmHeaders",
+                    Colour: RGBA(
+                        87,
+                        87,
+                        86,
+                        1
+                    )
+                },
+                {
+                    Name: "font_Title",
+                    Colour: RGBA(
+                        0,
+                        142,
+                        202,
+                        1
+                    )
+                },
+                {
+                    Name: "font_colour",
+                    Colour: RGBA(
+                        0,
+                        142,
+                        202,
+                        1
+                    )
+                },
+                {
+                    Name: "body_colour",
+                    Colour: RGBA(
+                        237,
+                        237,
+                        237,
+                        1
+                    )
+                },
+                {
+                    Name: "secondary_colour",
+                    Colour: RGBA(
+                        218,
+                        218,
+                        218,
+                        1
+                    )
+                },
+                {
+                    Name: "bg_Primary",
+                    color: RGBA(
+                        237,
+                        242,
+                        246,
+                        1
+                    )
+                },
+                {
+                    Name: "btn_UnSelected",
+                    Colour: RGBA(
+                        87,
+                        87,
+                        86,
+                        1
+                    )
+                },
+                {
+                    Name: "menu_btn_colour",
+                    Colour: RGBA(
+                        234,
+                        90,
+                        10,
+                        1
+                    )
+                },
+                {
+                    Name: "items_colour",
+                    Colour: RGBA(
+                        86,
+                        86,
+                        86,
+                        1
+                    )
+                },
+                {
+                    Name: "primary_colour",
+                    Colour: RGBA(
+                        0,
+                        141,
+                        202,
+                        1
+                    )
+                },
+                {
+                    Name: "Secondary_font_colour",
+                    Colour: RGBA(
+                        0,
+                        0,
+                        0,
+                        1
+                    )
+                },
+                {
+                    Name: "btn_Selected",
+                    Colour: RGBA(
+                        234,
+                        91,
+                        12,
+                        1
+                    )
+                },
+                {
+                    Name: "bg_Primary",
+                    Colour: RGBA(
+                        237,
+                        237,
+                        237,
+                        1
+                    )
+                },
+                {
+                    Name: "bg_Secondary",
+                    Colour: RGBA(
+                        218,
+                        218,
+                        218,
+                        1
+                    )
+                },
+                {
+                    Name: "body_width",
+                    width: App.Width - 40
+                },
+                {
+                    Name: "body_padding",
+                    padding: 30
+                },
+                {
+                    Name: "margin",
+                    margin: 15
+                },
+                {
+                    Name: "theme",
+                    Colour: RGBA(
+                        0,
+                        142,
+                        202,
+                        1
+                    )
+                },
+                {
+                    Name: "item_height",
+                    padding: 60
+                },
+                {
+                    Name: "height_padding",
+                    padding: 20
+                },
+                {
+                    Name: "font_size",
+                    size: 17
+                },
+                {
+                    Name: "fields_bg",
+                    Colour: RGBA(
+                        255,
+                        255,
+                        255,
+                        1
+                    )
+                },
+                {
+                    Name: "btn_UnSelected",
+                    Colour: RGBA(
+                        87,
+                        87,
+                        86,
+                        1
+                    )
+                },
+                {
+                    Name: "red",
+                    Colour: RGBA(
+                        205,
+                        23,
+                        25,
+                        1
+                    )
+                },
+                {
+                    Name: "orange",
+                    Colour: RGBA(
+                        234,
+                        91,
+                        12,
+                        1
+                    )
+                },
+                {
+                    Name: "green",
+                    Colour: RGBA(
+                        63,
+                        165,
+                        53,
+                        1
+                    )
+                },
+                {
+                    Name: "body_width",
+                    width: App.Width - 40
+                },
+                {
+                    Name: "body_padding",
+                    padding: 30
+                },
+                {
+                    Name: "theme",
+                    Colour: RGBA(
+                        0,
+                        142,
+                        202,
+                        1
+                    )
+                },
+                {
+                    Name: "item_height",
+                    padding: 60
+                },
+                {
+                    Name: "height_padding",
+                    padding: 20
+                }
+            )
+        );
+        Set(
+            SettingsItems,
+            Table(
+                {
+                    Name: "HELP",
+                    URL: Help_Screen
+                },
+                {
+                    Name: "ADMIN",
+                    URL: Admin_Screen
+                },
+                {
+                    Name: "SETTINGS",
+                    URL: Settings_Screen
+                } 
+            )
+        );
+        Set(
+            colSidebarMenu,
+            Table(
+                {
+                    Value: "Home",
+                    Icon: Icon.Home,
+                    Screen: Dashboard_Screen,
+                    rotation: 0
+                },
+                {
+                    Value: "New Order",
+                    Icon: Icon.Items,
+                    Screen: Order_Screen_1
+                },
+                {
+                    Value: "All Orders",
+                    Icon: Icon.Items,
+                    Screen: New_Orders_Screen
+                },
+                {
+                    Value: "Stock",
+                    Icon: Icon.Database,
+                    Screen: View_Stock
+                },
+                {
+                    Value: "Licences",
+                    Icon: Icon.Database,
+                    Screen: View_License
+                }
+            )
+        );
+         
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

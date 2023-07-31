@@ -1,0 +1,70 @@
+SplashSC As screen:
+    Fill: =LookUp(colColorScheme,Name="Main_colour",Colour)
+
+    Image6_1 As image:
+        Image: =Powered_by_CloudyIT_logo_15Dec
+        Width: =295
+        X: =App.Width/2 - Self.Width/2
+        Y: =App.Height - Self.Height - 15
+        ZIndex: =1
+
+    Timer1 As timer:
+        AutoStart: =true
+        BorderColor: =RGBA(98, 100, 167, 1)
+        BorderStyle: =BorderStyle.None
+        DisabledBorderColor: =RGBA(243, 242, 241, 1)
+        DisabledColor: =RGBA(200, 198, 196, 1)
+        DisabledFill: =RGBA(243, 242, 241, 1)
+        Duration: =2000
+        Fill: =RGBA(98, 100, 167, 1)
+        FocusedBorderThickness: =2
+        Font: =Font.'Segoe UI'
+        HoverBorderColor: =ColorFade(RGBA(98, 100, 167, 1), -10%)
+        HoverFill: =ColorFade(RGBA(98, 100, 167, 1), -10%)
+        OnTimerEnd: |
+            =Set(showTrialNotification,false);
+            Navigate(Dashboard_Screen)
+            /*
+            If( 
+                And( DateValue(CMSAppData.expirydate) > Now(), Int(CMSAppData.isvalid) = 1),  
+                
+                Navigate(Home), 
+                
+                Navigate('Lock App') );
+            
+            */
+        OnTimerStart: |-
+            =/*
+            If(Value(CMSAppData.version) > varAppVersion, Set(showGenNotification,true),Set(showGenNotification,false))
+            */
+        PressedBorderColor: =ColorFade(RGBA(98, 100, 167, 1), -30%)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =ColorFade(RGBA(98, 100, 167, 1), -30%)
+        Size: =10.5
+        Visible: =false
+        X: =40
+        Y: =40
+        ZIndex: =2
+
+    Image1_1 As image:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(86, 86, 86, 1)
+        Height: =200
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: =download
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        RadiusBottomLeft: =3
+        RadiusBottomRight: =3
+        RadiusTopLeft: =3
+        RadiusTopRight: =3
+        Width: =200
+        X: =Parent.Width/2 - Self.Width/2
+        Y: =Parent.Height/2.7 - Self.Height/2
+        ZIndex: =3
+

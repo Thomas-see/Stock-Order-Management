@@ -1,0 +1,17 @@
+blank_rec As CanvasComponent:
+    SaveButton():
+        ThisProperty:
+            Default: ="Text"
+    SaveProgressButton():
+        ThisProperty:
+            Default: ="Text"
+    Button2Title: ="Text"
+    Button2Visible: =true
+    ButtonColor: =RGBA(0, 0, 0, 1)
+    Fill: =LookUp(colColorScheme,Name="Main_colour",Colour)
+    Height: =60
+    Width: =Max(App.Width, App.MinScreenWidth)
+    X: =0
+    Y: =0
+    ZIndex: =2
+

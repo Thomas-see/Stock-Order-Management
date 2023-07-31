@@ -1,0 +1,125 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr881_stock_tb_stockordermanagements",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr881_stock_tb_stockordermanagement",
+    "MaxGetRowsCount": 2000,
+    "Name": "Stock_tb_Stock&OrderManagements",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr881_costperunit": "Cost Per Unit",
+      "cr881_datepurchased": "Date Purchased",
+      "cr881_description": "Description",
+      "cr881_lowstockalert": "Low Stock Alert",
+      "cr881_minimumstocklevel": "Minimum Stock Level",
+      "cr881_name": "Name",
+      "cr881_productcode": "Product Code",
+      "cr881_quantity": "Quantity",
+      "cr881_stock_tb_stockordermanagement_AsyncOperations": "System Jobs",
+      "cr881_stock_tb_stockordermanagement_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr881_stock_tb_stockordermanagement_DuplicateBaseRecord": "Duplicate Records (cr881_stock_tb_stockordermanagement_DuplicateBaseRecord)",
+      "cr881_stock_tb_stockordermanagement_DuplicateMatchingRecord": "Duplicate Records (cr881_stock_tb_stockordermanagement_DuplicateMatchingRecord)",
+      "cr881_stock_tb_stockordermanagement_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr881_stock_tb_stockordermanagement_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr881_stock_tb_stockordermanagement_ProcessSession": "Process Sessions",
+      "cr881_stock_tb_stockordermanagement_SyncErrors": "Sync Errors",
+      "cr881_stock_tb_stockordermanagementid": "Stock_tb_Stock&OrderManagement",
+      "cr881_Supplier": "Supplier",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Stock_tb_Stock&OrderManagements",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Stock_tb_Stock&OrderManagements (Views)",
+    "Name": "_cr881_stock_tb_stockordermanagement_views",
+    "RelatedEntityName": "Stock_tb_Stock&OrderManagements",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "001094df-07db-4e0f-8227-13b045705947": "Stock_tb_Stock&OrderManagement Advanced Find View",
+      "61f9dfb4-c184-46cf-b870-9e3d41988eae": "Stock_tb_Stock&OrderManagement Lookup View",
+      "7f9d7c03-ea49-4441-8f29-458b152d8e06": "Stock_tb_Stock&OrderManagement Associated View",
+      "85e7eca6-c6ea-43dd-acda-6f94d4d07347": "Inactive Stock_tb_Stock&OrderManagements",
+      "9bbd94a9-1a40-415d-b6ce-e3a77060cb45": "Active Stock_tb_Stock&OrderManagements"
+    }
+  },
+  {
+    "DisplayName": "Low Stock Alert (Stock_tb_Stock&OrderManagements)",
+    "Name": "cr881_stock_tb_stockordermanagement_cr881_lowstockalert",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr881_lowstockalert",
+        "OptionSetReferenceEntityName": "Stock_tb_Stock&OrderManagements"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr881_lowstockalert",
+    "RelatedEntityName": "Stock_tb_Stock&OrderManagements",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Stock_tb_Stock&OrderManagements)",
+    "Name": "cr881_stock_tb_stockordermanagement_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Stock_tb_Stock&OrderManagements"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Stock_tb_Stock&OrderManagements",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Stock_tb_Stock&OrderManagements)",
+    "Name": "cr881_stock_tb_stockordermanagement_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Stock_tb_Stock&OrderManagements"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Stock_tb_Stock&OrderManagements",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,506 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crmdqe_quoteheaders",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crmdqe_quoteheader",
+    "MaxGetRowsCount": 2000,
+    "Name": "Quote Headers",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "{Attachments}": "Attachments",
+      "bpf_crmdqe_quoteheader_new_bpf_c5a6f361b3b740d9bcabc6ad9094394a": "Opportunity Sales Process - Cloudy (CRMD update)",
+      "bpf_crmdqe_quoteheader_new_bpf_f21df00f99f343dfb1042a99fa221f63": "Quote Header (CRMD)",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "crmd_approvalrequiredcode": "Approval Required",
+      "crmd_approvedbyid": "Approved By",
+      "crmd_approvequote": "Approve Quote?",
+      "crmd_billto": "Invoice To (Address)",
+      "crmd_crmdqe_quoteheader_crmd_qe_order_quoteid": "Order Headers",
+      "crmd_crmdqe_quoteheader_crmdqe_quoteheader_lastquoterevisionid": "Quote Headers (crmd_crmdqe_quoteheader_crmdqe_quoteheader_lastquoterevisionid)",
+      "crmd_crmdqe_quoteheader_crmdqe_quoteheader_sourcerecordid": "Quote Headers (crmd_crmdqe_quoteheader_crmdqe_quoteheader_sourcerecordid)",
+      "crmd_crmdqe_quoteheader_opportunity_LatestQuote": "Opportunities",
+      "crmd_executivesummary": "Executive Summary",
+      "crmd_incoterms": "Incoterms",
+      "crmd_invoicingstatus": "Invoicing Status",
+      "crmd_keywords": "Keywords",
+      "crmd_lastquoterevisionid": "Last Quote Revision",
+      "crmd_margin": "Margin",
+      "crmd_margin_base": "Margin (Base)",
+      "crmd_marginpercent": "Margin %",
+      "crmd_pricelistid": "Price List",
+      "crmd_remainingpercentage": "Remaining Percentage",
+      "crmd_remainingtoorder": "Remaining To Order",
+      "crmd_remainingtoorder_base": "Remaining To Order (Base)",
+      "crmd_revision": "Revision",
+      "crmd_revisiondetails": "Revision Details",
+      "crmd_servicetypemultiselect": "Service Type (Multiselect)",
+      "crmd_shippingid": "Delivery Method",
+      "crmd_shippingtax": "Delivery VAT",
+      "crmd_shippingtax_base": "Delivery VAT (Base)",
+      "crmd_shippingtaxcodeid": "Delivery VAT Code",
+      "crmd_shipto": "Deliver To (Address)",
+      "crmd_SignedQuote": "Signed Quote",
+      "crmd_simpleorcomplexorder": "Simple or complex order",
+      "crmd_sourcerecordid": "Source Record",
+      "crmd_sow": "SOW",
+      "crmd_tags": "Tags",
+      "crmd_taxamount": "(+) VAT Amount",
+      "crmd_taxamount_base": "VAT Amount (Base)",
+      "crmd_termmonths": "Term (Months)",
+      "crmd_totalamount": "Total Amount",
+      "crmd_totalamount_base": "Total Amount (Base)",
+      "crmd_totalannualsalesprice": "Total Annual Sales Price",
+      "crmd_totalannualsalesprice_base": "Total Annual Sales Price (Base)",
+      "crmd_totalannualsalesprice_date": "Total Annual Sales Price (Last Updated On)",
+      "crmd_totalannualsalesprice_state": "Total Annual Sales Price (State)",
+      "crmd_totalcostpriceincterms": "Total Cost Price (Including Terms)",
+      "crmd_totalcostpriceincterms_base": "Total Cost Price (Including Terms) (Base)",
+      "crmd_totaldiscountedpriceincterms": "Total Discounted Price (Including Terms)",
+      "crmd_totaldiscountedpriceincterms_base": "Total Discounted Price (Including Terms) (Base)",
+      "crmd_totalmarginincterms": "Total Margin (Including Terms)",
+      "crmd_totalmarginincterms_base": "Total Margin (Including Terms) (Base)",
+      "crmd_totalmarginpercentageincterms": "Total Margin % (Including Terms)",
+      "crmd_totalmonthlysalesprice": "Total Monthly Sales Price",
+      "crmd_totalmonthlysalesprice_base": "Total Monthly Sales Price (Base)",
+      "crmd_totalmonthlysalesprice_date": "Total Monthly Sales Price (Last Updated On)",
+      "crmd_totalmonthlysalesprice_state": "Total Monthly Sales Price (State)",
+      "crmd_totalonorders": "Total On Orders",
+      "crmd_totalonorders_base": "Total On Orders (Base)",
+      "crmd_totalquarterlysalesprice": "Total Quarterly Sales Price",
+      "crmd_totalquarterlysalesprice_base": "Total Quarterly Sales Price (Base)",
+      "crmd_totalquarterlysalesprice_date": "Total Quarterly Sales Price (Last Updated On)",
+      "crmd_totalquarterlysalesprice_state": "Total Quarterly Sales Price (State)",
+      "crmd_totalshippingcost": "(+) Total Delivery Cost",
+      "crmd_totalshippingcost_base": "Total Delivery Cost (Base)",
+      "crmdqe_AccountLookup": "Account (Lookup)",
+      "crmdqe_clonedquoteguid": "Cloned Quote GUID",
+      "crmdqe_commercialtext": "Commercial Text",
+      "crmdqe_ContactLookup": "Contact (Lookup)",
+      "crmdqe_crmdqe_quoteheader_crmdqe_quoteproductline_QuoteHeaderLookup": "Quote Product Lines",
+      "crmdqe_customerreference": "Customer Reference",
+      "crmdqe_dateactivefrom": "Date Active From",
+      "crmdqe_dateactiveto": "Date Active To",
+      "crmdqe_datewonlost": "Date Won Lost",
+      "crmdqe_estimatedclosedate": "Estimated Close Date",
+      "crmdqe_LostToCompetitorLookup": "Lost To Competitor (Lookup)",
+      "crmdqe_marketingtext": "Marketing Text",
+      "crmdqe_OpportunityLookup": "Opportunity (Lookup)",
+      "crmdqe_pricelistused": "Price List Used",
+      "crmdqe_quotecreationdate": "Quote Creation Date",
+      "crmdqe_quoteheader_ActivityPointers": "Activities",
+      "crmdqe_quoteheader_adx_alertsubscriptions": "Alert Subscriptions",
+      "crmdqe_quoteheader_adx_inviteredemptions": "Invite Redemptions",
+      "crmdqe_quoteheader_adx_portalcomments": "Portal Comments",
+      "crmdqe_quoteheader_Annotations": "Notes",
+      "crmdqe_quoteheader_Appointments": "Appointments",
+      "crmdqe_quoteheader_AsyncOperations": "System Jobs",
+      "crmdqe_quoteheader_BulkDeleteFailures": "Bulk Delete Failures",
+      "crmdqe_quoteheader_chats": "Teams chats",
+      "crmdqe_quoteheader_crmd_signed365activities": "Sign Activities",
+      "crmdqe_quoteheader_DuplicateBaseRecord": "Duplicate Records (crmdqe_quoteheader_DuplicateBaseRecord)",
+      "crmdqe_quoteheader_DuplicateMatchingRecord": "Duplicate Records (crmdqe_quoteheader_DuplicateMatchingRecord)",
+      "crmdqe_quoteheader_Emails": "Email Messages",
+      "crmdqe_quoteheader_Faxes": "Faxes",
+      "crmdqe_quoteheader_id": "Quote Header Id",
+      "crmdqe_quoteheader_Letters": "Letters",
+      "crmdqe_quoteheader_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crmdqe_quoteheader_msdyn_approvals": "Project Service Approvals",
+      "crmdqe_quoteheader_msdyn_bookingalerts": "Booking Alerts",
+      "crmdqe_quoteheader_msdyn_copilottranscripts": "Copilot Transcripts",
+      "crmdqe_quoteheader_msdyn_ocliveworkitems": "Conversations",
+      "crmdqe_quoteheader_msdyn_ocsessions": "Sessions",
+      "crmdqe_quoteheader_msfp_alerts": "Customer Voice alert",
+      "crmdqe_quoteheader_msfp_surveyinvites": "Customer Voice survey invites",
+      "crmdqe_quoteheader_msfp_surveyresponses": "Customer Voice survey responses",
+      "crmdqe_quoteheader_new_casetimes": "Case Time Entries",
+      "crmdqe_quoteheader_PhoneCalls": "Phone Calls",
+      "crmdqe_quoteheader_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crmdqe_quoteheader_ProcessSession": "Process Sessions",
+      "crmdqe_quoteheader_RecurringAppointmentMasters": "Recurring Appointments",
+      "crmdqe_quoteheader_ServiceAppointments": "Service Activities",
+      "crmdqe_quoteheader_SharePointDocumentLocations": "Document Locations",
+      "crmdqe_quoteheader_SocialActivities": "Social Activities",
+      "crmdqe_quoteheader_SyncErrors": "Sync Errors",
+      "crmdqe_quoteheader_Tasks": "Tasks",
+      "crmdqe_quoteheader_Teams": "Teams",
+      "crmdqe_quoteheaderid": "Quote Header",
+      "crmdqe_quotemargin": "(Deprecated) Quote Margin %",
+      "crmdqe_quotenumber": "Quote Number",
+      "crmdqe_QuoteOwnerLookup": "Quote Owner (Lookup)",
+      "crmdqe_quoterevision": "Quote Revision (Deprecated)",
+      "crmdqe_quotevalidityindays": "Quote Validity In Days",
+      "crmdqe_shippingcost": "Delivery Cost",
+      "crmdqe_shippingcost_base": "Delivery Cost (Base)",
+      "crmdqe_supressprintingquotetotals": "Supress Printing Quote Totals",
+      "crmdqe_totalcostmargin": "Total Cost Margin",
+      "crmdqe_totalcostmargin_base": "Total Cost Margin (Base)",
+      "crmdqe_totalcostmarginpct": "Total Cost Margin %",
+      "crmdqe_totalcostprice": "Total Cost Price",
+      "crmdqe_totalcostprice_base": "Total Cost Price (Base)",
+      "crmdqe_totaldiscountedprice": "Total Discounted Price",
+      "crmdqe_totaldiscountedprice_base": "Total Discounted Price (Base)",
+      "crmdqe_totaldiscountedpriceandshipping": "Total Discounted Price and Delivery",
+      "crmdqe_totaldiscountedpriceandshipping_base": "Total Discounted Price and Delivery (Base)",
+      "crmdqe_totallistprice": "Total List Price",
+      "crmdqe_totallistprice_base": "Total List Price (Base)",
+      "crmdqe_totalmargin": "(Deprecated) Total Margin",
+      "crmdqe_totalmargin_base": "Total Margin (Base)",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "new_BillingContact": "Invoice Contact",
+      "new_createopportunity": "Create Opportunity?",
+      "new_crmdqe_quoteheader_crmd_signed365document_QuoteHeader": "Sign Documents",
+      "new_description": "Description",
+      "new_invoiceinstructions": "Invoice Instructions",
+      "new_processstatus": "Process Status",
+      "new_quotedescription": "Quote Description",
+      "new_specialinstructions": "Special Instructions",
+      "new_statementofworkcomplete": "Statement of Work Complete",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "processid": "Process Id",
+      "stageid": "(Deprecated) Stage Id",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "traversedpath": "(Deprecated) Traversed Path",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Quote Headers",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Quote Headers (Views)",
+    "Name": "_crmdqe_quoteheader_views",
+    "RelatedEntityName": "Quote Headers",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "16e5f8ab-ea44-4030-a105-89a1c7b36e53": "Inactive Quote Headers",
+      "2e33b5c4-4975-e811-8430-00155d019801": "09 - Cancelled",
+      "3e846d6b-ab79-ea11-8453-00155d019801": "03 - My Won",
+      "6816cc26-d949-44c3-9944-cff8c47db5a4": "Quote Header Lookup View",
+      "75337ae5-b90e-47dd-854b-18760ad7aa74": "Quote Header Associated View",
+      "876a9d4d-4975-e811-8430-00155d019801": "07 - All Won",
+      "8e018317-4a75-e811-8430-00155d019801": "01 - My Draft",
+      "bcd91932-f85b-ec11-8f8f-00224843411b": "All Quote Headers",
+      "d63ed551-ab79-ea11-8453-00155d019801": "02 - My Activated",
+      "d8dd1337-7114-47dc-ac29-7a0ce7a7efb5": "Active Quote Headers",
+      "d97cd2a0-766e-ea11-844b-00155d019801": "10 - Templates",
+      "de249051-4a75-e811-8430-00155d019801": "06 - All Active",
+      "eeb7503f-4a75-e811-8430-00155d019801": "05 - All Draft",
+      "fb6aa67c-ab79-ea11-8453-00155d019801": "04 - My Lost",
+      "fd752eda-4975-e811-8430-00155d019801": "08 - All Lost",
+      "fe447c46-9453-48b7-94a0-9d65204a4227": "Quote Header Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Approval Required (Quote Headers)",
+    "Name": "crmd_crmdqe_quoteheader_crmd_approvalrequiredcode",
+    "OptionSetInfoNameMapping": {
+      "100000000": "Approval Required",
+      "100000001": "Not Needed"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_approvalrequiredcode",
+        "OptionSetReferenceEntityName": "Quote Headers"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmd_approvalrequiredcode",
+    "RelatedEntityName": "Quote Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Approve Quote? (Quote Headers)",
+    "Name": "crmd_crmdqe_quoteheader_crmd_approvequote",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_approvequote",
+        "OptionSetReferenceEntityName": "Quote Headers"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_approvequote",
+    "RelatedEntityName": "Quote Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Simple or complex order (Quote Headers)",
+    "Name": "crmd_crmdqe_quoteheader_crmd_simpleorcomplexorder",
+    "OptionSetInfoNameMapping": {
+      "100000000": "Complex",
+      "100000001": "Simple"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_simpleorcomplexorder",
+        "OptionSetReferenceEntityName": "Quote Headers"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmd_simpleorcomplexorder",
+    "RelatedEntityName": "Quote Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Incoterms",
+    "Name": "crmd_incoterms",
+    "OptionSetInfoNameMapping": {
+      "100000000": "FOB (Free on Board)",
+      "100000001": "FCA (Free Carrier)",
+      "100000002": "EXW (Ex Works)",
+      "100000003": "FAS (Free Alongside Ship)",
+      "100000004": "DAP (Delivered at Place)",
+      "100000005": "DAT (Delivered at Terminal)",
+      "100000006": "CIF (Cost, Insurance and Freight)",
+      "100000007": "CIP (Carriage and Insurance Paid to)",
+      "100000008": "CFR (Cost and Freight)",
+      "100000009": "DDP (Delivery Duty Paid)",
+      "100000010": "CPT (Carriage Paid to)"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_incoterms",
+        "OptionSetReferenceEntityName": "Quote Headers"
+      },
+      "OptionSetReferenceItem1": {
+        "OptionSetReferenceColumnName": "crmd_incoterms",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmd_incoterms",
+    "RelatedEntityName": "Quote Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Invoicing Status",
+    "Name": "crmd_invoicingstatus",
+    "OptionSetInfoNameMapping": {
+      "100000000": "Invoice on Order",
+      "100000001": "Part Invoiced",
+      "100000002": "Invoice on Completion",
+      "103460000": "Invoice in 30 days",
+      "103460001": "Invoice on delivery",
+      "279640000": "Fully Invoiced",
+      "279640001": "Invoice from recurring items"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_invoicingstatus",
+        "OptionSetReferenceEntityName": "Quote Headers"
+      },
+      "OptionSetReferenceItem1": {
+        "OptionSetReferenceColumnName": "crmd_invoicingstatus",
+        "OptionSetReferenceEntityName": "Order Headers"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmd_invoicingstatus",
+    "RelatedEntityName": "Quote Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Price List Used",
+    "Name": "crmdqe_pricelistused",
+    "OptionSetInfoNameMapping": {
+      "122960000": "Cloudy Main Price List",
+      "122960001": "Price List 2",
+      "122960002": "Price List 3",
+      "122960003": "Price List 4",
+      "122960004": "Price List 5",
+      "122960005": "Price List 6"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmdqe_pricelistused",
+        "OptionSetReferenceEntityName": "Quote Headers"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmdqe_pricelistused",
+    "RelatedEntityName": "Quote Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Supress Printing Quote Totals (Quote Headers)",
+    "Name": "crmdqe_quoteheader_crmdqe_supressprintingquotetotals",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmdqe_supressprintingquotetotals",
+        "OptionSetReferenceEntityName": "Quote Headers"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmdqe_supressprintingquotetotals",
+    "RelatedEntityName": "Quote Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Quote Headers)",
+    "Name": "crmdqe_quoteheader_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Quote Headers"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Quote Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Quote Headers)",
+    "Name": "crmdqe_quoteheader_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "122960000": "Draft",
+      "122960001": "Activated",
+      "122960003": "Won",
+      "122960005": "Template",
+      "122960006": "Cancelled",
+      "122960007": "Revised",
+      "122960008": "Lost",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Quote Headers"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Quote Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Quote Validity In Days",
+    "Name": "crmdqe_quotevalidityindays",
+    "OptionSetInfoNameMapping": {
+      "122960000": "30 Days",
+      "122960001": "60 Days",
+      "122960002": "90 Days"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmdqe_quotevalidityindays",
+        "OptionSetReferenceEntityName": "Quote Headers"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmdqe_quotevalidityindays",
+    "RelatedEntityName": "Quote Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Create Opportunity? (Quote Headers)",
+    "Name": "new_crmdqe_quoteheader_new_createopportunity",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "new_createopportunity",
+        "OptionSetReferenceEntityName": "Quote Headers"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "new_createopportunity",
+    "RelatedEntityName": "Quote Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Process Status (Quote Headers)",
+    "Name": "new_crmdqe_quoteheader_new_processstatus",
+    "OptionSetInfoNameMapping": {
+      "100000000": "DRAFT",
+      "100000001": "ACTIVATE",
+      "100000002": "WON",
+      "100000003": "PROCESS CHECKS COMPLETE"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "new_processstatus",
+        "OptionSetReferenceEntityName": "Quote Headers"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "new_processstatus",
+    "RelatedEntityName": "Quote Headers",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Statement of Work Complete (Quote Headers)",
+    "Name": "new_crmdqe_quoteheader_new_statementofworkcomplete",
+    "OptionSetInfoNameMapping": {
+      "100000000": "Not needed",
+      "100000001": "Partially Completed",
+      "100000002": "Complete"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "new_statementofworkcomplete",
+        "OptionSetReferenceEntityName": "Quote Headers"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "new_statementofworkcomplete",
+    "RelatedEntityName": "Quote Headers",
+    "Type": "OptionSetInfo"
+  }
+]

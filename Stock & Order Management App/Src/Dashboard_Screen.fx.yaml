@@ -1,0 +1,663 @@
+Dashboard_Screen As screen:
+    Fill: =LookUp(colColorScheme,Name="bg_Primary",color)
+    OnVisible: |
+        =UpdateContext({showMenu:false});
+        //Reset(Gallery3);
+         
+
+    header_page_2 As header_page:
+        OnSelect: =Navigate(Dashboard_Screen)
+        PageName: ="Dashboard"
+
+    TopMenu_2 As TopMenu_1:
+        Y: |
+            =59
+
+    Icon6_10 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =22
+        Icon: =Icon.Hamburger
+        OnSelect: |
+            =UpdateContext({showMenu: !showMenu})
+        Width: =30
+        X: =1324
+        Y: =19
+        ZIndex: =1
+
+    Label6_2 As Label:
+        Alignment: =Align.Right
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.Edit
+        Font: =Font.'Open Sans'
+        FontSize: =14
+        Height: =40
+        PCFTeamsTheme: ="default"
+        Text: =User().FullName
+        Width: =320
+        X: =1031
+        Y: =69
+        ZIndex: =4
+
+    Icon7 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =39
+        Icon: =Icon.People
+        Width: =32
+        X: =1202
+        Y: =70
+        ZIndex: =5
+
+    blank_rec_7 As blank_rec:
+        SaveButton: ="Text"
+        SaveProgressButton: ="Text"
+        Y: =708
+        ZIndex: =6
+
+    Label7 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =19
+        Size: =10
+        Text: |-
+            ="Stock & Order Management | Version: 1.0.0.0"
+        Width: =349
+        X: =1017
+        Y: =728
+        ZIndex: =7
+
+    TextBox4_20 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(0,25,83,.8)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Font: =Font.'Lato Black'
+        Height: =24
+        HoverBorderColor: =TextBox4_20.BorderColor
+        HoverColor: =TextBox4_20.Color
+        HoverFill: =TextBox4_20.Fill
+        PressedBorderColor: =TextBox4_20.BorderColor
+        PressedColor: =TextBox4_20.Color
+        PressedFill: =TextBox4_20.Fill
+        Size: =10
+        Text: ="ADDITIONAL INFORMATION"
+        Width: =298.8888888888889
+        X: =19
+        Y: =388
+        ZIndex: =8
+
+    TextBox4_22 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(0,25,83,.8)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Font: =Font.'Lato Black'
+        Height: =27
+        HoverBorderColor: =TextBox4_22.BorderColor
+        HoverColor: =TextBox4_22.Color
+        HoverFill: =TextBox4_22.Fill
+        PressedBorderColor: =TextBox4_22.BorderColor
+        PressedColor: =TextBox4_22.Color
+        PressedFill: =TextBox4_22.Fill
+        Size: =8
+        Text: ="TOTAL ORDERS"
+        Width: =187
+        X: =19
+        Y: =422
+        ZIndex: =9
+
+    TextBox4_23 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(0,25,83,.8)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Font: =Font.'Lato Black'
+        Height: =27
+        HoverBorderColor: =TextBox4_23.BorderColor
+        HoverColor: =TextBox4_23.Color
+        HoverFill: =TextBox4_23.Fill
+        PressedBorderColor: =TextBox4_23.BorderColor
+        PressedColor: =TextBox4_23.Color
+        PressedFill: =TextBox4_23.Fill
+        Size: =8
+        Text: ="TOTAL ORDERS ORDERED"
+        Width: =187
+        X: =19
+        Y: =488
+        ZIndex: =10
+
+    TextBox4_24 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(0,25,83,.8)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Font: =Font.'Lato Black'
+        Height: =27
+        HoverBorderColor: =TextBox4_24.BorderColor
+        HoverColor: =TextBox4_24.Color
+        HoverFill: =TextBox4_24.Fill
+        PressedBorderColor: =TextBox4_24.BorderColor
+        PressedColor: =TextBox4_24.Color
+        PressedFill: =TextBox4_24.Fill
+        Size: =8
+        Text: ="TOTAL ORDERS ARRIVED"
+        Width: =187
+        X: =19
+        Y: =562
+        ZIndex: =11
+
+    TextBox4_25 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(0,25,83,.8)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Semibold
+        Height: =27
+        HoverBorderColor: =TextBox4_25.BorderColor
+        HoverColor: =TextBox4_25.Color
+        HoverFill: =TextBox4_25.Fill
+        PressedBorderColor: =TextBox4_25.BorderColor
+        PressedColor: =TextBox4_25.Color
+        PressedFill: =TextBox4_25.Fill
+        Size: =15
+        Text: =CountRows( Filter('Order Product Lines', Arrived=true && report2=false) )
+        Width: =187
+        X: =19
+        Y: =596
+        ZIndex: =12
+
+    TextBox4_26 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(0,25,83,.8)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Semibold
+        Height: =27
+        HoverBorderColor: =TextBox4_26.BorderColor
+        HoverColor: =TextBox4_26.Color
+        HoverFill: =TextBox4_26.Fill
+        PressedBorderColor: =TextBox4_26.BorderColor
+        PressedColor: =TextBox4_26.Color
+        PressedFill: =TextBox4_26.Fill
+        Size: =15
+        Text: =CountRows( Filter('Order Product Lines', Ordered=true && report=false ) )
+        Width: =187
+        X: =19
+        Y: =524
+        ZIndex: =13
+
+    TextBox4_27 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(0,25,83,.8)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Semibold
+        Height: =27
+        HoverBorderColor: =TextBox4_27.BorderColor
+        HoverColor: =TextBox4_27.Color
+        HoverFill: =TextBox4_27.Fill
+        PressedBorderColor: =TextBox4_27.BorderColor
+        PressedColor: =TextBox4_27.Color
+        PressedFill: =TextBox4_27.Fill
+        Size: =15
+        Text: =CountRows( 'Order Product Lines')
+        Width: =187
+        X: =19
+        Y: =453
+        ZIndex: =14
+
+    TextBox4_28 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(0,25,83,.8)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Font: =Font.'Lato Black'
+        Height: =27
+        HoverBorderColor: =TextBox4_28.BorderColor
+        HoverColor: =TextBox4_28.Color
+        HoverFill: =TextBox4_28.Fill
+        PressedBorderColor: =TextBox4_28.BorderColor
+        PressedColor: =TextBox4_28.Color
+        PressedFill: =TextBox4_28.Fill
+        Size: =8
+        Text: ="TOTAL ORDERS COMPLETED"
+        Width: =187
+        X: =19
+        Y: =632
+        ZIndex: =15
+
+    TextBox4_29 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(0,25,83,.8)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Semibold
+        Height: =27
+        HoverBorderColor: =TextBox4_29.BorderColor
+        HoverColor: =TextBox4_29.Color
+        HoverFill: =TextBox4_29.Fill
+        PressedBorderColor: =TextBox4_29.BorderColor
+        PressedColor: =TextBox4_29.Color
+        PressedFill: =TextBox4_29.Fill
+        Size: =15
+        Text: =CountRows( Filter('Order Product Lines', Completed=true && !JobCompleted=false) )
+        Width: =187
+        X: =19
+        Y: =659
+        ZIndex: =16
+
+    Rectangle2_1 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(255, 255, 255, 1)
+        FocusedBorderColor: =RGBA(98, 100, 167, 1)
+        Height: =562
+        HoverFill: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =1014
+        X: =340
+        Y: =132
+        ZIndex: =17
+
+    Rectangle4_20 As rectangle:
+        BorderColor: =RGBA(101, 128, 187, 1)
+        DisabledFill: =Rectangle4_20.Fill
+        Fill: =RGBA(230, 230, 230, 1)
+        Height: =562
+        HoverFill: =Rectangle4_20.Fill
+        PressedFill: =Rectangle4_20.Fill
+        TabIndex: =0
+        Width: =3
+        X: =1016
+        Y: =132
+        ZIndex: =18
+
+    Rectangle4_24 As rectangle:
+        BorderColor: =RGBA(101, 128, 187, 1)
+        DisabledFill: =Rectangle4_24.Fill
+        Fill: =RGBA(230, 230, 230, 1)
+        Height: =562
+        HoverFill: =Rectangle4_24.Fill
+        PressedFill: =Rectangle4_24.Fill
+        TabIndex: =0
+        Width: =3
+        X: =676
+        Y: =132
+        ZIndex: =19
+
+    TextBox4_17 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(0,25,83,.8)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Font: =Font.'Lato Black'
+        Height: =24
+        HoverBorderColor: =TextBox4_17.BorderColor
+        HoverColor: =TextBox4_17.Color
+        HoverFill: =TextBox4_17.Fill
+        PressedBorderColor: =TextBox4_17.BorderColor
+        PressedColor: =TextBox4_17.Color
+        PressedFill: =TextBox4_17.Fill
+        Size: =10
+        Text: ="ORDERS COMPLETED"
+        Width: =298.8888888888889
+        X: =1036
+        Y: =137
+        ZIndex: =20
+
+    TextBox4_18 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(0,25,83,.8)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Font: =Font.'Lato Black'
+        Height: =24
+        HoverBorderColor: =TextBox4_18.BorderColor
+        HoverColor: =TextBox4_18.Color
+        HoverFill: =TextBox4_18.Fill
+        PressedBorderColor: =TextBox4_18.BorderColor
+        PressedColor: =TextBox4_18.Color
+        PressedFill: =TextBox4_18.Fill
+        Size: =10
+        Text: ="ORDERS ARRIVED"
+        Width: =298.8888888888889
+        X: =696
+        Y: =137
+        ZIndex: =21
+
+    TextBox4_19 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(0,25,83,.8)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Font: =Font.'Lato Black'
+        Height: =24
+        HoverBorderColor: =TextBox4_19.BorderColor
+        HoverColor: =TextBox4_19.Color
+        HoverFill: =TextBox4_19.Fill
+        PressedBorderColor: =TextBox4_19.BorderColor
+        PressedColor: =TextBox4_19.Color
+        PressedFill: =TextBox4_19.Fill
+        Size: =10
+        Text: ="ORDERS ORDERED"
+        Width: =298.8888888888889
+        X: =360
+        Y: =137
+        ZIndex: =22
+
+    Rectangle9_1 As rectangle:
+        BorderColor: =RGBA(243, 242, 241, 1)
+        BorderStyle: =BorderStyle.None
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        FocusedBorderColor: =RGBA(98, 100, 167, 1)
+        Height: =34
+        HoverFill: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =1026
+        X: =340
+        Y: =132
+        ZIndex: =23
+
+    orders_ordered As gallery.galleryVertical:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Default: =//First(Self.AllItems)
+        Height: =527
+        Items: = Filter('Order Product Lines', Ordered=true && report=false ) 
+        Layout: =Layout.Vertical
+        ShowScrollbar: =false
+        TemplatePadding: =2
+        TemplateSize: =66
+        Width: =336
+        X: =343
+        Y: =167
+        ZIndex: =24
+
+        Rectangle14_14 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =Parent.TemplateHeight
+            OnSelect: |
+                =false
+            Width: =332
+            ZIndex: =1
+
+        Label4_33 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =21
+            OnSelect: =
+            PaddingLeft: =8
+            Size: =11
+            Text: =ThisItem.Order.'Order Number'
+            Width: =324
+            X: =8
+            Y: =5
+            ZIndex: =2
+
+        Label4_34 As label:
+            Height: =25
+            OnSelect: =
+            PaddingLeft: =8
+            Size: =10
+            Text: =ThisItem.Account.'Account Name'
+            Width: =180
+            X: =8
+            Y: =39
+            ZIndex: =3
+
+        Label4_35 As label:
+            Align: =Align.Right
+            Height: =23
+            OnSelect: =
+            PaddingLeft: =8
+            Size: =10
+            Text: =ThisItem.'Created On'
+            Width: =156
+            X: =128
+            Y: =40
+            ZIndex: =4
+
+        Rectangle8_10 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =64
+            OnSelect: =
+            Width: =332
+            ZIndex: =6
+
+        Rectangle4_25 As rectangle:
+            BorderColor: =RGBA(101, 128, 187, 1)
+            DisabledFill: =Rectangle4_25.Fill
+            Fill: =RGBA(230, 230, 230, 1)
+            Height: =3
+            HoverFill: =Rectangle4_25.Fill
+            PressedFill: =Rectangle4_25.Fill
+            TabIndex: =0
+            Width: =332
+            Y: =63
+            ZIndex: =8
+
+    orders_arrived As gallery.galleryVertical:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Default: =//First(Self.AllItems)
+        Height: =527
+        Items: = Filter('Order Product Lines', Arrived=true && report2=false) 
+        Layout: =Layout.Vertical
+        ShowScrollbar: =false
+        TemplatePadding: =2
+        TemplateSize: =66
+        Width: =336
+        X: =679
+        Y: =167
+        ZIndex: =25
+
+        Rectangle14_15 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =Parent.TemplateHeight
+            OnSelect: |
+                =false
+            Width: =332
+            ZIndex: =1
+
+        Label4_36 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =21
+            OnSelect: =
+            PaddingLeft: =8
+            Size: =11
+            Text: =ThisItem.Order.'Order Number'
+            Width: =324
+            X: =8
+            Y: =5
+            ZIndex: =2
+
+        Label4_37 As label:
+            Height: =25
+            OnSelect: =
+            PaddingLeft: =8
+            Size: =10
+            Text: =ThisItem.Account.'Account Name'
+            Width: =180
+            X: =8
+            Y: =39
+            ZIndex: =3
+
+        Label4_38 As label:
+            Align: =Align.Right
+            Height: =23
+            OnSelect: =
+            PaddingLeft: =8
+            Size: =10
+            Text: =ThisItem.'Created On'
+            Width: =156
+            X: =128
+            Y: =40
+            ZIndex: =4
+
+        Rectangle8_11 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =64
+            OnSelect: =
+            Width: =332
+            ZIndex: =6
+
+        Rectangle4_26 As rectangle:
+            BorderColor: =RGBA(101, 128, 187, 1)
+            DisabledFill: =Rectangle4_26.Fill
+            Fill: =RGBA(230, 230, 230, 1)
+            Height: =3
+            HoverFill: =Rectangle4_26.Fill
+            PressedFill: =Rectangle4_26.Fill
+            TabIndex: =0
+            Width: =332
+            Y: =63
+            ZIndex: =8
+
+    orders_completed As gallery.galleryVertical:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Default: =//First(Self.AllItems)
+        Height: =527
+        Items: = Filter('Order Product Lines', Completed=true && !JobCompleted=false) 
+        Layout: =Layout.Vertical
+        ShowScrollbar: =false
+        TemplatePadding: =2
+        TemplateSize: =66
+        Width: =336
+        X: =1019
+        Y: =167
+        ZIndex: =26
+
+        Rectangle14_16 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =Parent.TemplateHeight
+            OnSelect: |
+                =false
+            Width: =332
+            ZIndex: =1
+
+        Label4_39 As label:
+            FontWeight: =FontWeight.Bold
+            Height: =21
+            OnSelect: =
+            PaddingLeft: =8
+            Size: =11
+            Text: =ThisItem.Order.'Order Number'
+            Width: =324
+            X: =8
+            Y: =5
+            ZIndex: =2
+
+        Label4_40 As label:
+            Height: =25
+            OnSelect: =
+            PaddingLeft: =8
+            Size: =10
+            Text: =ThisItem.Account.'Account Name'
+            Width: =180
+            X: =8
+            Y: =39
+            ZIndex: =3
+
+        Label4_41 As label:
+            Align: =Align.Right
+            Height: =23
+            OnSelect: =
+            PaddingLeft: =8
+            Size: =10
+            Text: =ThisItem.'Created On'
+            Width: =156
+            X: =128
+            Y: =40
+            ZIndex: =4
+
+        Rectangle8_12 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =64
+            OnSelect: =
+            Width: =332
+            ZIndex: =6
+
+        Rectangle4_27 As rectangle:
+            BorderColor: =RGBA(101, 128, 187, 1)
+            DisabledFill: =Rectangle4_27.Fill
+            Fill: =RGBA(230, 230, 230, 1)
+            Height: =3
+            HoverFill: =Rectangle4_27.Fill
+            PressedFill: =Rectangle4_27.Fill
+            TabIndex: =0
+            Width: =332
+            Y: =63
+            ZIndex: =8
+
+    PieChart1 As pieChart:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(37, 36, 35, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        Explode: =2
+        Font: =Font.'Segoe UI'
+        Height: =298
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        ItemColorSet: =[RGBA(49, 130, 93, 1),RGBA(48, 166, 103, 1), RGBA(94, 193, 108, 1), RGBA(246, 199, 144, 1), RGBA(247, 199, 114, 1), RGBA(247, 180, 91, 1), RGBA(246, 143, 100, 1), RGBA(212, 96, 104, 1), RGBA(148, 110, 176, 1), RGBA(118, 154, 204, 1), RGBA(96, 197, 234, 1)]
+        Items: =Distinct('Recurring Items', approvalstatus)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        Width: =340
+        Y: =131
+        ZIndex: =27
+
+    Circle1 As circle:
+        BorderColor: =RGBA(243, 242, 241, 1)
+        BorderStyle: =BorderStyle.None
+        DisabledFill: =RGBA(98, 100, 167, 1)
+        Fill: =LookUp(colColorScheme,Name="bg_Primary",color)
+        Height: =150
+        HoverFill: =RGBA(98, 100, 167, 1)
+        PressedFill: =RGBA(98, 100, 167, 1)
+        Width: =150
+        X: =95
+        Y: =206
+        ZIndex: =28
+
+    Label7_2 As Label:
+        Alignment: =Align.Center
+        DisplayMode: =DisplayMode.Edit
+        FontSize: =35
+        FontWeight: =FontWeight.Bold
+        Height: =84
+        PCFTeamsTheme: ="default"
+        Text: =CountRows( 'Order Product Lines')
+        Width: =117
+        X: =109
+        Y: =238
+        ZIndex: =29
+
+    TextBox4_21 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(0,25,83,.8)
+        DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+        Font: =Font.'Lato Black'
+        Height: =24
+        HoverBorderColor: =TextBox4_21.BorderColor
+        HoverColor: =TextBox4_21.Color
+        HoverFill: =TextBox4_21.Fill
+        PressedBorderColor: =TextBox4_21.BorderColor
+        PressedColor: =TextBox4_21.Color
+        PressedFill: =TextBox4_21.Fill
+        Size: =10
+        Text: ="APPROVAL STATUS BY ORDER"
+        Width: =298.8888888888889
+        X: =21
+        Y: =132
+        ZIndex: =30
+
+    Rectangle8 As rectangle:
+        BorderColor: =RGBA(243, 242, 241, 1)
+        BorderStyle: =BorderStyle.None
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        FocusedBorderColor: =RGBA(98, 100, 167, 1)
+        Height: =599
+        HoverFill: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =339
+        X: =4
+        Y: =109
+        ZIndex: =31
+
+    Settings_2 As Settings:
+        Visible: =showMenu
+        X: =1254
+        Y: =59
+        ZIndex: =32
+

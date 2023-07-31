@@ -1,0 +1,36 @@
+Settings As CanvasComponent:
+    colourScheme: =colColorScheme
+    Fill: =LookUp(colColorScheme,Name="btn_UnSelected",Colour)
+    Height: =180
+    SettingsItems: =SettingsItems
+    Width: =112
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Gallery2_1 As gallery.galleryVertical:
+        BorderColor: =LookUp(Parent.colourScheme,Name="btn_Selected",Color)
+        DelayItemLoading: =true
+        Height: =CountRows(Self.AllItems)*(Self.TemplateHeight+ Self.TemplatePadding) 
+        Items: =Parent.SettingsItems
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =45
+        Width: =Parent.Width
+        ZIndex: =1
+
+        Button2_4 As Button:
+            BorderColor: =LookUp(Settings.colourScheme,Name="btn_Selected",Colour)
+            DisplayMode: =DisplayMode.Edit
+            FillColor: =RGBA(56, 96, 178, 0)
+            Height: =Parent.TemplateHeight - 5
+            HoverBorderColor: =ColorFade(LookUp(Settings.colourScheme,Name="btn_Selected",Colour), 20%)
+            HoverFillColor: =ColorFade(LookUp(Settings.colourScheme,Name="btn_Selected",Colour), -20%)
+            OnSelect: =Navigate(ThisItem.URL)
+            Text: =ThisItem.Name
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+

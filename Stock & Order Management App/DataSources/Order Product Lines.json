@@ -1,0 +1,437 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crmd_qe_orderdetails",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crmd_qe_orderdetail",
+    "MaxGetRowsCount": 2000,
+    "Name": "Order Product Lines",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr881_arrived": "Arrived",
+      "cr881_completed": "Completed",
+      "cr881_descriptionofwork": "Description Of Work",
+      "cr881_expectedquantity": "Expected Quantity",
+      "cr881_isimportant": "IsImportant",
+      "cr881_jobcompleted": "JobCompleted",
+      "cr881_ordered": "Ordered",
+      "cr881_report": "report",
+      "cr881_report2": "report2",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "crmd_accountid": "Account",
+      "crmd_buildid": "BOM Build",
+      "crmd_classification": "Payment",
+      "crmd_costprice": "Cost Price",
+      "crmd_costprice_base": "Cost Price (Base)",
+      "crmd_createrecurring": "Create Recurring",
+      "crmd_crmd_qe_orderdetail_crmd_bombuild_orderproductid": "BOM Builds",
+      "crmd_crmd_qe_orderdetail_crmd_customerasset_orderproductid": "Customer Assets",
+      "crmd_crmd_qe_orderdetail_crmd_deliverynoteline_orderlineid": "Delivery Note Lines",
+      "crmd_crmd_qe_orderdetail_crmd_purchaseorderline_orderproductid": "Purchase Order Lines",
+      "crmd_crmd_qe_orderdetail_crmd_recurringitem_OrderProductLine": "Recurring Items",
+      "crmd_customerassetscount": "Customer Assets Count",
+      "crmd_descriptionfull": "Description Full",
+      "crmd_descriptionshort": "Description Short",
+      "crmd_discountamount": "Discount Amount",
+      "crmd_discountamount_base": "Discount Amount (Base)",
+      "crmd_discountpercentage": "Discount Percentage",
+      "crmd_extendedcostprice": "Extended Cost Price",
+      "crmd_extendedcostprice_base": "Extended Cost Price (Base)",
+      "crmd_extendedcostpriceincterms": "Extended Cost Price (Including Terms)",
+      "crmd_extendedcostpriceincterms_base": "Extended Cost Price (Including Terms) (Base)",
+      "crmd_extendedsalesdiscountedprice": "Extended Sales Discounted Price",
+      "crmd_extendedsalesdiscountedprice_base": "Extended Sales Discounted Price (Base)",
+      "crmd_extendedsalesdiscountedpriceincterms": "Extended Sales Discounted Price (Inc Terms)",
+      "crmd_extendedsalesdiscountedpriceincterms_base": "Extended Sales Discounted Price (Inc Terms) (Base)",
+      "crmd_extendedsaleslistprice": "Extended Sales List Price",
+      "crmd_extendedsaleslistprice_base": "Extended Sales List Price (Base)",
+      "crmd_includeindelivery": "Include in Delivery",
+      "crmd_includeininvoice": "Include in Invoice",
+      "crmd_invoicingforoneoffitems": "One off Invoicing",
+      "crmd_name": "Name",
+      "crmd_NominalCodeXero": "Nominal Code (Xero)",
+      "crmd_notesfromprovisioning": "Notes from Provisioning",
+      "crmd_numberofpayments": "Number of Payments",
+      "crmd_orderid": "Order",
+      "crmd_orderlinenumber": "Order Line Number",
+      "crmd_paymentinadvance": "Payment in advance?",
+      "crmd_productandserviceid": "Product/Service",
+      "crmd_provisioningcomplete": "Provisioned?",
+      "crmd_qe_orderdetail_AsyncOperations": "System Jobs",
+      "crmd_qe_orderdetail_BulkDeleteFailures": "Bulk Delete Failures",
+      "crmd_qe_orderdetail_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crmd_qe_orderdetail_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crmd_qe_orderdetail_ProcessSession": "Process Sessions",
+      "crmd_qe_orderdetail_SyncErrors": "Sync Errors",
+      "crmd_qe_orderdetailid": "Order Product Line",
+      "crmd_quantity": "Quantity",
+      "crmd_quantityondelivery": "Quantity On Delivery",
+      "crmd_quotedetailid": "Quote Detail",
+      "crmd_Recurringlookup": "Recurring lookup",
+      "crmd_reservestock": "Reserve Stock",
+      "crmd_salesdiscountedprice": "Sales Discounted Price",
+      "crmd_salesdiscountedprice_base": "Sales Discounted Price (Base)",
+      "crmd_saleslistprice": "Sales List Price",
+      "crmd_saleslistprice_base": "Sales List Price (Base)",
+      "crmd_salesprofitincterms": "Sales Profit (Inc Terms)",
+      "crmd_salesprofitincterms_base": "Sales Profit (Inc Terms) (Base)",
+      "crmd_specialinstructions": "Special Instructions",
+      "crmd_startdate": "Start Date",
+      "crmd_supplierid": "Supplier",
+      "crmd_taxamount": "VAT Amount",
+      "crmd_taxamount_base": "VAT Amount (Base)",
+      "crmd_taxcodeid": "VAT Code",
+      "crmd_termmonths": "Term (Months)",
+      "crmd_totalamount": "Total Amount",
+      "crmd_totalamount_base": "Total Amount (Base)",
+      "crmd_totalvalueforinvoice": "Total Value(for invoice)",
+      "crmd_totalvalueforinvoice_base": "Total Value(for invoice) (Base)",
+      "crmd_unitgroupid": "Unit Group",
+      "crmd_unitid": "Unit",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "new_invoicefullterm": "Invoice Full Term",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Order Product Lines",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Order Product Lines (Views)",
+    "Name": "_crmd_qe_orderdetail_views",
+    "RelatedEntityName": "Order Product Lines",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "2164f86a-dae3-eb11-bacb-000d3a4af275": "Order Product Lines-All Products subgrid on orders",
+      "5248e809-e6ba-40e2-9c6e-47fdec907585": "Active Order Product Lines",
+      "686dadba-95d5-eb11-bacc-000d3abb2f52": "Order line - Purchase Order awaiting completion",
+      "6e41202f-e858-4d79-a9c8-74a614924dfe": "Order Product Line Associated View",
+      "7addb700-8e3d-4c1f-b778-74c429a190d3": "Inactive Order Product Lines",
+      "e5f6f8b6-d310-4723-9adf-8b98e660ee97": "Order Product Line Lookup View",
+      "e7e596a8-d85b-40e6-a1a3-24eb1f5ea6c5": "Order Product Line Advanced Find View",
+      "f1063c42-93d5-eb11-bacc-000d3abb2f52": "Order line - Purchase Order completed"
+    }
+  },
+  {
+    "DisplayName": "Arrived (Order Product Lines)",
+    "Name": "cr881_crmd_qe_orderdetail_cr881_arrived",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr881_arrived",
+        "OptionSetReferenceEntityName": "Order Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr881_arrived",
+    "RelatedEntityName": "Order Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Completed (Order Product Lines)",
+    "Name": "cr881_crmd_qe_orderdetail_cr881_completed",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr881_completed",
+        "OptionSetReferenceEntityName": "Order Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr881_completed",
+    "RelatedEntityName": "Order Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "IsImportant (Order Product Lines)",
+    "Name": "cr881_crmd_qe_orderdetail_cr881_isimportant",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr881_isimportant",
+        "OptionSetReferenceEntityName": "Order Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr881_isimportant",
+    "RelatedEntityName": "Order Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "JobCompleted (Order Product Lines)",
+    "Name": "cr881_crmd_qe_orderdetail_cr881_jobcompleted",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr881_jobcompleted",
+        "OptionSetReferenceEntityName": "Order Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr881_jobcompleted",
+    "RelatedEntityName": "Order Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Ordered (Order Product Lines)",
+    "Name": "cr881_crmd_qe_orderdetail_cr881_ordered",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr881_ordered",
+        "OptionSetReferenceEntityName": "Order Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr881_ordered",
+    "RelatedEntityName": "Order Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "report (Order Product Lines)",
+    "Name": "cr881_crmd_qe_orderdetail_cr881_report",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr881_report",
+        "OptionSetReferenceEntityName": "Order Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr881_report",
+    "RelatedEntityName": "Order Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "report2 (Order Product Lines)",
+    "Name": "cr881_crmd_qe_orderdetail_cr881_report2",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr881_report2",
+        "OptionSetReferenceEntityName": "Order Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr881_report2",
+    "RelatedEntityName": "Order Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Provisioning Complete",
+    "Name": "crmd_provisioningcomplete",
+    "OptionSetInfoNameMapping": {
+      "103460000": "Yes",
+      "103460001": "No",
+      "103460002": "N/A"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_provisioningcomplete",
+        "OptionSetReferenceEntityName": "Order Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmd_provisioningcomplete",
+    "RelatedEntityName": "Order Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Create Recurring (Order Product Lines)",
+    "Name": "crmd_qe_orderdetail_crmd_createrecurring",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_createrecurring",
+        "OptionSetReferenceEntityName": "Order Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_createrecurring",
+    "RelatedEntityName": "Order Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Include in Delivery (Order Product Lines)",
+    "Name": "crmd_qe_orderdetail_crmd_includeindelivery",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_includeindelivery",
+        "OptionSetReferenceEntityName": "Order Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_includeindelivery",
+    "RelatedEntityName": "Order Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Include in Invoice (Order Product Lines)",
+    "Name": "crmd_qe_orderdetail_crmd_includeininvoice",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_includeininvoice",
+        "OptionSetReferenceEntityName": "Order Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_includeininvoice",
+    "RelatedEntityName": "Order Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Reserve Stock (Order Product Lines)",
+    "Name": "crmd_qe_orderdetail_crmd_reservestock",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_reservestock",
+        "OptionSetReferenceEntityName": "Order Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_reservestock",
+    "RelatedEntityName": "Order Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Order Product Lines)",
+    "Name": "crmd_qe_orderdetail_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Order Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Order Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Order Product Lines)",
+    "Name": "crmd_qe_orderdetail_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Draft",
+      "100000000": "Complete",
+      "100000001": "Preparing",
+      "100000002": "Ready for Dispatch",
+      "100000003": "Dispatched",
+      "2": "Cancelled"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Order Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Order Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Invoice Full Term (Order Product Lines)",
+    "Name": "new_crmd_qe_orderdetail_new_invoicefullterm",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "new_invoicefullterm",
+        "OptionSetReferenceEntityName": "Order Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "new_invoicefullterm",
+    "RelatedEntityName": "Order Product Lines",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,132 @@
+BackHeader As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =95
+    Home: ="Text"
+    Save: ="Text"
+    ScreenName: ="Text"
+    Theme: =RGBA(0, 0, 0, 1)
+    Width: =App.Width
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    icnBack As icon.BackArrow:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: |-
+            =RGBA(
+                            0,
+                            142,
+                            202,
+                            1
+                        )
+        DisabledBorderColor: =RGBA(243, 242, 241, 1)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Height: =45
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(220,44,42, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(98, 100, 167, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Visible: =false
+        Width: =45
+        X: =40
+        Y: =Parent.Height/2 - Self.Height/2
+        ZIndex: =1
+
+    icnHome As icon.Home:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: |-
+            =RGBA(
+                            0,
+                            142,
+                            202,
+                            1
+                        )
+        DisabledBorderColor: =RGBA(243, 242, 241, 1)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Height: =45
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(220,44,42, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Home
+        OnSelect: =Parent.Home()
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(98, 100, 167, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Visible: =false
+        Width: =45
+        X: =icnBack.X + Self.Width + 20
+        Y: =icnBack.Y
+        ZIndex: =2
+
+    Label1_3 As Label:
+        Alignment: =Align.Center
+        Color: =Parent.Theme
+        DisplayMode: =DisplayMode.Edit
+        FontSize: =21
+        FontWeight: =FontWeight.Bold
+        Height: =46
+        PCFTeamsTheme: ="default"
+        Text: =Parent.ScreenName
+        Width: =1142
+        X: =115
+        Y: =25
+        ZIndex: =6
+
+    Circle1_4 As circle:
+        Fill: =Parent.Theme
+        Height: =45
+        OnSelect: =Parent.Home()
+        Width: =45
+        X: =115
+        Y: =25
+        ZIndex: =9
+
+    Group8_3 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =-20
+        ZIndex: =9
+
+        Circle1_3 As circle:
+            Fill: =Parent.Theme
+            Height: =45
+            OnSelect: =Back()
+            Width: =45
+            X: =40
+            Y: =24
+            ZIndex: =7
+
+        Icon10_5 As icon.Check:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =25
+            Icon: =Icon.ChevronLeft
+            OnSelect: =Back()
+            Width: =25
+            X: =50
+            Y: =34
+            ZIndex: =8
+
+    Group8_4 As group:
+        Height: =5
+        Width: =5
+        X: =-35
+        Y: =-20
+        ZIndex: =11
+
+        Icon10_7 As icon.Check:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =25
+            Icon: =Icon.Home
+            OnSelect: =Parent.Home()
+            Width: =25
+            X: =125
+            Y: =35
+            ZIndex: =10
+

@@ -1,0 +1,674 @@
+Order_Screen_1 As screen:
+    Fill: =LookUp(colColorScheme,Name="bg_Primary",color)
+    OnVisible: |-
+        =UpdateContext({showMenu:false});
+
+    "'1_5' As groupContainer.manualLayoutContainer":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DropShadow: =DropShadow.Bold
+        Fill: =LookUp(colColorScheme,Name="bg_Secondary",color)
+        Height: =589
+        Width: =885
+        X: =481
+        Y: =119
+        ZIndex: =1
+
+        galItems_4 As gallery.variableTemplateHeightGallery:
+            Height: =587
+            Items: |-
+                =SortByColumns(
+                  Search(
+                    Filter(
+                      'Order Headers',
+                      Account.Account = galItems_3.Selected.Account,
+                      IsBlank(ComboBox1_10.Selected.Value) || 'Status Reason' = ComboBox1_10.Selected.Value,
+                      IsBlank(DatePicker1.SelectedDate) || DateValue('Created On') = DatePicker1.SelectedDate 
+                    ),
+                    TextInputSearch_5.Text,
+                    "crmd_description"
+                  ),
+                  "createdon",
+                  If(NGALCATEGORYORDER, SortOrder.Ascending, SortOrder.Descending)
+                )
+            Layout: =Layout.Vertical
+            ShowScrollbar: =false
+            TemplatePadding: =0
+            TemplateSize: =113
+            Width: =885
+            ZIndex: =1
+
+            Rectangle14_10 As rectangle:
+                Fill: =If(ThisItem.IsSelected,ColorFade(LookUp(colColorScheme,Name="bg_Primary",color),90%),RGBA(255, 255, 255, 0.8))
+                Height: =110
+                OnSelect: |-
+                    =/*UpdateContext({showEditItem:true});
+                    UpdateContext({EditType:"Edit"});
+                    Select(Parent)*/
+                Width: =Parent.Width
+                Y: =3
+                ZIndex: =1
+
+            Label2_8 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =21
+                Text: =ThisItem.'Description/Specification'
+                Width: =567
+                X: =19
+                Y: =9
+                ZIndex: =2
+
+            Label2_9 As label:
+                Height: =23
+                Text: =ThisItem.Quote.'Quote Number'
+                Width: =400
+                X: =19
+                Y: =33
+                ZIndex: =3
+
+            Label2_10 As label:
+                Height: =23
+                Text: ="£ " & ThisItem.'Order Total'
+                Width: =384
+                X: =19
+                Y: =57
+                ZIndex: =4
+
+            Rectangle2 As rectangle:
+                Fill: =Switch(ThisItem.'Status Reason', 'Status Reason (Order Headers)'.Complete, LookUp(colColorScheme, Name = "green", Colour), 'Status Reason (Order Headers)'.Cancelled, LookUp(colColorScheme, Name = "red", Colour), 'Status Reason (Order Headers)'.Preparing, RGBA(98, 100, 167, 1), 'Status Reason (Order Headers)'.Draft, RGBA(205,133,63, 1), 'Status Reason (Order Headers)'.Dispatched, LookUp(colColorScheme, Name = "green", Colour))
+                Height: =110
+                OnSelect: =Select(Parent)
+                Width: =11
+                Y: =3
+                ZIndex: =5
+
+            "'DNU (EMAIL)' As icon.Mail":
+                Color: =RGBA(255, 255, 255, 1)
+                Fill: =LookUp(colColorScheme,Name="bg_HeaderNew",color)
+                FocusedBorderThickness: =0
+                Height: =40
+                Icon: =Icon.Mail
+                OnSelect: =Select(Parent)
+                Visible: =false
+                Width: =44
+                X: =542
+                Y: =9
+                ZIndex: =6
+
+            Label2_12 As label:
+                Height: =23
+                Text: =DateValue(ThisItem.'Created On')
+                Width: =187
+                X: =19
+                Y: =80
+                ZIndex: =7
+
+            Group1 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =9
+
+                Icon1 As icon.Alarm:
+                    Color: =LookUp(colColorScheme,Name="red",color)
+                    Height: =43
+                    Icon: =Icon.Alarm
+                    OnSelect: =Select(Parent)
+                    Visible: |
+                        =If(
+                            ThisItem.'Status Reason'='Status Reason (Order Headers)'.Complete,
+                            false,
+                            If(
+                                IsBlank(ThisItem.'Due Date'),
+                                false,
+                                If(
+                                    DateValue(ThisItem.'Due Date') < Today(),
+                                    true,
+                                    false
+                                )
+                            )
+                        )
+                    Width: =34
+                    X: =351
+                    Y: =70
+                    ZIndex: =8
+
+                Label6 As label:
+                    Color: =LookUp(colColorScheme,Name="red",color)
+                    Font: =Font.'Lato Black'
+                    FontWeight: =FontWeight.Bold
+                    OnSelect: =Select(Parent)
+                    Text: =ThisItem.'Executive Summary'
+                    Visible: |
+                        =If(
+                            ThisItem.'Status Reason'='Status Reason (Order Headers)'.Complete,
+                            false,
+                            If(
+                                IsBlank(ThisItem.'Due Date'),
+                                false,
+                                If(
+                                    DateValue(ThisItem.'Due Date') < Today(),
+                                    true,
+                                    false
+                                )
+                            )
+                        )
+                    Width: =211
+                    X: =385
+                    Y: =70
+                    ZIndex: =9
+
+            UserInput2_2 As rectangle:
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =113
+                OnSelect: |-
+                    =Navigate('Line Items_1');
+                    Set(Quote_ID, ThisItem.Quote.'Quote Header');
+                    Set(Order_ID, ThisItem.'Order Header');
+                    Set(Quote_Title, ThisItem.'Description/Specification')
+                Width: =596
+                ZIndex: =10
+
+            Icon2 As icon.Check:
+                Color: =RGBA(255, 255, 255, 1)
+                Fill: =LookUp(colColorScheme,Name="bg_HeaderNew",color)
+                Height: =35
+                Icon: =Icon.View
+                OnSelect: |-
+                    =Launch("https://cloudyit.crm11.dynamics.com/main.aspx?appid=28ff6879-ca4b-ec11-8f8e-000d3a7f937e&forceUCI=1&pagetype=entityrecord&etn=crmd_qe_order&id="&ThisItem.'Order Header')
+                PaddingBottom: =2
+                PaddingLeft: =2
+                PaddingRight: =2
+                PaddingTop: =2
+                Width: =35
+                X: =833
+                Y: =68
+                ZIndex: =11
+
+            Group2 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =14
+
+                Icon4 As icon.Add:
+                    Color: =LookUp(colColorScheme,Name="red",color)
+                    Height: =33
+                    Icon: =Icon.Error
+                    OnSelect: =Select(Parent)
+                    Visible: =If(ThisItem.IsImportnant
+                    Width: =45
+                    X: =622
+                    Y: =9
+                    ZIndex: =12
+
+                Label20 As label:
+                    Color: =LookUp(colColorScheme,Name="red",color)
+                    FontWeight: =FontWeight.Bold
+                    Height: =39
+                    OnSelect: =Select(Parent)
+                    Text: ="Marked as Important"
+                    Visible: =If(ThisItem.IsImportnant
+                    Width: =211
+                    X: =657
+                    Y: =6
+                    ZIndex: =13
+
+        txtSearchAsset_4 As text:
+            BorderColor: =LookUp(colColorScheme,Name="theme",color)
+            BorderThickness: =0
+            Clear: =true
+            Default: =""
+            Height: =30
+            HintText: ="Search"
+            HoverBorderColor: =Self.BorderColor
+            HoverFill: =Self.Fill
+            PressedBorderColor: =Self.BorderColor
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =false
+            Width: =165
+            X: =20
+            Y: =16
+            ZIndex: =2
+
+        Icon9_6 As icon.ArrowsUpDown:
+            Color: =LookUp(colColorScheme,Name="theme",color)
+            Height: =35
+            Icon: =Icon.Sort
+            OnSelect: |
+                =If(NGALCATEGORYORDER=true, UpdateContext({NGALCATEGORYORDER: false}), UpdateContext({NGALCATEGORYORDER: true}))
+            Visible: =false
+            Width: =33
+            X: =583
+            Y: =16
+            ZIndex: =4
+
+        ComboBox1_1 As combobox:
+            BorderThickness: =0
+            ChevronBackground: =LookUp(colColorScheme,Name="theme",color)
+            DefaultSelectedItems: =
+            DisplayFields: =["Value"]
+            Height: =30
+            InputTextPlaceholder: ="Status"
+            Items: =Choices('Status Reason (Order Headers)')
+            SearchFields: =["Value"]
+            SearchItems: =Choices('Status Reason (Order Headers)',ComboBox1_1.SearchText)
+            SelectMultiple: =false
+            Visible: =false
+            Width: =165
+            X: =199
+            Y: =16
+            ZIndex: =5
+
+        DatePicker1 As datepicker:
+            BorderThickness: =0
+            DefaultDate: =
+            Height: =30
+            IconBackground: =LookUp(colColorScheme,Name="theme",color)
+            Visible: =false
+            Width: =165
+            X: =378
+            Y: =16
+            ZIndex: =6
+
+        Icon9_7 As icon.ArrowsUpDown:
+            Color: =LookUp(colColorScheme,Name="theme",color)
+            Height: =35
+            Icon: =Icon.Reload
+            OnSelect: =Reset(DatePicker1)
+            Visible: =false
+            Width: =33
+            X: =550
+            Y: =16
+            ZIndex: =7
+
+    Icon6_18 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =22
+        Icon: =Icon.Hamburger
+        OnSelect: |
+            =UpdateContext({showMenu: !showMenu})
+        Width: =30
+        X: =1322
+        Y: =19
+        ZIndex: =2
+
+    "'1_4' As groupContainer.manualLayoutContainer":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Fill: =LookUp(colColorScheme,Name="bg_Primary",color)
+        Height: =589
+        Width: =481
+        Y: =119
+        ZIndex: =3
+
+        galItems_3 As gallery.variableTemplateHeightGallery:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =589
+            Items: |
+                =SortByColumns(
+                    Search(
+                        Accounts,
+                        TextInputSearch_4.Text,
+                        "name"
+                    ),
+                    "createdon",
+                    If(NGALLOCATIONSORDER, SortOrder.Ascending, SortOrder.Descending)
+                )
+            Layout: =Layout.Vertical
+            ShowScrollbar: =false
+            TemplatePadding: =0
+            TemplateSize: =65
+            Width: =476
+            ZIndex: =1
+
+            Rectangle14_9 As rectangle:
+                Fill: =If(ThisItem.IsSelected,ColorFade(LookUp(colColorScheme,Name="bg_Primary",color),40%),RGBA(255, 255, 255, 0.8))
+                Height: =58
+                OnSelect: |-
+                    =/*UpdateContext({showEditItem:true});
+                    UpdateContext({EditType:"Edit"});
+                    Select(Parent)*/
+                Width: =Parent.Width
+                Y: =3
+                ZIndex: =1
+
+            Label2_6 As label:
+                FontWeight: =FontWeight.Bold
+                Height: =44
+                Text: =ThisItem.'Account Name'
+                Width: =416
+                ZIndex: =2
+
+            Label2_7 As label:
+                Height: =48
+                Text: =ThisItem.'Relationship Type'
+                Width: =416
+                Y: =17
+                ZIndex: =3
+
+            UserInput_1 As rectangle:
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =65
+                OnSelect: =
+                Width: =591
+                ZIndex: =4
+
+            Icon2_1 As icon.Check:
+                Color: =RGBA(255, 255, 255, 1)
+                Fill: =LookUp(colColorScheme,Name="bg_HeaderNew",color)
+                Height: =35
+                Icon: =Icon.View
+                OnSelect: |-
+                    =Launch("https://cloudyit.crm11.dynamics.com/main.aspx?appid=28ff6879-ca4b-ec11-8f8e-000d3a7f937e&forceUCI=1&pagetype=entityrecord&etn=account&id="&ThisItem.Account)
+                PaddingBottom: =2
+                PaddingLeft: =2
+                PaddingRight: =2
+                PaddingTop: =2
+                Width: =35
+                X: =416
+                Y: =15
+                ZIndex: =5
+
+            Rectangle4_11 As rectangle:
+                BorderColor: =RGBA(101, 128, 187, 1)
+                DisabledFill: =Rectangle4_11.Fill
+                Fill: =RGBA(230, 230, 230, 1)
+                Height: =3
+                HoverFill: =Rectangle4_11.Fill
+                PressedFill: =Rectangle4_11.Fill
+                TabIndex: =0
+                Width: =634
+                Y: =62
+                ZIndex: =6
+
+        txtSearchAsset_3 As text:
+            BorderColor: =LookUp(colColorScheme,Name="theme",color)
+            BorderThickness: =0
+            Clear: =true
+            Default: =""
+            Height: =30
+            HintText: ="Search"
+            HoverBorderColor: =Self.BorderColor
+            HoverFill: =Self.Fill
+            PressedBorderColor: =Self.BorderColor
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: =false
+            Width: =250
+            X: =20
+            Y: =16
+            ZIndex: =2
+
+    Label5 As label:
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Bold
+        Height: =56
+        Text: ="NO ORDERS FOUND FOR THIS ACCOUNT"
+        Visible: |
+            =If(CountRows(galItems_4.AllItems) = 0, true, false)
+        Width: =433
+        X: =729
+        Y: =346
+        ZIndex: =4
+
+    header_page_4 As header_page:
+        OnSelect: =Navigate(Dashboard_Screen)
+        PageName: ="Viewing Order Screen"
+        ZIndex: =5
+
+    blank_rec_1 As blank_rec:
+        SaveButton: ="Text"
+        SaveProgressButton: ="Text"
+        Y: =59
+        ZIndex: =6
+
+    blank_rec_9 As blank_rec:
+        SaveButton: ="Text"
+        SaveProgressButton: ="Text"
+        Y: =708
+        ZIndex: =10
+
+    Icon9_5 As icon.ArrowsUpDown:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =35
+        Icon: =Icon.Sort
+        OnSelect: |
+            =If(NGALLOCATIONSORDER=true, UpdateContext({NGALLOCATIONSORDER: false}), UpdateContext({NGALLOCATIONSORDER: true}))
+        Width: =33
+        X: =360
+        Y: =72
+        ZIndex: =11
+
+    Group3 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =11
+
+        Label4_11 As Label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            PCFTeamsTheme: ="default"
+            Text: ="Search Account"
+            Visible: |
+                =If(IsBlank(TextInputSearch_4.Text), true, false)
+            Width: =320
+            X: =32
+            Y: =74
+            ZIndex: =7
+
+        TextInputSearch_4 As text:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Default: =""
+            DisabledBorderColor: =RGBA(159, 167, 165, 1)
+            DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+            DisabledFill: =ColorFade(RGBA(159, 167, 165, 1), 50%)
+            EnableSpellCheck: =true
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.Lato
+            HintText: =" "
+            HoverBorderColor: =RGBA(101, 128, 187, 1)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(190, 202, 226, 0), 30%)
+            PressedBorderColor: =TextInputSearch_4.HoverBorderColor
+            PressedColor: =TextInputSearch_4.Color
+            PressedFill: =TextInputSearch_4.Fill
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Reset: =
+            Size: =11
+            Width: =328
+            X: =18
+            Y: =70
+            ZIndex: =8
+
+        iconSearch_2 As icon.Search:
+            BorderColor: =RGBA(101, 128, 187, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(159, 167, 165, 1)
+            DisabledColor: =RGBA(193, 193, 193, 0.95)
+            DisabledFill: =iconSearch_2.Fill
+            Height: =20
+            HoverBorderColor: =ColorFade(iconSearch_2.BorderColor, 20%)
+            HoverColor: =ColorFade(iconSearch_2.Color, 20%)
+            HoverFill: =iconSearch_2.Fill
+            Icon: =Icon.Search
+            PressedBorderColor: =ColorFade(iconSearch_2.BorderColor, -20%)
+            PressedColor: =ColorFade(iconSearch_2.Color, -20%)
+            PressedFill: =iconSearch_2.Fill
+            TabIndex: =0
+            Width: =20
+            X: =309
+            Y: =80
+            ZIndex: =9
+
+    wellSortIC_22 As icon.ArrowsUpDown:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(243, 242, 241, 1)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Height: =TextInputSearch_4.Height
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(Self.Color, -30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Reload
+        OnSelect: =Refresh('Order Product Lines'); Refresh('Order Headers')
+        PaddingBottom: =3
+        PaddingLeft: =3
+        PaddingRight: =3
+        PaddingTop: =3
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(98, 100, 167, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =32
+        X: =397
+        Y: =69
+        ZIndex: =12
+
+    ComboBox1_10 As combobox:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        ChevronBackground: =LookUp(colColorScheme,Name="theme",Colour)
+        ChevronFill: =LookUp(colColorScheme,Name="bg_Fields",Colour)
+        Color: =
+        DefaultSelectedItems: =
+        DisplayFields: =["Value"]
+        Fill: =LookUp(colColorScheme,Name="Main_colour",Colour)
+        HoverFill: =ColorFade(LookUp(colColorScheme,Name="theme",Colour),80%)
+        InputTextPlaceholder: ="Status"
+        IsSearchable: =false
+        Items: =Choices('Status Reason (Order Headers)')
+        NoSelectionText: =
+        SearchFields: =["Value"]
+        SearchItems: =[]
+        SelectionFill: =LookUp(colColorScheme,Name="Main_colour",Colour)
+        SelectMultiple: =false
+        Size: =10
+        Tooltip: ="Filter by Status"
+        X: =834
+        Y: =70
+        ZIndex: =13
+
+    Label4_12 As Label:
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.Edit
+        Height: =33
+        PCFTeamsTheme: ="default"
+        Text: ="Filter by Status"
+        Visible: |
+            =If(IsBlank(ComboBox1_10.Selected), true, false)
+        Width: =101
+        X: =846
+        Y: =73
+        ZIndex: =14
+
+    DatePicker1_1 As datepicker:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DefaultDate: =
+        Fill: =RGBA(0, 0, 0, 0)
+        IconBackground: =LookUp(colColorScheme,Name="theme",Colour)
+        InputTextPlaceholder: =
+        Width: =165
+        X: =1187
+        Y: =70
+        ZIndex: =18
+
+    Label4_14 As Label:
+        Color: =RGBA(255, 255, 255, 1)
+        DisplayMode: =DisplayMode.Edit
+        Height: =33
+        PCFTeamsTheme: ="default"
+        Text: =If(IsBlank(DatePicker1_1.SelectedDate), Text(Date(2001,12,31), DatePicker1_1.Format, DatePicker1_1.Language))
+        Visible: |
+            =If(IsBlank(DatePicker1_1.SelectedDate), true, false)
+        Width: =101
+        X: =1191
+        Y: =73
+        ZIndex: =19
+
+    Group3_1 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =19
+
+        Label4_13 As Label:
+            Color: =RGBA(255, 255, 255, 1)
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            PCFTeamsTheme: ="default"
+            Text: ="Search Quote"
+            Visible: |
+                =If(IsBlank(TextInputSearch_5.Text), true, false)
+            Width: =320
+            X: =495
+            Y: =74
+            ZIndex: =15
+
+        TextInputSearch_5 As text:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Default: =""
+            DisabledBorderColor: =RGBA(159, 167, 165, 1)
+            DisabledColor: =ColorFade(RGBA(47, 41, 43, 1), 70%)
+            DisabledFill: =ColorFade(RGBA(159, 167, 165, 1), 50%)
+            EnableSpellCheck: =true
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.Lato
+            HintText: =" "
+            HoverBorderColor: =RGBA(101, 128, 187, 1)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(190, 202, 226, 0), 30%)
+            PressedBorderColor: =TextInputSearch_5.HoverBorderColor
+            PressedColor: =TextInputSearch_5.Color
+            PressedFill: =TextInputSearch_5.Fill
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Reset: =
+            Size: =11
+            Width: =328
+            X: =481
+            Y: =70
+            ZIndex: =16
+
+        iconSearch_3 As icon.Search:
+            BorderColor: =RGBA(101, 128, 187, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(159, 167, 165, 1)
+            DisabledColor: =RGBA(193, 193, 193, 0.95)
+            DisabledFill: =iconSearch_3.Fill
+            Height: =20
+            HoverBorderColor: =ColorFade(iconSearch_3.BorderColor, 20%)
+            HoverColor: =ColorFade(iconSearch_3.Color, 20%)
+            HoverFill: =iconSearch_3.Fill
+            Icon: =Icon.Search
+            PressedBorderColor: =ColorFade(iconSearch_3.BorderColor, -20%)
+            PressedColor: =ColorFade(iconSearch_3.Color, -20%)
+            PressedFill: =iconSearch_3.Fill
+            TabIndex: =0
+            Width: =20
+            X: =772
+            Y: =80
+            ZIndex: =17
+
+    Settings_3 As Settings:
+        Visible: =showMenu
+        X: =1254
+        Y: =59
+        ZIndex: =20
+

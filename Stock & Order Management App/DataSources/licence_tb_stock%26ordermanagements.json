@@ -1,0 +1,125 @@
+[
+  {
+    "DisplayName": "licence_tb_stock&ordermanagements (Views)",
+    "Name": "_cr881_licence_tb_stockordermanagement_views",
+    "RelatedEntityName": "licence_tb_stock&ordermanagements",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "179a7fa3-23d8-42df-9cd8-ea3c3c858c5f": "Inactive licence_tb_stock&ordermanagements",
+      "17acbc6a-2452-4ed3-89b5-58d1d35c97d3": "Active licence_tb_stock&ordermanagements",
+      "9b191b55-6263-4148-a1ec-644503262299": "licence_tb_stock&ordermanagement Associated View",
+      "c5212fe6-2e89-4843-b6a6-9204c3bc8e55": "licence_tb_stock&ordermanagement Lookup View",
+      "f684b4ac-b09a-41d0-85c2-c842657b7535": "licence_tb_stock&ordermanagement Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Status (licence_tb_stock&ordermanagements)",
+    "Name": "cr881_licence_tb_stockordermanagement_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "licence_tb_stock&ordermanagements"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "licence_tb_stock&ordermanagements",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (licence_tb_stock&ordermanagements)",
+    "Name": "cr881_licence_tb_stockordermanagement_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "licence_tb_stock&ordermanagements"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "licence_tb_stock&ordermanagements",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "statustype",
+    "Name": "cr881_statustype",
+    "OptionSetInfoNameMapping": {
+      "283530000": "Requested",
+      "283530001": "Purchased",
+      "283530002": "Completed"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr881_statustype",
+        "OptionSetReferenceEntityName": "licence_tb_stock&ordermanagements"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr881_statustype",
+    "RelatedEntityName": "licence_tb_stock&ordermanagements",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr881_licence_tb_stockordermanagements",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr881_licence_tb_stockordermanagement",
+    "MaxGetRowsCount": 2000,
+    "Name": "licence_tb_stock&ordermanagements",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "{Attachments}": "Attachments",
+      "cr881_customerLK": "customerLK",
+      "cr881_id": "ID",
+      "cr881_licence_tb_stockordermanagement_Annotations": "Notes",
+      "cr881_licence_tb_stockordermanagement_AsyncOperations": "System Jobs",
+      "cr881_licence_tb_stockordermanagement_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr881_licence_tb_stockordermanagement_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr881_licence_tb_stockordermanagement_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr881_licence_tb_stockordermanagement_ProcessSession": "Process Sessions",
+      "cr881_licence_tb_stockordermanagement_SyncErrors": "Sync Errors",
+      "cr881_licence_tb_stockordermanagementid": "licence_tb_stock&ordermanagement",
+      "cr881_nextinvoicedate": "nextinvoicedate",
+      "cr881_productcode": "ProductCode",
+      "cr881_productserviceLK": "productserviceLK",
+      "cr881_statustype": "statustype",
+      "cr881_term": "term",
+      "cr881_totalquantity": "totalquantity",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "licence_tb_stock&ordermanagements",
+    "Type": "NativeCDSDataSourceInfo"
+  }
+]

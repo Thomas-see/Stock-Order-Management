@@ -1,0 +1,85 @@
+Settings_Screen As screen:
+    Fill: =LookUp(colColorScheme,Name="body_colour",Colour)
+
+    Icon6_16 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =22
+        Icon: =Icon.Hamburger
+        OnSelect: |
+            =UpdateContext({showMenu: !showMenu})
+        Width: =30
+        X: =1319
+        Y: =19
+        ZIndex: =2
+
+    Label1_11 As label:
+        Align: =Align.Center
+        Color: =RGBA(60, 60, 59, 1)
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Bold
+        Height: =90
+        Size: =20
+        Text: ="SETTINGS"
+        Width: =Parent.Width
+        Y: =61
+        ZIndex: =4
+
+    "Chatbot2 As 'Chatbot (preview)'":
+        DisplayMode: =DisplayMode.Edit
+        EnvironmentId: ="109a6709-7597-4f44-8895-7f81f18b5e8c"
+        Height: =400
+        SchemaName: ="new_bot_97329a4072924b2dbd85128f602c6e9e"
+        Width: =320
+        X: =500
+        Y: =165
+        ZIndex: =8
+
+    blank_rec_6 As blank_rec:
+        SaveButton: ="Text"
+        SaveProgressButton: ="Text"
+        Y: =708
+        ZIndex: =9
+
+    header_page_9 As header_page:
+        OnSelect: =Navigate(Dashboard_Screen)
+        PageName: ="Settings Menu"
+        ZIndex: =12
+
+    Group2_7 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =-660
+        ZIndex: =12
+
+        Circle1_12 As circle:
+            Fill: =RGBA(60, 60, 59, 1)
+            Height: =55
+            HoverFill: =ColorFade(RGBA(234,91,12, 1), -20%)
+            OnSelect: =Navigate(Dashboard_Screen)
+            Width: =55
+            X: =653
+            Y: =710
+            ZIndex: =10
+
+        Icon1_8 As icon.Add:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =65
+            Icon: =Icon.Home
+            OnSelect: =Navigate(Dashboard_Screen)
+            PaddingBottom: =10
+            PaddingLeft: =15
+            PaddingRight: =15
+            PaddingTop: =15
+            Width: =65
+            X: =649
+            Y: =700
+            ZIndex: =11
+
+    Settings_7 As Settings:
+        Visible: =showMenu
+        X: =1254
+        Y: =60
+        ZIndex: =13
+

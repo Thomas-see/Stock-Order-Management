@@ -1,0 +1,25 @@
+Header As CanvasComponent:
+    Fill: =LookUp(colColorScheme,Name="bg_HeaderNew",color)
+    Height: =60
+    Width: =1366
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Label14_6 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =60
+        PaddingLeft: =20
+        Size: =20
+        Text: ="Stock & Order Management"
+        Width: =493
+        ZIndex: =1
+
+    Image1 As image:
+        Height: =60
+        Image: =Powered_by_CloudyIT_logo_15Dec
+        Width: =156
+        X: =1127
+        ZIndex: =2
+

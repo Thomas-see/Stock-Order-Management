@@ -1,0 +1,106 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "new_bpf_c5a6f361b3b740d9bcabc6ad9094394as",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "new_bpf_c5a6f361b3b740d9bcabc6ad9094394a",
+    "MaxGetRowsCount": 2000,
+    "Name": "Opportunity Sales Process - Cloudy (CRMD update)",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "activestageid": "Active Stage",
+      "activestagestartedon": "Active Stage Started On",
+      "bpf_crmd_qe_orderid": "Crmd_Qe_Order",
+      "bpf_crmdqe_quoteheaderid": "Crmdqe_Quoteheader",
+      "bpf_duration": "Duration",
+      "bpf_name": "Name",
+      "bpf_opportunityid": "Opportunity",
+      "businessprocessflowinstanceid": "Opportunity Sales Process - Cloudy (CRMD update)",
+      "completedon": "Completed On",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "new_bpf_c5a6f361b3b740d9bcabc6ad9094394a_AsyncOperations": "System Jobs",
+      "new_bpf_c5a6f361b3b740d9bcabc6ad9094394a_BulkDeleteFailures": "Bulk Delete Failures",
+      "new_bpf_c5a6f361b3b740d9bcabc6ad9094394a_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "new_bpf_c5a6f361b3b740d9bcabc6ad9094394a_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "new_bpf_c5a6f361b3b740d9bcabc6ad9094394a_ProcessSession": "Process Sessions",
+      "new_bpf_c5a6f361b3b740d9bcabc6ad9094394a_SyncErrors": "Sync Errors",
+      "new_bpf_c5a6f361b3b740d9bcabc6ad9094394a_WorkflowLogs": "Process Logs",
+      "organizationid": "Organization Id",
+      "overriddencreatedon": "Record Created On",
+      "processid": "Process",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "traversedpath": "Traversed Path",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Opportunity Sales Process - Cloudy (CRMD update)",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Opportunity Sales Process - Cloudy (CRMD update) (Views)",
+    "Name": "_new_bpf_c5a6f361b3b740d9bcabc6ad9094394a_views",
+    "RelatedEntityName": "Opportunity Sales Process - Cloudy (CRMD update)",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "5c8aa49c-d421-4c3c-bbad-a15f9e750d42": "Opportunity Sales Process - Cloudy (CRMD update) Lookup View",
+      "99efc500-dc4c-49ac-aeef-6b214c10aced": "Active Opportunity Sales Process - Cloudy (CRMD update) on my Opportunities",
+      "a6e17d7a-14d9-4b4c-ac13-6e4dfa177e65": "All Opportunity Sales Process - Cloudy (CRMD update)",
+      "c4194502-18ac-49f4-81bb-7db429696c10": "Opportunity Sales Process - Cloudy (CRMD update) Advanced Find View",
+      "c8ae2bab-9baf-45e1-adf2-abd5939917be": "Opportunity Sales Process - Cloudy (CRMD update) Associated View",
+      "e318778a-fb40-4a77-869a-58383d6cf514": "Inactive Opportunity Sales Process - Cloudy (CRMD update)",
+      "f256fb00-2e88-4716-994c-08c6cc8721e2": "Active Opportunity Sales Process - Cloudy (CRMD update)",
+      "f9ea71b9-a691-4dfd-a2da-82d96aafcd90": "Inactive Opportunity Sales Process - Cloudy (CRMD update) on my Opportunities"
+    }
+  },
+  {
+    "DisplayName": "Status (Opportunity Sales Process - Cloudy (CRMD update))",
+    "Name": "new_bpf_c5a6f361b3b740d9bcabc6ad9094394a_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Opportunity Sales Process - Cloudy (CRMD update)"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Opportunity Sales Process - Cloudy (CRMD update)",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Opportunity Sales Process - Cloudy (CRMD update))",
+    "Name": "new_bpf_c5a6f361b3b740d9bcabc6ad9094394a_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Finished",
+      "3": "Aborted"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Opportunity Sales Process - Cloudy (CRMD update)"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Opportunity Sales Process - Cloudy (CRMD update)",
+    "Type": "OptionSetInfo"
+  }
+]

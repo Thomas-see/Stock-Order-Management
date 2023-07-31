@@ -1,0 +1,461 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crmdqe_quoteproductlines",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crmdqe_quoteproductline",
+    "MaxGetRowsCount": 2000,
+    "Name": "Quote Product Lines",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "{Attachments}": "Attachments",
+      "cr881_collectionordelivery": "CollectionOrDelivery",
+      "cr881_datearrived": "Date Arrived",
+      "cr881_dateordered": "Date Ordered",
+      "cr881_daterequiredtocustomer": "Date Required To Customer",
+      "cr881_duedate": "Due Date",
+      "cr881_notes": "Notes (cr881_notes)",
+      "cr881_OrderedBy": "Ordered By ",
+      "cr881_stockarrived": "Stock Arrived",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "crmd_classification": "Payment",
+      "crmd_configtype": "Config Type",
+      "crmd_configurationlocked": "Configuration Locked",
+      "crmd_costdiscountamount": "Cost Discount",
+      "crmd_costdiscountamount_base": "Cost Discount (Base)",
+      "crmd_costdiscountpct": "Cost Discount % (crmd_costdiscountpct)",
+      "crmd_costdiscountpercentage": "Cost Discount % (crmd_costdiscountpercentage)",
+      "crmd_crmdqe_quoteproductline_crmd_attributeinstance_quoteproductid": "Attribute Instances",
+      "crmd_crmdqe_quoteproductline_crmd_qe_orderdetail_quotedetailid": "Order Product Lines",
+      "crmd_crmdqe_quoteproductline_crmdqe_quoteproductline_parentid": "Quote Product Lines (crmd_crmdqe_quoteproductline_crmdqe_quoteproductline_parentid)",
+      "crmd_crmdqe_quoteproductline_crmdqe_quoteproductline_sectionid": "Quote Product Lines (crmd_crmdqe_quoteproductline_crmdqe_quoteproductline_sectionid)",
+      "crmd_crmdqe_quoteproductline_crmdqe_quoteproductline_sourcerecordid": "Quote Product Lines (crmd_crmdqe_quoteproductline_crmdqe_quoteproductline_sourcerecordid)",
+      "crmd_extendedcostprice": "Extended Cost Price",
+      "crmd_extendedcostprice_base": "Extended Cost Price (Base)",
+      "crmd_extendedcostpriceincterms": "Extended Cost Price (Including Terms)",
+      "crmd_extendedcostpriceincterms_base": "Extended Cost Price (Including Terms) (Base)",
+      "crmd_extendedlistcostprice": "Extended List Cost Price",
+      "crmd_extendedlistcostprice_base": "Extended List Cost Price (Base)",
+      "crmd_extendedsalesdiscountedprice": "Extended Sales Discounted Price",
+      "crmd_extendedsalesdiscountedprice_base": "Extended Sales Discounted Price (Base)",
+      "crmd_extendedsalesdiscountedpriceincterms": "Extended Sales Discounted Price (Inc Terms)",
+      "crmd_extendedsalesdiscountedpriceincterms_base": "Extended Sales Discounted Price (Inc Terms) (Base)",
+      "crmd_extendedsaleslistprice": "Extended Sales List Price",
+      "crmd_extendedsaleslistprice_base": "Extended Sales List Price (Base)",
+      "crmd_ispictureattached": "IsPictureAttached",
+      "crmd_make": "Make",
+      "crmd_numberofpayments": "Number of Payments",
+      "crmd_originalproductid": "Original Product",
+      "crmd_pagebreak": "Page Break",
+      "crmd_parentid": "Parent",
+      "crmd_pricelistitemid": "Price List Item",
+      "crmd_quantityonorder": "Quantity On Order",
+      "crmd_quantityremainingtoorder": "Quantity Remaining To Order",
+      "crmd_salesdiscountamount": "Sales Discount",
+      "crmd_salesdiscountamount_base": "Sales Discount (Base)",
+      "crmd_salesdiscountpercentage": "Sales Discount %",
+      "crmd_salesprofit": "Sales Profit",
+      "crmd_salesprofit_base": "Sales Profit (Base)",
+      "crmd_salesprofitincterms": "Sales Profit (Inc Terms)",
+      "crmd_salesprofitincterms_base": "Sales Profit (Inc Terms) (Base)",
+      "crmd_salesprofitpercent": "Sales Profit %",
+      "crmd_sectionid": "Section",
+      "crmd_sourcerecordid": "Source Record",
+      "crmd_specialinstructions": "Special Instructions",
+      "crmd_taxamount": "VAT Amount",
+      "crmd_taxamount_base": "VAT Amount (Base)",
+      "crmd_taxcodeid": "VAT Code",
+      "crmd_termmonths": "Term (Months)",
+      "crmd_thumbnailurl": "Thumbnail Url",
+      "crmd_totalamount": "Total Amount",
+      "crmd_totalamount_base": "Total Amount (Base)",
+      "crmd_unitgroupid": "Unit Group",
+      "crmd_unitid": "Unit",
+      "crmd_weight": "Weight",
+      "crmdqe_AccountLookup": "Account (Lookup)",
+      "crmdqe_allowcostpricechange": "Allow Cost Price Change",
+      "crmdqe_costdiscountfromlist": "CostDiscountFromList",
+      "crmdqe_costmarginpct": "Cost Margin %",
+      "crmdqe_costprice": "Cost Price",
+      "crmdqe_costprice_base": "Cost Price (Base)",
+      "crmdqe_descriptionfull": "Description Full",
+      "crmdqe_descriptionshort": "Description Short",
+      "crmdqe_discountfromlistpct": "Discount From List %",
+      "crmdqe_extendedcostprice": "Ext. Cost Price",
+      "crmdqe_extendedcostprice_base": "Ext. Cost Price (Base)",
+      "crmdqe_extendedsalesdiscountedprice": "Ext. Sales Discounted Price",
+      "crmdqe_extendedsalesdiscountedprice_base": "Ext. Sales Discounted Price (Base)",
+      "crmdqe_extendedsaleslistprice": "Ext. Sales List Price",
+      "crmdqe_extendedsaleslistprice_base": "Ext. Sales List Price (Base)",
+      "crmdqe_guidance": "Guidance",
+      "crmdqe_linemargin": "(Deprecated) Line Margin",
+      "crmdqe_linemargin_base": "Line Margin (Base)",
+      "crmdqe_linemarginpct": "(Deprecated) Line Margin %",
+      "crmdqe_listcostprice": "List Cost Price",
+      "crmdqe_listcostprice_base": "List Cost Price (Base)",
+      "crmdqe_nominalledgercodepurchase": "Nominal Ledger Code Purchase",
+      "crmdqe_nominalledgercodesales": "Nominal Ledger Code Sales",
+      "crmdqe_ourproductcode": "Our Product Code",
+      "crmdqe_productlifespan": "ProductLifeSpan",
+      "crmdqe_ProductServicesLookup": "Product & Services (Lookup)",
+      "crmdqe_quantity": "Quantity",
+      "crmdqe_quotedetaillinenumber": "Quote Detail Line Number",
+      "crmdqe_QuoteHeaderLookup": "Quote Header (Lookup)",
+      "crmdqe_quotelinetype": "Quote Line Type",
+      "crmdqe_quoteproductline_Annotations": "Notes (crmdqe_quoteproductline_Annotations)",
+      "crmdqe_quoteproductline_AsyncOperations": "System Jobs",
+      "crmdqe_quoteproductline_BulkDeleteFailures": "Bulk Delete Failures",
+      "crmdqe_quoteproductline_DuplicateBaseRecord": "Duplicate Records (crmdqe_quoteproductline_DuplicateBaseRecord)",
+      "crmdqe_quoteproductline_DuplicateMatchingRecord": "Duplicate Records (crmdqe_quoteproductline_DuplicateMatchingRecord)",
+      "crmdqe_quoteproductline_id": "Quote Product Line Id",
+      "crmdqe_quoteproductline_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crmdqe_quoteproductline_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crmdqe_quoteproductline_ProcessSession": "Process Sessions",
+      "crmdqe_quoteproductline_SyncErrors": "Sync Errors",
+      "crmdqe_quoteproductlineid": "Quote Product Line",
+      "crmdqe_salesdiscountedprice": "Sales Discounted Price",
+      "crmdqe_salesdiscountedprice_base": "Sales Discounted Price (Base)",
+      "crmdqe_saleslistprice": "Sales List Price",
+      "crmdqe_saleslistprice_base": "Sales List Price (Base)",
+      "crmdqe_showinpdf": "Show in Document",
+      "crmdqe_showprice": "Show Price",
+      "crmdqe_sortorder": "Sort order",
+      "crmdqe_SupplierCurrencyLookup": "Supplier Currency (Lookup)",
+      "crmdqe_SupplierLookup": "Supplier (Lookup)",
+      "crmdqe_supplierproductcode": "Supplier Product Code",
+      "crmdqe_unitofmeasure": "Unit of measure",
+      "entityimage": "Thumbnail",
+      "entityimageid": "EntityImageId",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Quote Product Lines",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Quote Product Lines (Views)",
+    "Name": "_crmdqe_quoteproductline_views",
+    "RelatedEntityName": "Quote Product Lines",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "065110d6-4e0f-e811-8427-00155d019801": "Product Lines - WON",
+      "0d90ea85-45eb-404f-98a5-3b61993c2be2": "Active Quote Product Lines",
+      "279cc998-9df0-e711-8427-00155d019801": "Quote Header view",
+      "2f5dc272-d0f9-4fdd-b371-49f37913dac0": "Quote Product Line Lookup View",
+      "5649782c-4f0f-e811-8427-00155d019801": "Product Lines - LOST",
+      "62ac94da-cb76-4610-b6fa-8a12e8a09ebc": "Inactive Quote Product Lines",
+      "9c8e5cdf-2e96-ec11-b400-00224840ddf8": "Subtotal view",
+      "d5c2ce6c-ce00-48f2-bbd2-b37e1f30b104": "Quote Product Line Associated View",
+      "e77a5fa3-4e0f-e811-8427-00155d019801": "Product Lines - OPEN",
+      "e8de955d-0fac-44fb-bcb3-502c7d5293b4": "Quote Product Line Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "CollectionOrDelivery (Quote Product Lines)",
+    "Name": "cr881_crmdqe_quoteproductline_cr881_collectionordelivery",
+    "OptionSetInfoNameMapping": {
+      "283530000": "Collection",
+      "283530001": "Delivery"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr881_collectionordelivery",
+        "OptionSetReferenceEntityName": "Quote Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr881_collectionordelivery",
+    "RelatedEntityName": "Quote Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Stock Arrived (Quote Product Lines)",
+    "Name": "cr881_crmdqe_quoteproductline_cr881_stockarrived",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr881_stockarrived",
+        "OptionSetReferenceEntityName": "Quote Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "cr881_stockarrived",
+    "RelatedEntityName": "Quote Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Config Type",
+    "Name": "crmd_configtype",
+    "OptionSetInfoNameMapping": {
+      "100000000": "Standard",
+      "100000001": "Configuration",
+      "100000002": "Choice",
+      "100000003": "Main Unit"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_configtype",
+        "OptionSetReferenceEntityName": "Quote Product Lines"
+      },
+      "OptionSetReferenceItem1": {
+        "OptionSetReferenceColumnName": "crmd_configtype",
+        "OptionSetReferenceEntityName": "Products & Services"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmd_configtype",
+    "RelatedEntityName": "Quote Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Configuration Locked (Quote Product Lines)",
+    "Name": "crmd_crmdqe_quoteproductline_crmd_configurationlocked",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_configurationlocked",
+        "OptionSetReferenceEntityName": "Quote Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_configurationlocked",
+    "RelatedEntityName": "Quote Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "IsPictureAttached (Quote Product Lines)",
+    "Name": "crmd_crmdqe_quoteproductline_crmd_ispictureattached",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_ispictureattached",
+        "OptionSetReferenceEntityName": "Quote Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_ispictureattached",
+    "RelatedEntityName": "Quote Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Page Break (Quote Product Lines)",
+    "Name": "crmd_crmdqe_quoteproductline_crmd_pagebreak",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_pagebreak",
+        "OptionSetReferenceEntityName": "Quote Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_pagebreak",
+    "RelatedEntityName": "Quote Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Product Classification",
+    "Name": "crmd_qe_productclassification",
+    "OptionSetInfoNameMapping": {
+      "100000000": "Annual",
+      "100000001": "Quarterly",
+      "100000002": "Monthly",
+      "100000003": "One Off"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_classification",
+        "OptionSetReferenceEntityName": "Quote Product Lines"
+      },
+      "OptionSetReferenceItem1": {
+        "OptionSetReferenceColumnName": "crmd_classification",
+        "OptionSetReferenceEntityName": "Products & Services"
+      },
+      "OptionSetReferenceItem2": {
+        "OptionSetReferenceColumnName": "crmd_classification",
+        "OptionSetReferenceEntityName": "Order Product Lines"
+      },
+      "OptionSetReferenceItem3": {
+        "OptionSetReferenceColumnName": "crmd_productclassification",
+        "OptionSetReferenceEntityName": "Recurring Items"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmd_classification",
+    "RelatedEntityName": "Quote Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Quote Line Types",
+    "Name": "crmdqe_quotelinetypes",
+    "OptionSetInfoNameMapping": {
+      "100000000": "Group",
+      "122960000": "Standard",
+      "122960001": "Comment",
+      "122960002": "Subtotal Header",
+      "122960003": "Subtotal Footer"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmdqe_quotelinetype",
+        "OptionSetReferenceEntityName": "Quote Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmdqe_quotelinetype",
+    "RelatedEntityName": "Quote Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Allow Cost Price Change (Quote Product Lines)",
+    "Name": "crmdqe_quoteproductline_crmdqe_allowcostpricechange",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmdqe_allowcostpricechange",
+        "OptionSetReferenceEntityName": "Quote Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmdqe_allowcostpricechange",
+    "RelatedEntityName": "Quote Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Show in Document (Quote Product Lines)",
+    "Name": "crmdqe_quoteproductline_crmdqe_showinpdf",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmdqe_showinpdf",
+        "OptionSetReferenceEntityName": "Quote Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmdqe_showinpdf",
+    "RelatedEntityName": "Quote Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Show Price (Quote Product Lines)",
+    "Name": "crmdqe_quoteproductline_crmdqe_showprice",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmdqe_showprice",
+        "OptionSetReferenceEntityName": "Quote Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmdqe_showprice",
+    "RelatedEntityName": "Quote Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Quote Product Lines)",
+    "Name": "crmdqe_quoteproductline_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Quote Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Quote Product Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Quote Product Lines)",
+    "Name": "crmdqe_quoteproductline_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "122960000": "Draft",
+      "122960001": "Activated",
+      "122960003": "Template",
+      "122960004": "Won",
+      "122960006": "Cancelled",
+      "122960007": "Revised",
+      "122960008": "Lost",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Quote Product Lines"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Quote Product Lines",
+    "Type": "OptionSetInfo"
+  }
+]

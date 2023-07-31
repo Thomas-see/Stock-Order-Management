@@ -1,0 +1,125 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crmd_xero_nominalcodes",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crmd_xero_nominalcode",
+    "MaxGetRowsCount": 2000,
+    "Name": "Nominal Codes (Xero)",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "crmd_crmd_xero_nominalcode_crmd_qe_orderdetail_NominalCodeXero": "Order Product Lines",
+      "crmd_crmd_xero_nominalcode_crmd_recurringitem_NominalCodeXero": "Recurring Items",
+      "crmd_crmd_xero_nominalcode_crmdqe_productsservices_NominalCodeXero": "Products & Services",
+      "crmd_crmd_xero_nominalcode_invoicedetail_xero_nominalcodeid": "Invoice Lines",
+      "crmd_crmd_xero_nominalcode_product_xero_nominalcodepurchaseid": "Products (crmd_crmd_xero_nominalcode_product_xero_nominalcodepurchaseid)",
+      "crmd_name": "Name",
+      "crmd_product_crmd_NominalCode_crmd_xero_n": "Products (crmd_product_crmd_NominalCode_crmd_xero_n)",
+      "crmd_xero_nominalcode_AsyncOperations": "System Jobs",
+      "crmd_xero_nominalcode_BulkDeleteFailures": "Bulk Delete Failures",
+      "crmd_xero_nominalcode_DuplicateBaseRecord": "Duplicate Records (crmd_xero_nominalcode_DuplicateBaseRecord)",
+      "crmd_xero_nominalcode_DuplicateMatchingRecord": "Duplicate Records (crmd_xero_nominalcode_DuplicateMatchingRecord)",
+      "crmd_xero_nominalcode_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crmd_xero_nominalcode_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crmd_xero_nominalcode_ProcessSession": "Process Sessions",
+      "crmd_xero_nominalcode_SyncErrors": "Sync Errors",
+      "crmd_xero_nominalcodeid": "Nominal Code (Xero)",
+      "crmd_xero_typecode": "Type",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "organizationid": "Organization Id",
+      "overriddencreatedon": "Record Created On",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Nominal Codes (Xero)",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Nominal Codes (Xero) (Views)",
+    "Name": "_crmd_xero_nominalcode_views",
+    "RelatedEntityName": "Nominal Codes (Xero)",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "4c900164-8ce9-ed11-8847-002248c87a4c": "Sales Nominal Codes (Xero)",
+      "77d9fdae-97c9-4ea1-a10c-ef0e30faaed2": "Nominal Code (Xero) Lookup View",
+      "9ad1a332-2163-49e1-be03-557748bda666": "Nominal Code (Xero) Advanced Find View",
+      "a5e06ad8-8ce9-ed11-8847-002248c87a4c": "Purchase Nominal Codes (Xero)",
+      "aff6fbae-035c-4ffa-82c3-3b24ca868de6": "Active Nominal Codes (Xero)",
+      "d6f9d0e2-2182-4f2e-aa29-ad5de6968aab": "Inactive Nominal Codes (Xero)",
+      "f421a9ee-dc35-48c1-9ab7-99d15e74ee4b": "Nominal Code (Xero) Associated View"
+    }
+  },
+  {
+    "DisplayName": "Type (Nominal Codes (Xero))",
+    "Name": "crmd_xero_nominalcode_crmd_xero_typecode",
+    "OptionSetInfoNameMapping": {
+      "15": "Revenue",
+      "16": "Sales",
+      "5": "Direct Costs",
+      "7": "Expense"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_xero_typecode",
+        "OptionSetReferenceEntityName": "Nominal Codes (Xero)"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmd_xero_typecode",
+    "RelatedEntityName": "Nominal Codes (Xero)",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Nominal Codes (Xero))",
+    "Name": "crmd_xero_nominalcode_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Nominal Codes (Xero)"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Nominal Codes (Xero)",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Nominal Codes (Xero))",
+    "Name": "crmd_xero_nominalcode_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Nominal Codes (Xero)"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Nominal Codes (Xero)",
+    "Type": "OptionSetInfo"
+  }
+]

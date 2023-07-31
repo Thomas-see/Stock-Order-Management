@@ -1,0 +1,168 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crmd_deliverynotes",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crmd_deliverynote",
+    "MaxGetRowsCount": 2000,
+    "Name": "Delivery Notes",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "crmd_additionalinfo": "Additional Information",
+      "crmd_anyassets": "Any Assets?",
+      "crmd_completeinstructions": "Complete Instructions",
+      "crmd_crmd_deliverynote_crmd_deliverynoteline_deliverynoteid": "Delivery Note Lines",
+      "crmd_deliveryaddressid": "Delivery Address",
+      "crmd_deliverynote_AsyncOperations": "System Jobs",
+      "crmd_deliverynote_BulkDeleteFailures": "Bulk Delete Failures",
+      "crmd_deliverynote_DuplicateBaseRecord": "Duplicate Records (crmd_deliverynote_DuplicateBaseRecord)",
+      "crmd_deliverynote_DuplicateMatchingRecord": "Duplicate Records (crmd_deliverynote_DuplicateMatchingRecord)",
+      "crmd_deliverynote_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crmd_deliverynote_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crmd_deliverynote_ProcessSession": "Process Sessions",
+      "crmd_deliverynote_SyncErrors": "Sync Errors",
+      "crmd_deliverynoteid": "Delivery Note",
+      "crmd_deliverynotenumber": "Delivery Note Number",
+      "crmd_deliverynoteref": "Delivery Note Ref",
+      "crmd_despatchdate": "Despatch Date",
+      "crmd_name": "Name",
+      "crmd_orderid": "Order",
+      "crmd_purchaseorderid": "Purchase Order",
+      "crmd_serialnumbersaddedtodeliverynotelines": "Serial Numbers added to Delivery Note lines",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "processid": "Process Id",
+      "stageid": "(Deprecated) Stage Id",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "traversedpath": "(Deprecated) Traversed Path",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Delivery Notes",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Delivery Notes (Views)",
+    "Name": "_crmd_deliverynote_views",
+    "RelatedEntityName": "Delivery Notes",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "139c3ed3-3183-eb11-a812-000d3ad48ea1": "5 Goods Out - Full Delivery",
+      "180449b5-79a5-480b-bd75-4874e91af1d5": "Inactive Delivery Notes",
+      "18cc5aff-3183-eb11-a812-000d3ad48298": "7 Goods In - In Transit",
+      "21aa3843-fa09-40e3-9dd4-f5336b6238d0": "Delivery Note Lookup View",
+      "22e039a2-5f0c-473d-b6a1-8a727c807064": "Delivery Note Associated View",
+      "25f33b54-2f7a-45e2-a303-fa67fe1110f1": "Delivery Note Advanced Find View",
+      "2f7d8cec-3183-eb11-a812-000d3ad48ea1": "6 Goods Out - Cancelled",
+      "31c5b8aa-2c83-eb11-a812-000d3ad48298": "Inbound Deliveries",
+      "39c87bc2-448f-475b-8eab-5fafb12f6406": "1 Goods Out - Draft",
+      "46f8e17f-eaa0-eb11-b1ac-00224840daef": "Outbound Deliveries",
+      "6c8bd7be-3183-eb11-a812-000d3ad48298": "4 Goods Out - Part Delivery",
+      "c6eb5d49-3283-eb11-a812-000d3ad48298": "9 Goods In - Full Delivery",
+      "da427c2f-3283-eb11-a812-000d3ad48298": "8 Goods In - Part Delivery",
+      "e4c0d75b-3283-eb11-a812-000d3ad48ea1": "10 Goods In - Cancelled",
+      "f44b00a4-3183-eb11-a812-000d3ad48298": "3 Goods Out - Transit",
+      "f6044794-3183-eb11-a812-000d3ad48ea1": "2 Goods Out - Ready"
+    }
+  },
+  {
+    "DisplayName": "* CRMD Task completed",
+    "Name": "crmd_crmdtaskcompleted",
+    "OptionSetInfoNameMapping": {
+      "103460000": "Not needed",
+      "103460001": "In progress",
+      "103460002": "Completed"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_serialnumbersaddedtodeliverynotelines",
+        "OptionSetReferenceEntityName": "Delivery Notes"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmd_serialnumbersaddedtodeliverynotelines",
+    "RelatedEntityName": "Delivery Notes",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Any Assets? (Delivery Notes)",
+    "Name": "crmd_deliverynote_crmd_anyassets",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_anyassets",
+        "OptionSetReferenceEntityName": "Delivery Notes"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_anyassets",
+    "RelatedEntityName": "Delivery Notes",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Delivery Notes)",
+    "Name": "crmd_deliverynote_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Delivery Notes"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Delivery Notes",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Delivery Notes)",
+    "Name": "crmd_deliverynote_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Draft",
+      "100000000": "Part Delivery",
+      "100000001": "Ready",
+      "100000002": "In Transit",
+      "100000003": "Cancelled",
+      "100000004": "Returned",
+      "2": "Complete"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Delivery Notes"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Delivery Notes",
+    "Type": "OptionSetInfo"
+  }
+]

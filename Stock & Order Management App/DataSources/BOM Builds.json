@@ -1,0 +1,130 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crmd_bombuilds",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crmd_bombuild",
+    "MaxGetRowsCount": 2000,
+    "Name": "BOM Builds",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "crmd_bombuild_AsyncOperations": "System Jobs",
+      "crmd_bombuild_BulkDeleteFailures": "Bulk Delete Failures",
+      "crmd_bombuild_DuplicateBaseRecord": "Duplicate Records (crmd_bombuild_DuplicateBaseRecord)",
+      "crmd_bombuild_DuplicateMatchingRecord": "Duplicate Records (crmd_bombuild_DuplicateMatchingRecord)",
+      "crmd_bombuild_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crmd_bombuild_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crmd_bombuild_ProcessSession": "Process Sessions",
+      "crmd_bombuild_SyncErrors": "Sync Errors",
+      "crmd_bombuildid": "BOM Build",
+      "crmd_bomtask_bombuildid_crmd_bombuild": "BOM Tasks",
+      "crmd_buildnumber": "Build Number",
+      "crmd_crmd_bombuild_crmd_qe_orderdetail_buildid": "Order Product Lines",
+      "crmd_customerasset_buildid_crmd_bombuild": "Customer Assets",
+      "crmd_description": "Description",
+      "crmd_ignorestocklevels": "Ignore Stock Levels",
+      "crmd_name": "Name",
+      "crmd_orderproductid": "Order Product",
+      "crmd_productid": "Product",
+      "crmd_quantity": "Quantity",
+      "crmd_stocklocationid": "Stock Location",
+      "crmd_stocktransaction_buildid_crmd_bombui": "Stock Transactions",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "BOM Builds",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "BOM Builds (Views)",
+    "Name": "_crmd_bombuild_views",
+    "RelatedEntityName": "BOM Builds",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "14fd5f24-5b9c-4707-b273-de8db0a762c9": "BOM Build Associated View",
+      "5a25d0ec-45a6-47e0-8566-b7113d07a173": "Complete",
+      "5f40e698-7ad3-49be-9637-b31cd00c1893": "BOM Build Lookup View",
+      "b60fbb7f-597b-eb11-a812-00224840c172": "Require Attention",
+      "d05ff4a0-c871-41ad-ae08-ef88a9801056": "BOM Build Advanced Find View",
+      "fb1dd0fe-ab9e-4c6f-9707-163d911c3cc9": "In Progress"
+    }
+  },
+  {
+    "DisplayName": "Ignore Stock Levels (BOM Builds)",
+    "Name": "crmd_bombuild_crmd_ignorestocklevels",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_ignorestocklevels",
+        "OptionSetReferenceEntityName": "BOM Builds"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_ignorestocklevels",
+    "RelatedEntityName": "BOM Builds",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (BOM Builds)",
+    "Name": "crmd_bombuild_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "BOM Builds"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "BOM Builds",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (BOM Builds)",
+    "Name": "crmd_bombuild_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "In Progress",
+      "100000000": "Requires Attention",
+      "2": "Complete"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "BOM Builds"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "BOM Builds",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,105 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "new_bpf_f21df00f99f343dfb1042a99fa221f63s",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "new_bpf_f21df00f99f343dfb1042a99fa221f63",
+    "MaxGetRowsCount": 2000,
+    "Name": "Quote Header (CRMD)",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "activestageid": "Active Stage",
+      "activestagestartedon": "Active Stage Started On",
+      "bpf_crmdqe_quoteheaderid": "Crmdqe_Quoteheader",
+      "bpf_duration": "Duration",
+      "bpf_name": "Name",
+      "businessprocessflowinstanceid": "Quote Header (CRMD)",
+      "completedon": "Completed On",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "new_bpf_f21df00f99f343dfb1042a99fa221f63_AsyncOperations": "System Jobs",
+      "new_bpf_f21df00f99f343dfb1042a99fa221f63_BulkDeleteFailures": "Bulk Delete Failures",
+      "new_bpf_f21df00f99f343dfb1042a99fa221f63_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "new_bpf_f21df00f99f343dfb1042a99fa221f63_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "new_bpf_f21df00f99f343dfb1042a99fa221f63_ProcessSession": "Process Sessions",
+      "new_bpf_f21df00f99f343dfb1042a99fa221f63_SharePointDocumentLocations": "Document Locations",
+      "new_bpf_f21df00f99f343dfb1042a99fa221f63_SyncErrors": "Sync Errors",
+      "new_bpf_f21df00f99f343dfb1042a99fa221f63_WorkflowLogs": "Process Logs",
+      "organizationid": "Organization Id",
+      "overriddencreatedon": "Record Created On",
+      "processid": "Process",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "traversedpath": "Traversed Path",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Quote Header (CRMD)",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Quote Header (CRMD) (Views)",
+    "Name": "_new_bpf_f21df00f99f343dfb1042a99fa221f63_views",
+    "RelatedEntityName": "Quote Header (CRMD)",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "2e67a9a1-8b55-422f-9795-231128099b32": "Active Quote Header (CRMD)",
+      "2f0d0df0-f123-444c-b169-fc74ac57a4fe": "Quote Header (CRMD) Advanced Find View",
+      "371d43c9-564a-4aaa-9c42-fb76f14321ca": "All Quote Header (CRMD)",
+      "5087322f-119d-4bc7-8c1e-0c6f5aa75a15": "Quote Header (CRMD) Lookup View",
+      "87be3ea6-984f-4715-a4fe-3a2f0a29dd71": "Quote Header (CRMD) Associated View",
+      "ad47a310-7454-4f17-95cc-7c21ab3c534d": "Inactive Quote Header (CRMD)",
+      "b146acdb-9e08-40a4-ac20-d3ace1c8403e": "Active Quote Header (CRMD) on my Quote Headers",
+      "f6318b25-533c-48b6-9ead-629cffa7e4c1": "Inactive Quote Header (CRMD) on my Quote Headers"
+    }
+  },
+  {
+    "DisplayName": "Status (Quote Header (CRMD))",
+    "Name": "new_bpf_f21df00f99f343dfb1042a99fa221f63_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Quote Header (CRMD)"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Quote Header (CRMD)",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Quote Header (CRMD))",
+    "Name": "new_bpf_f21df00f99f343dfb1042a99fa221f63_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Finished",
+      "3": "Aborted"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Quote Header (CRMD)"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Quote Header (CRMD)",
+    "Type": "OptionSetInfo"
+  }
+]

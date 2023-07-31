@@ -1,0 +1,77 @@
+Admin_Screen As screen:
+    Fill: =LookUp(colColorScheme,Name="bg_Primary",color)
+    OnVisible: |-
+        =UpdateContext({showMenu:false});
+
+    Icon6_14 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =22
+        Icon: =Icon.Hamburger
+        OnSelect: |
+            =UpdateContext({showMenu: !showMenu})
+        Width: =30
+        X: =1324
+        Y: =19
+        ZIndex: =2
+
+    Label1_10 As label:
+        Align: =Align.Center
+        Color: =RGBA(60, 60, 59, 1)
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Bold
+        Height: =90
+        Size: =20
+        Text: ="ADMIN MENU"
+        Width: =Parent.Width
+        Y: =60
+        ZIndex: =3
+
+    header_page_3 As header_page:
+        OnSelect: =Navigate(Dashboard_Screen)
+        PageName: ="Admin Menu"
+        ZIndex: =7
+
+    blank_rec_4 As blank_rec:
+        SaveButton: ="Text"
+        SaveProgressButton: ="Text"
+        Y: =708
+        ZIndex: =8
+
+    Settings_9 As Settings:
+        Visible: =showMenu
+        X: =1254
+        Y: =60
+        ZIndex: =11
+
+    Group2_5 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =-660
+        ZIndex: =11
+
+        Circle1_10 As circle:
+            Fill: =RGBA(60, 60, 59, 1)
+            Height: =55
+            HoverFill: =ColorFade(RGBA(234,91,12, 1), -20%)
+            OnSelect: =Navigate(Dashboard_Screen)
+            Width: =55
+            X: =653
+            Y: =710
+            ZIndex: =9
+
+        Icon1_6 As icon.Add:
+            BorderColor: =RGBA(255, 255, 255, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =65
+            Icon: =Icon.Home
+            OnSelect: =Navigate(Dashboard_Screen)
+            PaddingBottom: =10
+            PaddingLeft: =15
+            PaddingRight: =15
+            PaddingTop: =15
+            Width: =65
+            X: =649
+            Y: =700
+            ZIndex: =10
+

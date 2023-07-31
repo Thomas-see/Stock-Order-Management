@@ -1,0 +1,462 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crmdqe_productsserviceses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crmdqe_productsservices",
+    "MaxGetRowsCount": 2000,
+    "Name": "Products & Services",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "cr881_cr881_licence_tb_stockordermanagement_pro": "licence_tb_stock&ordermanagements",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "crmd_allocatedassets": "Allocated Assets",
+      "crmd_allocatedassets_date": "Allocated Assets (Last Updated On)",
+      "crmd_allocatedassets_state": "Allocated Assets (State)",
+      "crmd_allocatedcomponents": "Allocated Components",
+      "crmd_allocatedcomponents_date": "Allocated Components (Last Updated On)",
+      "crmd_allocatedcomponents_state": "Allocated Components (State)",
+      "crmd_allocatedquantity": "Allocated Quantity",
+      "crmd_allocatedquantity_date": "Allocated Quantity (Last Updated On)",
+      "crmd_allocatedquantity_state": "Allocated Quantity (State)",
+      "crmd_availablequantity": "Available Quantity",
+      "crmd_bombuild_productid_crmdqe_productsse": "BOM Builds",
+      "crmd_bomtask_productid_crmdqe_productsser": "BOM Tasks",
+      "crmd_classification": "Payment",
+      "crmd_commoditycode": "Commodity Code",
+      "crmd_configtype": "Config Type",
+      "crmd_crmdqe_productsservices_crmd_attribute_productid": "Attributes",
+      "crmd_crmdqe_productsservices_crmd_attributeassociation_productid": "Attribute Associations",
+      "crmd_crmdqe_productsservices_crmd_bomassociation_componentid": "BOM Associations (crmd_crmdqe_productsservices_crmd_bomassociation_componentid)",
+      "crmd_crmdqe_productsservices_crmd_bomassociation_parentid": "BOM Associations (crmd_crmdqe_productsservices_crmd_bomassociation_parentid)",
+      "crmd_crmdqe_productsservices_crmd_customerasset_productid": "Customer Assets",
+      "crmd_crmdqe_productsservices_crmd_deliverynoteline_productid": "Delivery Note Lines",
+      "crmd_crmdqe_productsservices_crmd_entitysearch_qe_productid": "Entity Searches",
+      "crmd_crmdqe_productsservices_crmd_invoiceproduct_productid": "Invoice Products",
+      "crmd_crmdqe_productsservices_crmd_pricelistitem_productid": "Price List Items",
+      "crmd_crmdqe_productsservices_crmd_productlocation_productid": "Product Locations",
+      "crmd_crmdqe_productsservices_crmd_productserviceassociation_parentid": "Product/Service Associations (crmd_crmdqe_productsservices_crmd_productserviceassociation_parentid)",
+      "crmd_crmdqe_productsservices_crmd_productserviceassociation_productserviceid": "Product/Service Associations (crmd_crmdqe_productsservices_crmd_productserviceassociation_productserviceid)",
+      "crmd_crmdqe_productsservices_crmd_purchaseorderline_productid": "Purchase Order Lines",
+      "crmd_crmdqe_productsservices_crmd_qe_order_shippingid": "Order Headers",
+      "crmd_crmdqe_productsservices_crmd_qe_orderdetail_productandserviceid": "Order Product Lines",
+      "crmd_crmdqe_productsservices_crmd_recurringitem_productserviceid": "Recurring Items",
+      "crmd_crmdqe_productsservices_crmd_stocktransaction_productid": "Stock Transactions",
+      "crmd_crmdqe_productsservices_crmd_supplierinvoiceproduct_productid": "Supplier Invoice Products",
+      "crmd_crmdqe_productsservices_crmd_supplierproductassociation_productid": "Supplier & Product Associations",
+      "crmd_crmdqe_productsservices_crmdqe_productsservices_parentid": "Products & Services (crmd_crmdqe_productsservices_crmdqe_productsservices_parentid)",
+      "crmd_crmdqe_productsservices_crmdqe_productsservices_sourcerecordid": "Products & Services (crmd_crmdqe_productsservices_crmdqe_productsservices_sourcerecordid)",
+      "crmd_crmdqe_productsservices_crmdqe_quoteheader_shippingid": "Quote Headers",
+      "crmd_crmdqe_productsservices_crmdqe_quoteproductline_originalproductid": "Quote Product Lines (crmd_crmdqe_productsservices_crmdqe_quoteproductline_originalproductid)",
+      "crmd_crmdqe_productsservices_invoicedetail_productserviceid": "Invoice Lines",
+      "crmd_defaultlocationid": "Default Location",
+      "crmd_drawingnumber": "Drawing Number",
+      "crmd_includesuggestions": "Include Suggestions",
+      "crmd_incrementalorderquantity": "Incremental Order Quantity",
+      "crmd_iscustomerasset": "Customer Asset",
+      "crmd_ismanufactured": "Manufactured",
+      "crmd_isproductfamily": "Product Family",
+      "crmd_lastcost": "Last Cost BC",
+      "crmd_lastcost_base": "Last Cost (Base)",
+      "crmd_lastordereddate": "Last Ordered Date",
+      "crmd_make": "Make",
+      "crmd_minimumsellingquantity": "Minimum Selling Quantity",
+      "crmd_nominalcodeid": "Nominal Code",
+      "crmd_NominalCodeXero": "Nominal Code Xero",
+      "crmd_parentid": "Parent Product",
+      "crmd_poquantity": "PO Quantity",
+      "crmd_productid": "Dynamics Standard Product",
+      "crmd_purchasetaxcodeid": "Purchase VAT Code",
+      "crmd_purchaseunitcost": "Purchase Unit Cost",
+      "crmd_purchaseunitid": "Purchase Unit",
+      "crmd_sourcerecordid": "Source Record",
+      "crmd_supplierforpoid": "Supplier for PO",
+      "crmd_taxcodeid": "VAT Code",
+      "crmd_thumbnailurl": "Thumbnail Url",
+      "crmd_unitgroupid": "Unit Group",
+      "crmd_unitid": "Unit",
+      "crmd_weight": "Weight",
+      "crmdqe_allowcostpricechange": "Allow Cost Price Change",
+      "crmdqe_annualusage": "Annual Usage",
+      "crmdqe_averagequoteprice": "Average quote price",
+      "crmdqe_category1": "Category 1",
+      "crmdqe_category2": "Category 2",
+      "crmdqe_category3": "Category 3",
+      "crmdqe_costpricebc": "Cost Price BC",
+      "crmdqe_crmdqe_productsservices_crmdqe_quoteproductline_ProductServicesLookup": "Quote Product Lines (crmdqe_crmdqe_productsservices_crmdqe_quoteproductline_ProductServicesLookup)",
+      "crmdqe_customtariffnos": "Custom Tariff Nos",
+      "crmdqe_descriptionfull": "Description Full",
+      "crmdqe_descriptionshort": "Description Short",
+      "crmdqe_guidance": "Guidance",
+      "crmdqe_listpricecontrol": "List Price Control",
+      "crmdqe_nominalledgercodepurchase": "Nominal Ledger Code Purchase",
+      "crmdqe_nominalledgercodesales": "Nominal Ledger Code Sales",
+      "crmdqe_ourproductcode": "Our Product Code",
+      "crmdqe_pricelist1salespricebc": "Price List 1 Sales Price BC",
+      "crmdqe_pricelist1validity": "Price List 1 Validity",
+      "crmdqe_pricelist2salespricebc": "Price List 2 Sales Price BC",
+      "crmdqe_pricelist2validity": "Price List 2 Validity",
+      "crmdqe_pricelist3salespricebc": "Price List 3 Sales Price BC",
+      "crmdqe_pricelist3validity": "Price List 3 Validity",
+      "crmdqe_pricelist4salespricebc": "Price List 4 Sales Price BC",
+      "crmdqe_pricelist4validity": "Price List 4 Validity",
+      "crmdqe_pricelist5salespricebc": "Price List 5 Sales Price BC",
+      "crmdqe_pricelist5validity": "Price List 5 Validity",
+      "crmdqe_pricelist6salespricebc": "Price List 6 Sales Price BC",
+      "crmdqe_pricelist6validity": "Price List 6 Validity",
+      "crmdqe_productlifespan": "Alert",
+      "crmdqe_productsservices_AsyncOperations": "System Jobs",
+      "crmdqe_productsservices_BulkDeleteFailures": "Bulk Delete Failures",
+      "crmdqe_productsservices_DuplicateBaseRecord": "Duplicate Records (crmdqe_productsservices_DuplicateBaseRecord)",
+      "crmdqe_productsservices_DuplicateMatchingRecord": "Duplicate Records (crmdqe_productsservices_DuplicateMatchingRecord)",
+      "crmdqe_productsservices_id": "Products & Services ID",
+      "crmdqe_productsservices_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crmdqe_productsservices_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crmdqe_productsservices_ProcessSession": "Process Sessions",
+      "crmdqe_productsservices_SyncErrors": "Sync Errors",
+      "crmdqe_productsservicesid": "Products & Service",
+      "crmdqe_producttype": "Product Type",
+      "crmdqe_qlaquantitywon": "QLA Quantity Won",
+      "crmdqe_qlaquantitywon_date": "QLA Quantity Won (Last Updated On)",
+      "crmdqe_qlaquantitywon_state": "QLA Quantity Won (State)",
+      "crmdqe_searchtextall": "Search Text ALL",
+      "crmdqe_searchtextcategories": "Search Text Categories",
+      "crmdqe_stockcurrentlevel": "Stock Current Level",
+      "crmdqe_stocklocation": "Stock Location (Text)",
+      "crmdqe_stockminimumlevel": "Stock Minimum Level",
+      "crmdqe_stockminimumorderquantity": "Stock Minimum Order Quantity",
+      "crmdqe_stockonorder": "Stock On Order",
+      "crmdqe_stockordernow": "Stock - Order Now",
+      "crmdqe_stockreorderleadtimedays": "Stock Re-Order Lead time Days",
+      "crmdqe_SupplierCurrencyLookup": "(Deprecated) Supplier Currency (Lookup)",
+      "crmdqe_SupplierLookup": "Primary Supplier",
+      "crmdqe_supplierproductcode": "Supplier Product Code",
+      "crmdqe_suppliersearch": "Supplier Search",
+      "crmdqe_unitofmeasure": "zzUnit of Measure",
+      "entityimage": "Thumbnail",
+      "entityimageid": "EntityImageId",
+      "exchangerate": "Exchange Rate",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "new_crmdqe_productsservices_new_cloudy_licence_ProductLicence": "Licences",
+      "organizationid": "Organization Id",
+      "overriddencreatedon": "Record Created On",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "transactioncurrencyid": "Currency",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Products & Services",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Products & Services (Views)",
+    "Name": "_crmdqe_productsservices_views",
+    "RelatedEntityName": "Products & Services",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "35fb4c91-852a-eb11-a813-000d3ad50753": "Stock Management",
+      "65c59dd4-ca3a-eb11-a813-000d3ad689ea": "Recurring Products",
+      "a62fc9aa-6da4-42d4-8a0d-b9640533643a": "Inactive Products & Services",
+      "b0fc9c87-c863-4a56-ba4d-b0ea1bd3a608": "Products & Service Lookup View",
+      "d377a126-1f1b-e911-8439-00155d019801": "Write-In Products",
+      "de505088-6654-49e8-a5e0-dee9719001b5": "Products & Service Associated View",
+      "de83beb3-5fbf-ea11-845c-00155d019801": "Import Template",
+      "e21fcecc-87ae-467b-8bf9-5b9437152ddd": "Active Products & Services",
+      "e2b87568-7365-eb11-a812-0022483fcf8e": "Delivery",
+      "e4fecacb-2c5c-ec11-8f8f-00224842c91e": "Import Template Purchasing",
+      "ecba71db-2075-4f6a-83a4-c8413a825323": "Products & Service Advanced Find View",
+      "f1213d2c-2a83-eb11-a812-000d3ad48ea1": "Stock Order Now"
+    }
+  },
+  {
+    "DisplayName": "Include Suggestions (Products & Services)",
+    "Name": "crmd_crmdqe_productsservices_crmd_includesuggestions",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_includesuggestions",
+        "OptionSetReferenceEntityName": "Products & Services"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_includesuggestions",
+    "RelatedEntityName": "Products & Services",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Manufactured (Products & Services)",
+    "Name": "crmd_crmdqe_productsservices_crmd_ismanufactured",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_ismanufactured",
+        "OptionSetReferenceEntityName": "Products & Services"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_ismanufactured",
+    "RelatedEntityName": "Products & Services",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Product Family (Products & Services)",
+    "Name": "crmd_crmdqe_productsservices_crmd_isproductfamily",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_isproductfamily",
+        "OptionSetReferenceEntityName": "Products & Services"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_isproductfamily",
+    "RelatedEntityName": "Products & Services",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Customer Asset (Products & Services)",
+    "Name": "crmd_crmdqe_productsservices_iscustomerasset",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_iscustomerasset",
+        "OptionSetReferenceEntityName": "Products & Services"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_iscustomerasset",
+    "RelatedEntityName": "Products & Services",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Allow Cost Price Change (Products & Services)",
+    "Name": "crmdqe_productsservices_crmdqe_allowcostpricechange",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmdqe_allowcostpricechange",
+        "OptionSetReferenceEntityName": "Products & Services"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmdqe_allowcostpricechange",
+    "RelatedEntityName": "Products & Services",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Price List 1 Validity (Products & Services)",
+    "Name": "crmdqe_productsservices_crmdqe_pricelist1validity",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmdqe_pricelist1validity",
+        "OptionSetReferenceEntityName": "Products & Services"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmdqe_pricelist1validity",
+    "RelatedEntityName": "Products & Services",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Price List 2 Validity (Products & Services)",
+    "Name": "crmdqe_productsservices_crmdqe_pricelist2validity",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmdqe_pricelist2validity",
+        "OptionSetReferenceEntityName": "Products & Services"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmdqe_pricelist2validity",
+    "RelatedEntityName": "Products & Services",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Price List 3 Validity (Products & Services)",
+    "Name": "crmdqe_productsservices_crmdqe_pricelist3validity",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmdqe_pricelist3validity",
+        "OptionSetReferenceEntityName": "Products & Services"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmdqe_pricelist3validity",
+    "RelatedEntityName": "Products & Services",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Price List 4 Validity (Products & Services)",
+    "Name": "crmdqe_productsservices_crmdqe_pricelist4validity",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmdqe_pricelist4validity",
+        "OptionSetReferenceEntityName": "Products & Services"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmdqe_pricelist4validity",
+    "RelatedEntityName": "Products & Services",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Price List 5 Validity (Products & Services)",
+    "Name": "crmdqe_productsservices_crmdqe_pricelist5validity",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmdqe_pricelist5validity",
+        "OptionSetReferenceEntityName": "Products & Services"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmdqe_pricelist5validity",
+    "RelatedEntityName": "Products & Services",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Price List 6 Validity (Products & Services)",
+    "Name": "crmdqe_productsservices_crmdqe_pricelist6validity",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmdqe_pricelist6validity",
+        "OptionSetReferenceEntityName": "Products & Services"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmdqe_pricelist6validity",
+    "RelatedEntityName": "Products & Services",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Products & Services)",
+    "Name": "crmdqe_productsservices_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Products & Services"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Products & Services",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Products & Services)",
+    "Name": "crmdqe_productsservices_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Products & Services"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Products & Services",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Product Type",
+    "Name": "crmdqe_producttype",
+    "OptionSetInfoNameMapping": {
+      "100000001": "Delivery",
+      "122960000": "Stock Item",
+      "122960001": "Non Stock Item",
+      "122960999": "Write-In Product"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmdqe_producttype",
+        "OptionSetReferenceEntityName": "Products & Services"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "crmdqe_producttype",
+    "RelatedEntityName": "Products & Services",
+    "Type": "OptionSetInfo"
+  }
+]

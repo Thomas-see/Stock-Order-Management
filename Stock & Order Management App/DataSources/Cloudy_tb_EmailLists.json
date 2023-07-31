@@ -1,0 +1,98 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr881_cloudy_tb_emaillists",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr881_cloudy_tb_emaillist",
+    "MaxGetRowsCount": 2000,
+    "Name": "Cloudy_tb_EmailLists",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr881_cloudy_tb_emaillist_AsyncOperations": "System Jobs",
+      "cr881_cloudy_tb_emaillist_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr881_cloudy_tb_emaillist_DuplicateBaseRecord": "Duplicate Records (cr881_cloudy_tb_emaillist_DuplicateBaseRecord)",
+      "cr881_cloudy_tb_emaillist_DuplicateMatchingRecord": "Duplicate Records (cr881_cloudy_tb_emaillist_DuplicateMatchingRecord)",
+      "cr881_cloudy_tb_emaillist_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr881_cloudy_tb_emaillist_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr881_cloudy_tb_emaillist_ProcessSession": "Process Sessions",
+      "cr881_cloudy_tb_emaillist_SyncErrors": "Sync Errors",
+      "cr881_cloudy_tb_emaillistid": "Cloudy_tb_EmailList",
+      "cr881_email": "Email",
+      "cr881_name": "Name",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Cloudy_tb_EmailLists",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Cloudy_tb_EmailLists (Views)",
+    "Name": "_cr881_cloudy_tb_emaillist_views",
+    "RelatedEntityName": "Cloudy_tb_EmailLists",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0f1bb532-c954-458e-adb7-9d48620a8e76": "Cloudy_tb_EmailList Lookup View",
+      "298e2bdf-1ad6-438f-b7ff-79667a1b32a2": "Inactive Cloudy_tb_EmailLists",
+      "7e4ba9e4-7106-426a-8f8c-cf05a753475c": "Cloudy_tb_EmailList Advanced Find View",
+      "7e6ba982-0be2-418b-b970-a05818be6cd6": "Cloudy_tb_EmailList Associated View",
+      "b24b66ad-46dd-4878-8ede-aedc084ed2ca": "Active Cloudy_tb_EmailLists"
+    }
+  },
+  {
+    "DisplayName": "Status (Cloudy_tb_EmailLists)",
+    "Name": "cr881_cloudy_tb_emaillist_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Cloudy_tb_EmailLists"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Cloudy_tb_EmailLists",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Cloudy_tb_EmailLists)",
+    "Name": "cr881_cloudy_tb_emaillist_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Cloudy_tb_EmailLists"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Cloudy_tb_EmailLists",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,90 @@
+header_page As CanvasComponent:
+    OnSelect():
+        ThisProperty:
+            Default: ="Text"
+    Fill: =LookUp(colColorScheme,Name="Main_colour",Colour)
+    Height: =60
+    OnChangeLogo: =true
+    OnSelectHamburger: |-
+        =UpdateContext({showMenu: !showMenu})
+    PageName: ="Text"
+    Width: =Max(App.Width, App.MinScreenWidth)
+    X: =0
+    Y: =0
+    ZIndex: =2
+
+    Label14_7 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =60
+        PaddingLeft: =20
+        Size: =20
+        Text: ="STOCK & ORDER MANAGEMENT | "
+        Width: =493
+        X: =35
+        ZIndex: =1
+
+    Label20_1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =18
+        Size: =7
+        Text: ="Powered by"
+        Visible: =false
+        Width: =134
+        X: =1135
+        Y: =1
+        ZIndex: =3
+
+    Icon1_1 As icon.Add:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =60
+        Icon: =Icon.Hamburger
+        OnSelect: =Parent.OnSelectHamburger()
+        Width: =30
+        X: =1302
+        ZIndex: =4
+
+    Image5_1 As image:
+        Height: =60
+        Image: =Powered_by_CloudyIT_logo_15Dec
+        Width: =145
+        X: =1135
+        Y: =1
+        ZIndex: =5
+
+    Label14_8 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =60
+        PaddingLeft: =20
+        Size: =17
+        Text: =Parent.PageName
+        Width: =493
+        X: =484
+        ZIndex: =6
+
+    Icon6 As icon.ChevronLeft:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(243, 242, 241, 1)
+        DisabledColor: =RGBA(220, 220, 220, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Height: =38
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(RGBA(98, 100, 167, 1), -30%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =If(Parent.OnChangeLogo =true, Icon.Home, Icon.ChevronLeft)
+        OnSelect: =Parent.OnSelect()
+        PaddingBottom: =3
+        PaddingLeft: =3
+        PaddingRight: =3
+        PaddingTop: =3
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =ColorFade(RGBA(98, 100, 167, 1), -30%)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =38
+        X: =11
+        Y: =11
+        ZIndex: =7
+

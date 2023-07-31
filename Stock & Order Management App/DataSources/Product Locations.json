@@ -1,0 +1,158 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crmd_productlocations",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crmd_productlocation",
+    "MaxGetRowsCount": 2000,
+    "Name": "Product Locations",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "crmd_adjustmentquantity": "Adjustment Quantity",
+      "crmd_bin": "Bin",
+      "crmd_bomtask_productlocationid_crmd_produ": "BOM Tasks",
+      "crmd_crmd_productlocation_crmd_deliverynoteline_productlocationid": "Delivery Note Lines",
+      "crmd_crmd_productlocation_crmd_stocktransaction_productlocationid": "Stock Transactions",
+      "crmd_crmd_productlocation_crmdqe_productsservices_defaultlocationid": "Products & Services",
+      "crmd_customerasset_productlocationid_crmd": "Customer Assets",
+      "crmd_customerassetscount": "Customer Assets Count",
+      "crmd_customerassetscount_date": "Customer Assets Count (Last Updated On)",
+      "crmd_customerassetscount_state": "Customer Assets Count (State)",
+      "crmd_iscustomerasset": "Is Customer Asset",
+      "crmd_locationid": "Location",
+      "crmd_name": "Name",
+      "crmd_notes": "Notes",
+      "crmd_productid": "Product",
+      "crmd_productlocation_AsyncOperations": "System Jobs",
+      "crmd_productlocation_BulkDeleteFailures": "Bulk Delete Failures",
+      "crmd_productlocation_DuplicateBaseRecord": "Duplicate Records (crmd_productlocation_DuplicateBaseRecord)",
+      "crmd_productlocation_DuplicateMatchingRecord": "Duplicate Records (crmd_productlocation_DuplicateMatchingRecord)",
+      "crmd_productlocation_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crmd_productlocation_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crmd_productlocation_ProcessSession": "Process Sessions",
+      "crmd_productlocation_SyncErrors": "Sync Errors",
+      "crmd_productlocationid": "Product Location",
+      "crmd_refreshproductstock": "Refresh Product Stock",
+      "crmd_row": "Row",
+      "crmd_section": "Section",
+      "crmd_stocklevel": "Stock Level",
+      "crmd_totalstocklevel": "Total Stock Level",
+      "crmd_unitgroupid": "Unit Group",
+      "crmd_unitid": "Unit",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Product Locations",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Product Locations (Views)",
+    "Name": "_crmd_productlocation_views",
+    "RelatedEntityName": "Product Locations",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "4cc3bd5b-98ae-460e-bdb9-bbd777816067": "Product Location Associated View",
+      "7f09e284-11f5-4292-b9e7-e640470757fa": "Active Product Locations",
+      "9c00e473-33d6-4364-8aff-c31751307ad8": "Inactive Product Locations",
+      "9f7d62da-65ee-4ec3-a17c-0b9abbebdf43": "Product Location Lookup View",
+      "c14903e1-85e6-454d-8c51-35da87984705": "Product Location Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Is Customer Asset (Product Locations)",
+    "Name": "crmd_crmd_productlocation_iscustomerasset",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_iscustomerasset",
+        "OptionSetReferenceEntityName": "Product Locations"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_iscustomerasset",
+    "RelatedEntityName": "Product Locations",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Refresh Product Stock (Product Locations)",
+    "Name": "crmd_productlocation_crmd_refreshproductstock",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "crmd_refreshproductstock",
+        "OptionSetReferenceEntityName": "Product Locations"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "crmd_refreshproductstock",
+    "RelatedEntityName": "Product Locations",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Product Locations)",
+    "Name": "crmd_productlocation_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Product Locations"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Product Locations",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Product Locations)",
+    "Name": "crmd_productlocation_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Product Locations"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Product Locations",
+    "Type": "OptionSetInfo"
+  }
+]

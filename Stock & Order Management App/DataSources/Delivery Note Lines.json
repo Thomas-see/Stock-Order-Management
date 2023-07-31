@@ -1,0 +1,119 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "crmd_deliverynotelines",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "crmd_deliverynoteline",
+    "MaxGetRowsCount": 2000,
+    "Name": "Delivery Note Lines",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "crmd_crmd_deliverynoteline_crmd_customerasset_deliverynotelineid": "Customer Assets",
+      "crmd_crmd_deliverynoteline_crmd_stocktransaction_deliverynotelineid": "Stock Transactions",
+      "crmd_deliverydate": "Delivery Date",
+      "crmd_deliverynoteid": "Delivery Note",
+      "crmd_deliverynoteline_AsyncOperations": "System Jobs",
+      "crmd_deliverynoteline_BulkDeleteFailures": "Bulk Delete Failures",
+      "crmd_deliverynoteline_DuplicateBaseRecord": "Duplicate Records (crmd_deliverynoteline_DuplicateBaseRecord)",
+      "crmd_deliverynoteline_DuplicateMatchingRecord": "Duplicate Records (crmd_deliverynoteline_DuplicateMatchingRecord)",
+      "crmd_deliverynoteline_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "crmd_deliverynoteline_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "crmd_deliverynoteline_ProcessSession": "Process Sessions",
+      "crmd_deliverynoteline_SyncErrors": "Sync Errors",
+      "crmd_deliverynotelineid": "Delivery Note Line",
+      "crmd_deliverynotelinenumber": "Delivery Note Line Number",
+      "crmd_name": "Name",
+      "crmd_notesfromprovisioning": "Notes from Provisioning",
+      "crmd_notesinstructions": "Notes  & instructions",
+      "crmd_orderlineid": "Order Line",
+      "crmd_productid": "Product",
+      "crmd_productlocationid": "Product Location",
+      "crmd_purchaseorderlineid": "Purchase Order Line",
+      "crmd_quantitydelivered": "Quantity Delivered",
+      "crmd_quantityexpected": "Quantity Expected",
+      "crmd_specialinstructions": "Special Instructions",
+      "crmd_unitgroupid": "Unit Group",
+      "crmd_unitid": "Unit",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Delivery Note Lines",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Delivery Note Lines (Views)",
+    "Name": "_crmd_deliverynoteline_views",
+    "RelatedEntityName": "Delivery Note Lines",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "2192b630-71ee-4d82-8f32-43e03bcf3962": "Delivery Note Line Associated View",
+      "29e4334b-2734-455f-acce-69a2acc513b0": "Active Delivery Note Lines",
+      "a62e26da-d833-eb11-a813-000d3ad50753": "Delivery Note Lines (Subgrid)",
+      "c23e7e11-cfa6-4b5d-b354-c3bf1a59f8c7": "Delivery Note Line Advanced Find View",
+      "c487175d-696d-410c-add2-bbde2dcf27eb": "Inactive Delivery Note Lines",
+      "e0846156-df0f-40c2-9215-990f194b0fb7": "Delivery Note Line Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Status (Delivery Note Lines)",
+    "Name": "crmd_deliverynoteline_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Delivery Note Lines"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Delivery Note Lines",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Delivery Note Lines)",
+    "Name": "crmd_deliverynoteline_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Draft",
+      "100000000": "Part Delivery",
+      "100000001": "Ready",
+      "100000002": "In Transit",
+      "100000003": "Cancelled",
+      "100000004": "Returned",
+      "2": "Complete"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Delivery Note Lines"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Delivery Note Lines",
+    "Type": "OptionSetInfo"
+  }
+]
